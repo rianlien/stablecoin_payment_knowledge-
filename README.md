@@ -1,0 +1,2 @@
+# stablecoin_payment_knowledge-
+ステーブルコイン決済関連のニュースや情報を集めるプロジェクト
