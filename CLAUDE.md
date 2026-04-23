@@ -1,11 +1,42 @@
-# CLAUDE.md
+# Stablecoin Payments Research Repo
 
-This repository tracks research and knowledge on stablecoin payments.
+## Purpose
+This repository stores team-shared research notes on stablecoin payments.
 
-## Directory Structure
+## Workflow
+- Create one markdown file per news item in /00_Inbox
+- Create one daily digest in /01_Daily-Briefs
+- Create one weekly digest in /02_Weekly
+- Prefer pull request creation over direct commits
+- Do not delete existing notes unless explicitly instructed
 
-- `00_Inbox/` — Raw notes and unprocessed inputs
-- `01_Daily-Briefs/` — Daily research briefs
-- `02_Weekly/` — Weekly summaries
-- `03_Topics/` — Topic-specific deep dives
-- `90_Templates/` — Templates for notes and briefs
+## Source priority
+1. Official announcements
+2. Regulators / legal / guidelines
+3. Earnings / investor materials
+4. Official blogs / interviews
+5. Trusted industry media
+
+## Output rules
+- Separate facts from implications
+- State uncertainty explicitly
+- Use existing tags first
+- Keep 3-5 tags per note
+- Use YAML arrays for tags
+
+## Preferred tags
+- stablecoin
+- payments
+- regulation
+- kyt
+- wallet
+- psp
+- agentic-commerce
+- x402
+- merchant
+
+## Language rules
+- Write all note content in Japanese
+- Keep YAML frontmatter keys in English
+- Translate summaries, implications, and open questions into natural Japanese
+- Preserve official product names, company names, regulation names, and protocol names in their original form when needed
