@@ -18,6 +18,12 @@
 - テーマ整理や MOC は `/03_Topics/` に保存する
 - フォーマットは `/90_Templates/` のテンプレートに従う
 
+## Research note rules
+- 深掘り調査ノートや規格解説ノートは `/04_Protocols/` に保存する
+- ニュースノートとは分けて管理する
+- 関連するニュースノートとプロトコルノートは相互リンクする
+- 長期的に参照する基礎知識は MOC から辿れるようにする
+
 ## Writing rules
 - 事実と解釈を分ける
 - 推測は推測と明記する
@@ -44,6 +50,8 @@
 - agentic-commerce
 - x402
 - merchant
+- protocol
+- erc
 
 ## Workflow rules
 - 既存ファイルを確認してから新規ノートを作成する
