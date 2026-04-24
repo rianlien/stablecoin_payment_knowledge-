@@ -1,28 +1,38 @@
 # Stablecoin Payments Research Repo
 
 ## Purpose
-This repository stores team-shared research notes on stablecoin payments.
+このリポジトリは、ステーブルコイン決済に関するニュース・規制・企業動向・技術動向を、
+チームで再利用可能な Markdown 資産として蓄積するためのものです。
 
-## Workflow
-- Create one markdown file per news item in /00_Inbox
-- Create one daily digest in /01_Daily-Briefs
-- Create one weekly digest in /02_Weekly
-- Prefer pull request creation over direct commits
-- Do not delete existing notes unless explicitly instructed
+## Language rules
+- ノート本文は必ず自然な日本語で書く
+- YAML frontmatter の key は英語のままにする
+- 固有名詞、正式な会社名、プロダクト名、規格名、法令名は必要に応じて原文を維持してよい
+- 不自然な直訳を避け、決済・規制・プロダクト文脈で自然な日本語にする
 
-## Source priority
-1. Official announcements
-2. Regulators / legal / guidelines
-3. Earnings / investor materials
-4. Official blogs / interviews
-5. Trusted industry media
+## Repository rules
+- 1ニュースにつき1ファイル作成する
+- ニュースノートは `/00_Inbox/` に保存する
+- 日次まとめは `/01_Daily-Briefs/` に保存する
+- 週次まとめは `/02_Weekly/` に保存する
+- テーマ整理や MOC は `/03_Topics/` に保存する
+- フォーマットは `/90_Templates/` のテンプレートに従う
 
-## Output rules
-- Separate facts from implications
-- State uncertainty explicitly
-- Use existing tags first
-- Keep 3-5 tags per note
-- Use YAML arrays for tags
+## Writing rules
+- 事実と解釈を分ける
+- 推測は推測と明記する
+- 出典が分かるようにリンクを残す
+- 単なる要約で終わらせず、示唆を書く
+- 重要度と確からしさを分けて評価する
+- 重複した説明を避け、既存ノートがある場合は重複作成しない
+- ただし、重要な続報や正式ローンチ、規制変更などの大きな進展は新規ノート化してよい
+
+## Tag rules
+- 既存タグを最優先で使う
+- 新規タグは既存タグで表現できない場合のみ追加する
+- 1ノートあたりのタグは3〜5個までにする
+- 表記ゆれを避ける
+- tags は YAML 配列で記述する
 
 ## Preferred tags
 - stablecoin
@@ -35,8 +45,13 @@ This repository stores team-shared research notes on stablecoin payments.
 - x402
 - merchant
 
-## Language rules
-- Write all note content in Japanese
-- Keep YAML frontmatter keys in English
-- Translate summaries, implications, and open questions into natural Japanese
-- Preserve official product names, company names, regulation names, and protocol names in their original form when needed
+## Workflow rules
+- 既存ファイルを確認してから新規ノートを作成する
+- 既存イベントの再掲載は避ける
+- 変更は原則として review しやすい形でまとめる
+- 可能なら direct commit ではなく review 前提で変更を出す
+
+## Quality bar
+- チームが後から読んでも意味が分かること
+- 将来 MOC や週次まとめに再利用できる粒度であること
+- ノート単体で、何が起きたか / なぜ重要か / 何を考えるべきか が分かること
