@@ -1,89 +1,81 @@
 ---
-title: "CLARITY Act：ステーブルコイン利回り妥協案テキスト公開、Senate Banking マークアップへ前進"
+title: "CLARITY Act、ステーブルコイン利回り問題で超党派妥協案が浮上——銀行ロビーとの攻防が続く中、上院委員会マークアップが5月中旬に迫る"
 date: 2026-05-01
-source: CoinDesk / Unchained Crypto / The Block
-source_url: https://www.coindesk.com/policy/2026/05/01/clarity-act-text-lets-crypto-firms-offer-stablecoin-rewards-while-shielding-bank-yield
-entity: US Senate Banking Committee
-category: 規制
+source: "CoinDesk / Payment Expert / CryptoTimes / Coinpedia"
+source_url: "https://www.coindesk.com/policy/2026/05/01/clarity-act-text-lets-crypto-firms-offer-stablecoin-rewards-while-shielding-bank-yield"
+entity: "US Senate Banking Committee"
+category: "regulation"
 tags:
   - regulation
   - stablecoin
   - payments
-summary: "上院のティリス議員（共和党）とアルソブルックス議員（民主党）が CLARITY Act のステーブルコイン利回り問題に関する妥協案テキストを 5 月 1 日に公開。銀行預金と経済的・機能的に等価な利回りを禁止する一方、『真正な活動』に基づく活動型リワードは容認する条件で合意。Coinbase・Circle を含む暗号資産業界団体が即座に支持を表明し、上院銀行委員会に早期マークアップを要請した。"
-implications: "GENIUS Act とは別の市場構造法案である CLARITY Act が成立に近づくことで、ステーブルコイン利回りの法的位置付けが確定する。業界は『保有型リワード』から『利用型リワード』へのモデル転換を迫られる。"
-follow_up: "週 5/11 の Senate Banking マークアップ動向、Coinbase の CUSHY ファンドへの影響、利回り条項の最終テキスト確定"
+summary: "2026年5月1日、上院銀行委員会のTillis（共和）・Alsobrooks（民主）両議員がCLARITY Actのステーブルコイン利回り条項の妥協案テキストを公表。準備金そのものからの受動的利回りは禁止するが、プラットフォーム利用に基づくアクティビティ報酬は許容する内容。Coinbase・Circleが即時支持を表明した一方、主要銀行団体5者が連名で反発。Polymarket上の成立確率が70%に急上昇し、5月11日の週に委員会マークアップが予定される。"
+implications: "CLARITY Actが通過すれば、米国でのステーブルコイン発行・流通に包括的な連邦フレームワークが確立される。ステーブルコイン報酬プログラムの合法的な運営範囲が明確になることで、CoinbaseやCircleのビジネスモデルが法的確実性を得る。"
+follow_up: "5月11日の週のマークアップ動向、銀行ロビー活動の成否、Coinbase/Circle各社の公式声明詳細"
 ---
 
 ## 概要
 
-2026 年 5 月 1 日、上院銀行委員会のティリス議員（共和党・ノースカロライナ）とアルソブルックス議員（民主党・メリーランド）が CLARITY Act（Comprehensive Legislation for Accelerating Regulatory Insights on Token and Yield）の暫定テキストを公開した。中心争点となっていたステーブルコインの利回り問題について、「銀行預金と等価な受動的利回りを禁止しつつ、取引に基づく活動型リワードは容認する」という妥協案が盛り込まれた。Coinbase と Circle は同日中に支持を表明した。
+2026年5月1日、米国議会の「Digital Asset Market Clarity Act（CLARITY Act）」を巡る最大の論点だったステーブルコイン利回り問題について、超党派の妥協案テキストが公表された。Thom Tillis上院議員（共和・ノースカロライナ）とAngela Alsobrooks上院議員（民主・メリーランド）が中心となり、ホワイトハウスとの調整を経て作成された。5月5日時点で銀行ロビーとの攻防が続いているが、上院銀行委員会の委員長であるTim Scott議員は5月11日の週にマークアップを開催すると表明した。
 
 ## 何が起きたか
 
-**妥協案の内容（Section 404）**
-- ステーブルコイン残高に対して銀行預金と「経済的または機能的に等価」な利子・利回りを支払うことを禁止
-- 禁止の例外として「真正な活動または真正な取引（bona fide activities or bona fide transactions）」に基づくインセンティブは容認
-- クレジットカードのポイント・リワードに相当するモデルが想定されており、「保有して受け取る（buy and hold）」から「使って受け取る（buy and use）」への構造転換を要求
-
-**経緯**
-- 2026 年 1 月：Coinbase の Brian Armstrong CEO が利回り条項への不満から直前にサポートを撤回し、上院銀行委員会のティム・スコット委員長がマークアップを延期
-- 2026 年 3 月：Tillis・Alsobrooks 両議員が交渉再開の意向を表明
-- 2026 年 5 月 1 日：妥協案テキスト公開、ホワイトハウスも 5 月中のマークアップを後押し
-
-**業界・市場の反応**
-- Coinbase・Circle を含む複数の暗号資産業界団体が即日支持表明、Senate Banking への早期マークアップを要請
-- Polymarket 上の「CLARITY Act 2026 年成立」予測確率が 46% → 64% に上昇
-- Circle（CRCL）株が 5 月 4 日に約 20% 上昇
-- 上院銀行委員会の次のマークアップ可能時間枠は 5 月 11 日週（5 月 21 日にメモリアルデー休会）
+- **2026年5月1日（金）**: Tillis・Alsobrooks両議員が妥協案テキストを公表（CoinDesk報道）
+- **妥協案の骨子**:
+  - 準備金から直接発生する受動的利回り（銀行預金利息の機能的・経済的同等物）は**禁止**
+  - プラットフォーム上の「誠実な活動・取引（bona fide activities or bona fide transactions）」に基づく報酬は**許容**
+  - 暗号資産企業はステーブルコイン保有だけに対して利回りを付与することは不可
+  - ガバナンス・エコシステム参加に連動した報酬プログラムは継続可能
+- **2026年5月2日**: Coinbase・Circle・各暗号資産業界団体が即時支持を表明し、上院銀行委員会に速やかなマークアップを要請
+- **2026年5月4日**: Circleの株価が約20%上昇、Coinbaseが6.1%上昇（NYSEベース）
+- **2026年5月5日**: Tillis・Alsobrooks両議員が最終案と明言。一方、米国銀行協会（ABA）、Bank Policy Institute、Consumer Bankers Association、Financial Services Forum、Independent Community Bankers of Americaの5団体が連名で「妥協案は不十分」と反発
+- **Polymarket成立確率**: 妥協案公表後、2026年成立確率が46% → 64% → 70%へ急上昇（過去30日で最高値）
+- **次のマイルストーン**: 5月11日の週に上院銀行委員会のマークアップ開催が確定
 
 ## なぜ重要か
 
 ### 決済事業者視点
-- 利回り禁止が確定すれば、ステーブルコインを「決済手段」として明確に定義する法的根拠となり、PSP や加盟店がステーブルコイン受け入れを判断する際の規制リスクが大幅に低下する
-- 一方で、「利用型リワード」の設計次第では独自の決済ロイヤリティプログラムが可能になり、ステーブルコイン支払いのインセンティブ設計に新たな余地が生まれる
+- CLARITY Act通過により、米国でステーブルコイン決済を扱うPSP・銀行・フィンテックが準拠すべき連邦ルールが明確化される
+- 報酬プログラムの「bona fide」要件が確定すれば、加盟店ポイント・ロイヤルティ連動の決済インセンティブ設計に影響する可能性
 
 ### 加盟店視点
-- ステーブルコインが明確に決済手段として分類されることで、会計処理・税務処理の不確実性が下がり、導入判断がしやすくなる
-- 利回りなしでもリワードプログラムが残るなら、ユーザー側の利用動機は維持される
+- ステーブルコイン保有による受動的利回りが禁止される場合、商業用ウォレットの資金効率に直接影響する
+- 反面、「活動連動型」報酬が合法化されれば、決済量に応じたキャッシュバック的報酬設計は維持可能
 
 ### プロダクト視点
-- 「真正な活動」の定義が規則制定時に具体化されるまで、エンジニアリング・プロダクト設計に不確実性が残る
-- Coinbase が同じ日の前後に CUSHY（ステーブルコイン信用ファンド）を発表した背景は、機関投資家向け利回り商品として CLARITY Act の利回り制限を回避できる構造を用意したためと見られる
+- Coinbase・CircleのステーブルコインAPIを活用した報酬プログラム設計において、今後は「bona fide activity」基準への適合が不可欠になる
+- 法的明確性が生まれることで、大手ブランドのステーブルコイン決済採用障壁が下がる
 
 ### 規制 / リスク視点
-- GENIUS Act（発行体規制）と CLARITY Act（市場構造・取引所規制）は別法案であり、両者の成立時期・内容の相互作用が重要。GENIUS Act が既に施行済みの状況で CLARITY Act が成立すると、ステーブルコインに関する包括的な連邦規制体系が整う
-- 「等価」の判断基準が規則制定段階でどう解釈されるかが最大のリスクポイント
+- 銀行5団体の連名反発は、マークアップ前後に条文修正圧力をかけてくる可能性を示唆
+- CLARITY ActはGENIUS Actとは別立てで市場構造全体を規定する法案であり、ステーブルコイン条項のみが先行して妥協点に達した段階
+- 通過後でも、OCC・FinCEN等の規制当局による細則策定（GENIUS Act NPRMに続く形）が必要
 
 ## 我々への示唆
 
 - いま検討すべきこと:
-  - 自社のステーブルコイン利用プロダクトで「利回り型」要素を設計している場合、CLARITY Act の利回り禁止条項との整合性を法務に確認
-  - 「活動型リワード」の設計指針（どの行為がリワードの根拠となるか）を CLARITY Act 成立前に素案を用意しておく
+  - 自社プロダクト内のユーザー向け報酬・インセンティブ設計が「bona fide activity」要件を満たすかを法務チームと事前確認
+  - CLARITY Actマークアップの結果次第でロードマップを調整できるよう、規制監視体制を整備
 - 後で深掘りすべきこと:
-  - Section 404 の「bona fide activities」の定義が規則制定段階でどう具体化されるか
-  - GENIUS Act と CLARITY Act の双方が成立した場合の、ステーブルコイン発行体・PSP・ウォレット事業者それぞれへの義務の分担構造
+  - マークアップ後に最終条文を精査し、PSP・PayFac向けに特定の義務が課されるかを確認
+  - 「bona fide activities」の定義範囲——コンテンツ閲覧・API利用・ガバナンス投票のどこまでが該当するか
 - 今は優先度が低いこと:
-  - 法案成立前に細部の条項を実装に落とし込むのは時期尚早。マークアップ通過後に最終テキストを確認してから設計判断する
+  - 法案が通過するまでは具体的な準拠コスト試算は後回しでよい
 
 ## 未解決の論点
 
-- 「経済的または機能的に等価」の具体的な判断基準（金利水準？保有残高への比例性？）が未定義
-- DeFi プロトコルに埋め込まれたステーブルコイン利回り（AMM の流動性報酬等）がこの制限の対象になるか不明
-- 法案の「ステーブルコイン発行体」以外の事業者（PSP・ウォレット）が活動型リワードを提供する場合の規制主体が不明確
+- 銀行5団体の反発は委員会での条文修正を引き起こすか？現行妥協案テキストのまま通過するか？
+- 「bona fide activity」の具体的な定義はOCC・連邦規制当局が別途細則で定めるのか、法律本文で列挙されるのか？
+- 外国発行ステーブルコイン（USDT等）はCLARITY Actの対象外になるのか？
+- 通過後の施行タイムライン——GENIUS Act実施規則との優先度関係は？
 
 ## 参考リンク
 
-- 一次情報: [CoinDesk — Clarity Act text lets crypto firms offer stablecoin rewards while shielding bank yield (2026-05-01)](https://www.coindesk.com/policy/2026/05/01/clarity-act-text-lets-crypto-firms-offer-stablecoin-rewards-while-shielding-bank-yield)
-- 一次情報: [The Block — Coinbase says deal reached on Clarity Act stablecoin yield (2026-05-02)](https://www.theblock.co/post/399780/coinbase-says-deal-reached-on-clarity-act-stablecoin-yield-clearing-path-to-long-stalled-senate-markup)
-- 補足情報: [Unchained Crypto — Senators Release CLARITY Act Stablecoin Yield Compromise (2026-05-01)](https://unchainedcrypto.com/senators-release-clarity-act-stablecoin-yield-compromise-as-white-house-pushes-for-may-markup/)
-- 補足情報: [CNBC — Circle jumps nearly 20% on Clarity Act compromise (2026-05-04)](https://www.cnbc.com/2026/05/04/circle-jumps-16percent-on-clarity-act-compromise-that-preserves-stablecoin-rewards.html)
-- 関連ノート: [GENIUS Act 銀行側遅延要請（2026-04-22）](./2026-04-22_GENIUS-Act_banks-seek-delay.md)
-- 関連ノート: [Crypto Coalition CLARITY Act 上院書簡（2026-04-23）](./2026-04-23_CryptoCoalition_clarity-act-senate-letter.md)
+- 一次情報: [CoinDesk（妥協案テキスト）2026-05-01](https://www.coindesk.com/policy/2026/05/01/clarity-act-text-lets-crypto-firms-offer-stablecoin-rewards-while-shielding-bank-yield)
+- 補足情報: [CoinDesk（業界支持）2026-05-02](https://www.coindesk.com/policy/2026/05/02/crypto-industry-backs-clarity-act-yield-compromise-pushes-senate-banking-for-markup) / [CryptoTimes（銀行ロビー・議員防衛）2026-05-05](https://www.cryptotimes.io/2026/05/05/lummis-and-tillis-defend-clarity-act-stablecoin-compromise-as-banking-lobby-mounts-pushback/) / [Payment Expert（法案前進）2026-05-05](https://paymentexpert.com/2026/05/05/clarity-act-moves-forward-yield/) / [CNBC（Circle株価）2026-05-04](https://www.cnbc.com/2026/05/04/circle-jumps-16percent-on-clarity-act-compromise-that-preserves-stablecoin-rewards.html)
 
 ## 重要度
-
 - High
 
 ## 確からしさ
-
-- High（CoinDesk・The Block・Unchained による一次報道、業界団体・Polymarket による客観的反応データあり）
+- High
