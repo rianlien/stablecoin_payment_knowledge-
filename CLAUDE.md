@@ -1,65 +1,45 @@
 # Stablecoin Payments Research Repo
 
-## Purpose
-このリポジトリは、ステーブルコイン決済に関するニュース・規制・企業動向・技術動向を、
-チームで再利用可能な Markdown 資産として蓄積するためのものです。
+## Default
+- この repo は stablecoin / agentic commerce 関連の調査ノート蓄積用
+- 本文は自然な日本語、YAML key は英語
+- 固有名詞、会社名、規格名、法令名は必要に応じて原文維持
 
-## Language rules
-- ノート本文は必ず自然な日本語で書く
-- YAML frontmatter の key は英語のままにする
-- 固有名詞、正式な会社名、プロダクト名、規格名、法令名は必要に応じて原文を維持してよい
-- 不自然な直訳を避け、決済・規制・プロダクト文脈で自然な日本語にする
+## Paths
+- ニュース: `/00_Inbox/`
+- Daily Brief: `/01_Daily-Briefs/`
+- Weekly: `/02_Weekly/`
+- Topics / MOC: `/03_Topics/`
+- Protocol research: `/04_Protocols/`
+- テンプレート: `/90_Templates/`
 
-## Repository rules
-- 1ニュースにつき1ファイル作成する
-- ニュースノートは `/00_Inbox/` に保存する
-- 日次まとめは `/01_Daily-Briefs/` に保存する
-- 週次まとめは `/02_Weekly/` に保存する
-- テーマ整理や MOC は `/03_Topics/` に保存する
-- フォーマットは `/90_Templates/` のテンプレートに従う
-
-## Research note rules
-- 深掘り調査ノートや規格解説ノートは `/04_Protocols/` に保存する
-- ニュースノートとは分けて管理する
-- 関連するニュースノートとプロトコルノートは相互リンクする
-- 長期的に参照する基礎知識は MOC から辿れるようにする
-
-## Writing rules
-- 事実と解釈を分ける
-- 推測は推測と明記する
-- 出典が分かるようにリンクを残す
-- 単なる要約で終わらせず、示唆を書く
+## Common rules
+- 1ニュース1ファイル
+- 既存ノート確認後に作成し、同一イベントの重複作成は避ける
+- 重要な続報、正式ローンチ、規制変更、標準更新は別ノート化してよい
+- 事実と解釈を分け、推測は推測と明記し、出典リンクを残す
 - 重要度と確からしさを分けて評価する
-- 重複した説明を避け、既存ノートがある場合は重複作成しない
-- ただし、重要な続報や正式ローンチ、規制変更などの大きな進展は新規ノート化してよい
+- 既存タグ優先、tags は 3〜5 個
+- 変更は review しやすい形を優先し、原則 direct commit しない
 
-## Tag rules
-- 既存タグを最優先で使う
-- 新規タグは既存タグで表現できない場合のみ追加する
-- 1ノートあたりのタグは3〜5個までにする
-- 表記ゆれを避ける
-- tags は YAML 配列で記述する
+## Daily agentic-commerce routine defaults
+- JST の今日を基準に `start_date=today-7 days`、`end_date=today`
+- 採用基準は `underlying_event_date`
+- `article_published_date` が期間内でも underlying event が期間外なら除外
+- 日付が曖昧な項目は、一次情報で裏どりできない限り除外
+- 主対象: agentic commerce, agent payments, payment authorization, agent identity, merchant / PSP readiness, API billing, machine payments, payment-related protocol / standard
+- stablecoin 項目は、agent-led commerce / machine payments / API billing / x402 / AP2 などに直接関係する場合のみ採用
+- 一般 AI ニュース、一般 stablecoin ニュース、価格動向、意見記事、古い発表の再報道は除外
+- 既存 `/00_Inbox/` と `/01_Daily-Briefs/` を見て重複回避
+- 新規ノートは 1 run で最大 10 件。重要項目が少なければ無理に埋めない
+- ニュースノートは `/90_Templates/news_note_template.md`、Daily Brief は `/90_Templates/daily_brief_template.md`
+- ニュースノートには `article_published_date`、`underlying_event_date`、`primary_source_date` を記録
+- confirmed facts / likely implications / speculation-watch を分ける
+- Daily Brief にはその run で新規採用した項目だけを書く
+- 重要項目がない日も Daily Brief を作成または更新し、「該当なし」と明記する
 
-## Preferred tags
-- stablecoin
-- payments
-- regulation
-- kyt
-- wallet
-- psp
-- agentic-commerce
-- x402
-- merchant
-- protocol
-- erc
-
-## Workflow rules
-- 既存ファイルを確認してから新規ノートを作成する
-- 既存イベントの再掲載は避ける
-- 変更は原則として review しやすい形でまとめる
-- 可能なら direct commit ではなく review 前提で変更を出す
-
-## Quality bar
-- チームが後から読んでも意味が分かること
-- 将来 MOC や週次まとめに再利用できる粒度であること
-- ノート単体で、何が起きたか / なぜ重要か / 何を考えるべきか が分かること
+## Weekly defaults
+- 週次まとめは毎週月曜日に、直前の暦週（月曜〜日曜）を対象に作成
+- 元データは `/00_Inbox/` と `/01_Daily-Briefs/`
+- 事実の羅列より、変化の方向性、示唆、監視ポイントを優先
+- 重複話題は統合して `/02_Weekly/` に保存

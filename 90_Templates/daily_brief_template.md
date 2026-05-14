@@ -15,17 +15,19 @@ follow_up:
 - 
 
 ## 新規追加ノート
-- [[2026-04-23_circle_usdc_expansion]]
+- [[]]
   - 概要:
   - 重要度:
   - 確からしさ:
+  - 主要カテゴリ:
   - 情報元:
   - リンク:
 
-- [[2026-04-23_stripe_stablecoin_update]]
+- [[]]
   - 概要:
   - 重要度:
   - 確からしさ:
+  - 主要カテゴリ:
   - 情報元:
   - リンク:
 
@@ -33,6 +35,23 @@ follow_up:
 - 
 
 ## 共通して見える変化
+- 
+
+## 領域別の示唆
+
+### Product
+- 
+
+### Authorization / Identity
+- 
+
+### Regulation / Risk
+- 
+
+### Merchant / PSP Operations
+- 
+
+### Market Direction
 - 
 
 ## 我々への示唆
@@ -49,3 +68,4 @@ follow_up:
 ## 備考
 - 収集対象は直近7日間
 - この Daily Brief には今日新規採用した項目のみ記載
+- 該当項目がない場合は、その旨を簡潔に明記する
