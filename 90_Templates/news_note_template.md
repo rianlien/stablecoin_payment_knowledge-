@@ -5,10 +5,16 @@ source:
 source_url:
 entity:
 category:
+primary_category:
+article_published_date:
+underlying_event_date:
+primary_source_date:
 tags:
   - stablecoin
 summary:
 implications:
+importance:
+confidence:
 follow_up:
 ---
 
@@ -16,6 +22,9 @@ follow_up:
 - 
 
 ## 何が起きたか
+- 
+
+## 確認された事実
 - 
 
 ## なぜ重要か
@@ -39,6 +48,12 @@ follow_up:
   - 
 - 今は優先度が低いこと:
   - 
+
+## ありそうな示唆
+- 
+
+## 推測 / 監視ポイント
+- 
 
 ## 未解決の論点
 - 
