@@ -45,6 +45,8 @@
 | [[01_Daily-Briefs/2026-05/2026-05-09]] | ECB Lagarde、CLARITY Act markup、Mastercard × Yellow Card、Exodus XO Cash |
 | [[01_Daily-Briefs/2026-05/2026-05-10]] | Western Union USDPT、Exodus XO Cash、CLARITY Act、FCA safeguarding |
 | [[01_Daily-Briefs/2026-05/2026-05-11]] | Western Union USDPT mainnet、SoFiUSD、ECB、Exodus XO Cash、CLARITY Act |
+| [[01_Daily-Briefs/2026-05/2026-05-13]] | Kraken × Reap、PayPal × Google Cloud、CLARITY Act、Bridge × Celo |
+| [[01_Daily-Briefs/2026-05/2026-05-14]] | CLARITY Act 委員会通過、Consensus Miami、MoonPay、Paxos |
 
 ## Archived
 
