@@ -20,7 +20,7 @@ git clone https://github.com/rianlien/stablecoin_payment_knowledge-.git
 
 ## Folder rules
 - 00_Inbox: 1ニュース1ファイル
-- 01_Daily-Briefs: 日次まとめ
+- 01_Daily-Briefs: 日次まとめ（月別フォルダで管理）
 - 02_Weekly: 週次まとめ
 - 03_Topics: テーマ別の論点整理
 - 04_Protocols: EIP/ERCなどプロトコル仕様の調査メモ

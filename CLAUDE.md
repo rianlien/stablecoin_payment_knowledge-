@@ -7,7 +7,7 @@
 
 ## Paths
 - ニュース: `/00_Inbox/`
-- Daily Brief: `/01_Daily-Briefs/`
+- Daily Brief: `/01_Daily-Briefs/YYYY-MM/`
 - Weekly: `/02_Weekly/`
 - Topics / MOC: `/03_Topics/`
 - Protocol research: `/04_Protocols/`
@@ -35,7 +35,7 @@
 - ニュースノートは `/90_Templates/news_note_template.md`、Daily Brief は `/90_Templates/daily_brief_template.md`
 - ニュースノートには `article_published_date`、`underlying_event_date`、`primary_source_date` を記録
 - confirmed facts / likely implications / speculation-watch を分ける
-- Daily Brief にはその run で新規採用した項目だけを書く
+- Daily Brief にはその run で新規採用した項目だけを書き、`/01_Daily-Briefs/YYYY-MM/YYYY-MM-DD.md` に保存する
 - 重要項目がない日も Daily Brief を作成または更新し、「該当なし」と明記する
 
 ## Weekly defaults
