@@ -11,6 +11,7 @@
 - Weekly: `/02_Weekly/`
 - Topics / MOC: `/03_Topics/`
 - Protocol research: `/04_Protocols/`
+- Entities / Companies: `/06_Entities/Companies/`
 - テンプレート: `/90_Templates/`
 
 ## Common rules

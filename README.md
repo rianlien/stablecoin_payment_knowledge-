@@ -25,6 +25,7 @@ git clone https://github.com/rianlien/stablecoin_payment_knowledge-.git
 - 03_Topics: テーマ別の論点整理
 - 04_Protocols: EIP/ERCなどプロトコル仕様の調査メモ
 - 05_MOCs: 関連ノートを束ねるMOC（Map of Content）
+- 06_Entities: 企業・組織・人物など、ニュース横断で追う対象
 - 90_Templates: テンプレート
 
 ## Editing rules
