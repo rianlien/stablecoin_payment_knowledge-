@@ -1,0 +1,41 @@
+name: Post Daily Brief to Slack
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '01_Daily-Briefs/**/*.md'
+
+jobs:
+  post-to-slack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Find changed brief date
+        id: brief
+        run: |
+          BRIEF_FILE=$(git diff --name-only HEAD~1 HEAD 2>/dev/null \
+            | grep '^01_Daily-Briefs/.*\.md$' | head -1 || true)
+          if [ -z "$BRIEF_FILE" ]; then
+            # Fallback for initial commit
+            BRIEF_FILE=$(git show --name-only --format= HEAD \
+              | grep '^01_Daily-Briefs/.*\.md$' | head -1 || true)
+          fi
+          if [ -n "$BRIEF_FILE" ]; then
+            DATE=$(basename "$BRIEF_FILE" .md)
+            echo "date=$DATE" >> "$GITHUB_OUTPUT"
+            echo "Found changed brief: $BRIEF_FILE (date=$DATE)"
+          else
+            echo "No daily brief changed in this push"
+          fi
+
+      - name: Post to Slack
+        if: steps.brief.outputs.date != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          BRIEF_DATE: ${{ steps.brief.outputs.date }}
+          SKIP_MTIME_CHECK: "1"
+        run: python3 .claude/hooks/post_brief_to_slack.py

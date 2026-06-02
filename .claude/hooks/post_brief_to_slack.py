@@ -19,8 +19,12 @@ from pathlib import Path
 
 JST = timezone(timedelta(hours=9))
 NOW_JST = datetime.now(JST)
-TODAY = NOW_JST.strftime("%Y-%m-%d")
-YEAR_MONTH = NOW_JST.strftime("%Y-%m")
+
+# Allow GitHub Actions to override the target date via BRIEF_DATE env var
+# (GHA checks out fresh, so file mtime != original commit time)
+_DATE_OVERRIDE = os.environ.get("BRIEF_DATE", "")
+TODAY = _DATE_OVERRIDE if _DATE_OVERRIDE else NOW_JST.strftime("%Y-%m-%d")
+YEAR_MONTH = TODAY[:7]
 
 WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL", "")
 
@@ -201,7 +205,9 @@ def post(payload: dict) -> None:
 # ── Guards ────────────────────────────────────────────────────────────────────
 
 def brief_modified_today() -> bool:
-    """True if the brief file's mtime is today (JST)."""
+    """True if the brief file's mtime is today (JST), or SKIP_MTIME_CHECK is set."""
+    if os.environ.get("SKIP_MTIME_CHECK"):
+        return True
     mtime = datetime.fromtimestamp(BRIEF_PATH.stat().st_mtime, tz=JST)
     return mtime.date() == NOW_JST.date()
 
