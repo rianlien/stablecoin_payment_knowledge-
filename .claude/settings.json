@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /home/user/stablecoin_payment_knowledge-/.claude/hooks/post_brief_to_slack.py"
+          }
+        ]
+      }
+    ]
+  }
+}
