@@ -42,26 +42,61 @@ GITHUB_BASE = (
 # ── Parsing ───────────────────────────────────────────────────────────────────
 
 def _section(text: str, header: str) -> str:
-    """Return content of a ## header section (up to next ##)."""
-    pat = rf"## {re.escape(header)}\n(.*?)(?=\n## |\Z)"
-    m = re.search(pat, text, re.DOTALL)
-    return m.group(1).strip() if m else ""
+    """Return concatenated content of ALL ## sections whose header starts with 'header'."""
+    pat = rf"## {re.escape(header)}[^\n]*\n(.*?)(?=\n## |\Z)"
+    parts = [m.group(1).strip() for m in re.finditer(pat, text, re.DOTALL)]
+    return "\n\n".join(parts) if parts else ""
 
 
-def parse_topics(section: str) -> list[tuple[str, str]]:
-    """Parse 今日の要点 bullets → [(title, first_sentence), ...]."""
+def parse_note_links(text: str) -> dict[str, str]:
+    """
+    Parse ## 新規追加ノート → {entity_keyword: url}.
+    Slug format: YYYY-MM-DD_Entity_topic  (entity may contain hyphens).
+    Each keyword from the entity part (length >= 4) maps to the first link URL.
+    """
+    section = _section(text, "新規追加ノート")
+    links: dict[str, str] = {}
+    for block in re.split(r"\n(?=- \[\[)", "\n" + section):
+        slug_m = re.search(r"\[\[(.*?)\]\]", block)
+        if not slug_m:
+            continue
+        slug = slug_m.group(1)
+        parts = slug.split("_")
+        entity = parts[1].lower() if len(parts) >= 2 else ""
+        url_m = re.search(r"\]\((https?://[^)]+)\)", block)
+        if not url_m:
+            continue
+        url = url_m.group(1)
+        for kw in entity.split("-"):
+            if len(kw) >= 4:
+                links.setdefault(kw, url)
+    return links
+
+
+def parse_topics(section: str, note_links: dict[str, str]) -> list[tuple[str, str, str]]:
+    """
+    Parse 今日の要点 bullets → [(title, first_sentence, url), ...].
+    URL is looked up from note_links by matching entity keywords against the title.
+    Handles both:
+      - **Title（date）**：desc   (date inside bold)
+      - **Title**（date）：desc   (date outside bold)
+    """
     items = []
-    # Handles both:
-    #   - **Title（date）**：desc   (date inside bold)
-    #   - **Title**（date）：desc   (date outside bold)
     for m in re.finditer(
         r"-\s+\*\*(.*?)\*\*[^：:]*[：:]\s*(.*?)(?=\n-\s+\*\*|\Z)", section, re.DOTALL
     ):
         title = m.group(1).strip()
         desc = m.group(2).strip().replace("\n", " ")
-        # Truncate to first sentence
         first = re.split(r"。|\.(?=\s)", desc)[0]
-        items.append((title, first + "。" if "。" in desc else first))
+        desc_out = first + "。" if "。" in desc else first
+        # Find matching URL by scanning note_links keywords against the title
+        url = ""
+        title_lower = title.lower()
+        for kw, link in note_links.items():
+            if kw in title_lower:
+                url = link
+                break
+        items.append((title, desc_out, url))
     return items
 
 
@@ -99,11 +134,12 @@ def parse_brief(path: Path) -> dict:
 
     topics_section = _section(text, "今日の要点")
     impl_section = _section(text, "今日の重要論点")
+    note_links = parse_note_links(text)
 
     return {
         "date": TODAY,
         "new_notes_count": count.group(1) if count else "?",
-        "topics": parse_topics(topics_section),
+        "topics": parse_topics(topics_section, note_links),
         "implications": parse_implications(impl_section),
         "monitoring": parse_monitoring(text),
     }
@@ -120,8 +156,9 @@ def build_payload(data: dict) -> dict:
 
     # 主要トピック
     topic_lines = []
-    for title, desc in data["topics"]:
-        topic_lines.append(f"• *{title}*\n  {_trunc(desc)}")
+    for title, desc, url in data["topics"]:
+        title_md = f"<{url}|{title}>" if url else title
+        topic_lines.append(f"• *{title_md}*\n  {_trunc(desc)}")
     topics_text = "\n".join(topic_lines) or "（記載なし）"
 
     # 示唆
