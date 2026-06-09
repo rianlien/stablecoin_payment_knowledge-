@@ -38,6 +38,7 @@
 - confirmed facts / likely implications / speculation-watch を分ける
 - Daily Brief にはその run で新規採用した項目だけを書き、`/01_Daily-Briefs/YYYY-MM/YYYY-MM-DD.md` に保存する
 - 重要項目がない日も Daily Brief を作成または更新し、「該当なし」と明記する
+- Daily Brief の `新規追加ノート` 内 `リンク:` は必ず `[Source Name（YYYY-MM-DD）](URL)` 形式で書く（裸の URL は Slack 投稿スクリプトがリンクとして認識しない）
 
 ## Weekly defaults
 - 週次まとめは毎週月曜日に、直前の暦週（月曜〜日曜）を対象に作成

@@ -21,7 +21,7 @@ follow_up:
   - 確からしさ:
   - 主要カテゴリ:
   - 情報元:
-  - リンク:
+  - リンク: [Source Name（YYYY-MM-DD）](URL)
 
 - [[]]
   - 概要:
@@ -29,7 +29,7 @@ follow_up:
   - 確からしさ:
   - 主要カテゴリ:
   - 情報元:
-  - リンク:
+  - リンク: [Source Name（YYYY-MM-DD）](URL)
 
 ## 今日の重要論点
 - 
