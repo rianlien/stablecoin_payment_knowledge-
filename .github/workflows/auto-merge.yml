@@ -1,0 +1,35 @@
+name: Auto Merge — No Conflict
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Check mergeable and merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR=${{ github.event.pull_request.number }}
+          REPO=${{ github.repository }}
+
+          for i in 1 2 3 4 5 6; do
+            STATUS=$(gh api repos/$REPO/pulls/$PR --jq '.mergeable')
+            echo "attempt $i: mergeable=$STATUS"
+            if [ "$STATUS" = "true" ]; then
+              echo "No conflicts — merging PR #$PR"
+              gh pr merge $PR --repo $REPO --merge
+              exit 0
+            elif [ "$STATUS" = "false" ]; then
+              echo "Conflicts detected — skipping auto merge"
+              exit 0
+            fi
+            sleep 10
+          done
+
+          echo "Could not determine mergeable status after retries — skipping"
