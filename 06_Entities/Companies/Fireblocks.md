@@ -115,6 +115,24 @@ Fireblocks インフラ（決済処理・コンプライアンス・セトルメ
 
 ---
 
+## Inbox との紐付け
+
+### ローンチ・発表
+
+| 日付 | ノート | 位置づけ |
+|---|---|---|
+| 2026-05-20 | [[2026-05-20_Fireblocks_x402-foundation-agentic-payments-suite]] | Agentic Payments Suite（Gateway + Wallets）ローンチと x402 Foundation 参加の正式発表 |
+| 2026-05-20 | [[2026-05-20_Sui-Fireblocks_gasless-stablecoin-transfers]] | Sui との連携でガスレスのステーブルコイン送金を実現 |
+| 2026-06-02 | [[2026-06-02_Fireblocks_flow-stablecoin-acceptance-psp-fintech]] | Flow プロダクト：PSP・フィンテック向けステーブルコイン受け取りソリューション |
+
+### 関連エコシステム動向
+
+| 日付 | ノート | 位置づけ |
+|---|---|---|
+| 2026-05-28 | [[2026-05-28_OTL_open-transaction-layer-agentic-coordination]] | OTL（Fireblocks・Checkout.com・Robinhood 参加）によるエージェント決済の調整レイヤー構想 |
+
+---
+
 ## 参考リンク
 
 - [プレスリリース (PR Newswire)](https://www.prnewswire.com/news-releases/fireblocks-joins-x402-foundation-launches-agentic-payments-suite-302777251.html)
