@@ -1,0 +1,9 @@
+nav:
+  - index.md
+  - ニュース: 00_Inbox
+  - Daily Brief: 01_Daily-Briefs
+  - Weekly: 02_Weekly
+  - トピック: 03_Topics
+  - プロトコル: 04_Protocols
+  - MOC: 05_MOCs
+  - 企業: 06_Entities
