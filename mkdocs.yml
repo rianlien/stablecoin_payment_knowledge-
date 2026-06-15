@@ -3,6 +3,7 @@ site_url: https://rianlien.github.io/stablecoin_payment_knowledge-/
 
 theme:
   name: material
+  custom_dir: overrides
   language: ja
   palette:
     - scheme: default
