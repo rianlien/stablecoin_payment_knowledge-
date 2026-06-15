@@ -1,0 +1,34 @@
+site_name: Stablecoin & Agentic Commerce Research
+site_url: https://rianlien.github.io/stablecoin_payment_knowledge-/
+
+theme:
+  name: material
+  language: ja
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: ダークモードに切り替え
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: ライトモードに切り替え
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+plugins:
+  - search:
+      lang: ja
+  - tags
+
+markdown_extensions:
+  - meta
+  - attr_list
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
