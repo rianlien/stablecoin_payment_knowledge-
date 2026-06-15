@@ -1,0 +1,943 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rianlien.github.io/stablecoin_payment_knowledge-/03_Topics/agent-payment-authorization/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>エージェント決済の認可モデル - Stablecoin & Agentic Commerce Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans JP";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="Stablecoin &amp; Agentic Commerce Research" class="md-header__button md-logo" aria-label="Stablecoin & Agentic Commerce Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stablecoin & Agentic Commerce Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              エージェント決済の認可モデル
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ダークモードに切り替え"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切り替え" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ライトモードに切り替え"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切り替え" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="共有" aria-label="共有" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Stablecoin &amp; Agentic Commerce Research" class="md-nav__button md-logo" aria-label="Stablecoin & Agentic Commerce Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Stablecoin & Agentic Commerce Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_Inbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ニュース
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Daily-Briefs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily Brief
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Weekly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weekly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    トピック
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_Protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    プロトコル
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_MOCs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_Entities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    企業
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        問題の本質
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        認可モデルの主要アプローチ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="認可モデルの主要アプローチ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ap2agentic-payment-protocol-google-fido-alliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AP2（Agentic Payment Protocol）— Google / FIDO Alliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mppmachine-payments-protocol-stripe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MPP（Machine Payments Protocol）— Stripe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visa-trusted-agent-protocoltap-visa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visa Trusted Agent Protocol（TAP）— Visa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mastercard-agent-to-agenta2a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mastercard Agent-to-Agent（A2A）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circle-agent-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Circle Agent Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ウォレット・委任の実装事例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        規制・ガードレール
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        現在の構図
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        監視ポイント
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        関連ページ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">agent-payments</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">agentic-commerce</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">identity</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">payment-authorization</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="_1">エージェント決済の認可モデル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>AI エージェントが人間に代わって決済を実行する際の「誰が何をどこまで許可するか」の枠組み。認証（Authentication）、認可（Authorization）、責任帰属（Liability）の3層で整理する。</p>
+<hr />
+<h2 id="_2">問題の本質<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>人間が決済する場合、認証（カード・生体）と認可（金額・スコープ）は暗黙に人間が担う。エージェントが決済する場合：
+- <strong>認証</strong>: エージェントのアイデンティティをどう証明するか
+- <strong>認可</strong>: ユーザーがエージェントに「どこまで払ってよいか」を事前に定義する必要がある
+- <strong>責任</strong>: エラー・不正が起きた時、誰が責任を負うか</p>
+<hr />
+<h2 id="_3">認可モデルの主要アプローチ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="ap2agentic-payment-protocol-google-fido-alliance">AP2（Agentic Payment Protocol）— Google / FIDO Alliance<a class="headerlink" href="#ap2agentic-payment-protocol-google-fido-alliance" title="Permanent link">&para;</a></h3>
+<p><strong>概念</strong>: AI エージェントがデバイスバインドの認証情報で決済を認可される標準。FIDO2 の passkey モデルをエージェントに適用。ユーザー → エージェント → マーチャント の信頼チェーンをデバイスレベルで担保。</p>
+<table>
+<thead>
+<tr>
+<th>日付</th>
+<th>ノート</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-04-28</td>
+<td>[[2026-04-28_Google_ap2-fido-alliance]]</td>
+</tr>
+<tr>
+<td>2026-05-19</td>
+<td>[[2026-05-19_Google_universal-cart-ap2-io2026]]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mppmachine-payments-protocol-stripe">MPP（Machine Payments Protocol）— Stripe<a class="headerlink" href="#mppmachine-payments-protocol-stripe" title="Permanent link">&para;</a></h3>
+<p><strong>概念</strong>: Stripe が提案する AI エージェント向け決済プロトコル。マーチャント側の実装を最小化し、エージェントが Stripe のインフラを通じて支払いを完結させる。x402 とは補完・競合の両面がある（AWS AgentCore では共存）。</p>
+<table>
+<thead>
+<tr>
+<th>日付</th>
+<th>ノート</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-04-30</td>
+<td>[[2026-04-30_Stripe-Sessions-2026_MPP-agentic-payments]]</td>
+</tr>
+<tr>
+<td>2026-05-06</td>
+<td>[[2026-05-06_RedotPay-Tempo_mpp-agentic-payments-launch]]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="visa-trusted-agent-protocoltap-visa">Visa Trusted Agent Protocol（TAP）— Visa<a class="headerlink" href="#visa-trusted-agent-protocoltap-visa" title="Permanent link">&para;</a></h3>
+<p><strong>概念</strong>: Visa が提案するエージェント向け決済認可フレームワーク。エージェントのアイデンティティをカードネットワークが保証し、既存の加盟店・PSP インフラと互換性を持たせる。</p>
+<table>
+<thead>
+<tr>
+<th>日付</th>
+<th>ノート</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-05-05</td>
+<td>[[2026-05-05_Visa_agentic-ready-canada-global]]</td>
+</tr>
+<tr>
+<td>2026-05-28</td>
+<td>[[2026-05-28_Visa-Replit_trusted-agent-protocol]]</td>
+</tr>
+<tr>
+<td>2026-05-27</td>
+<td>[[2026-05-27_Highnote-Visa_agentic-commerce-ai-initiated-payments]]</td>
+</tr>
+<tr>
+<td>2026-06-11</td>
+<td>[[2026-06-11_Visa-OpenAI_chatgpt-agent-payments]]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mastercard-agent-to-agenta2a">Mastercard Agent-to-Agent（A2A）<a class="headerlink" href="#mastercard-agent-to-agenta2a" title="Permanent link">&para;</a></h3>
+<p><strong>概念</strong>: Mastercard がエージェント間決済のための認可・清算フレームワークを整備。JD.com との連携でアジア市場向けの実装を進める。</p>
+<table>
+<thead>
+<tr>
+<th>日付</th>
+<th>ノート</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-04-30</td>
+<td>[[2026-04-30_Mastercard_q1-2026-agent-to-agent-payments]]</td>
+</tr>
+<tr>
+<td>2026-05-18</td>
+<td>[[2026-05-18_Mastercard-JDcom_agent-pay-strategic-partnership]]</td>
+</tr>
+<tr>
+<td>2026-06-02</td>
+<td>[[2026-06-02_Worldline-ING-Mastercard_agentic-payments-europe]]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="circle-agent-stack">Circle Agent Stack<a class="headerlink" href="#circle-agent-stack" title="Permanent link">&para;</a></h3>
+<p><strong>概念</strong>: Circle が提案するエージェント経済向けのコンポーネント群。ナノペイメント、エージェントウォレット、認可スコープ管理を USDC インフラ上で提供。</p>
+<table>
+<thead>
+<tr>
+<th>日付</th>
+<th>ノート</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-05-11</td>
+<td>[[2026-05-11_Circle_agent-stack-nanopayments-agentic-economy]]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">ウォレット・委任の実装事例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>日付</th>
+<th>ノート</th>
+<th>概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-05-26</td>
+<td>[[2026-05-26_Coinbase-Base_mcp-ai-agent-wallet]]</td>
+<td>Base 上の MCP 対応エージェントウォレット。MCP プロトコルで AI ツールからウォレット操作を委任</td>
+</tr>
+<tr>
+<td>2026-05-20</td>
+<td>[[2026-05-20_Fireblocks_x402-foundation-agentic-payments-suite]]</td>
+<td>Fireblocks Agentic Wallets。フィンテックがエンドユーザーのエージェントへの委任を仲介</td>
+</tr>
+<tr>
+<td>2026-05-06</td>
+<td>[[2026-05-06_AnchorageDigital_agentic-banking-google-cloud]]</td>
+<td>Anchorage Digital が Google Cloud と連携してエージェント向け銀行グレードの認可インフラを提供</td>
+</tr>
+<tr>
+<td>2026-05-14</td>
+<td>[[2026-05-14_NEAR-AI_usdc-confidential-intents-agent-payments]]</td>
+<td>NEAR AI の Confidential Intents。プライバシー保護型の決済認可モデル</td>
+</tr>
+<tr>
+<td>2026-05-01</td>
+<td>[[2026-05-01_MoonPay_moonagents-card-mastercard-ai-agents]]</td>
+<td>MoonPay が AI エージェント向けカードを Mastercard と提供</td>
+</tr>
+<tr>
+<td>2026-05-04</td>
+<td>[[2026-05-04_OwlTing_owlpay-agent-wallet]]</td>
+<td>OwlPay エージェントウォレット。台湾発の実装事例</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">規制・ガードレール<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>日付</th>
+<th>ノート</th>
+<th>概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-05-13</td>
+<td>[[2026-05-13_CFES_agentic-payments-guardrails-report]]</td>
+<td>CFES が支出上限・監査ログ・人間承認のガードレール基準を提言</td>
+</tr>
+<tr>
+<td>2026-05-13</td>
+<td>[[2026-05-13_CFES_agentic-payments-liability-authority]]</td>
+<td>エージェントの決済エラー時の責任帰属を整理</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">現在の構図<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>アプローチ      主体          レール      強み
+-----------     ----          ------      ----
+AP2 / FIDO      Google        カード/標準  デバイスバインド認証
+MPP             Stripe        カード/Stripe 既存マーチャントとの互換
+x402            Coinbase/LF   オンチェーン 開発者標準・マイクロペイメント
+TAP             Visa          カード       カードネットワーク信頼性
+A2A             Mastercard    カード/CPN   企業間決済・B2B
+</code></pre></div>
+<p>AP2 と MPP と x402 は AWS AgentCore Payments で共存しており、排他的な競合というよりレイヤーが異なる補完関係になりつつある。認証レイヤー（AP2/TAP）と決済プロトコル（x402/MPP）は異なる問題を解いている。</p>
+<hr />
+<h2 id="_7">監視ポイント<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>AP2 / FIDO Alliance の仕様確定タイミングと採用状況</li>
+<li>Visa TAP の GA と PSP 実装数</li>
+<li>CFES ガードレール提言の業界・規制への波及</li>
+<li>MCP（Model Context Protocol）経由のウォレット委任が標準化されるか</li>
+<li>エージェント向けカード（MoonPay, Crossmint 等）の発行量</li>
+</ul>
+<hr />
+<h2 id="_8">関連ページ<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[[x402-ecosystem]] — x402 決済プロトコルの全体像</li>
+<li>[[psp-merchant-readiness]] — PSP・マーチャント側の対応状況</li>
+<li>[[MOC_agent-payments-stack]] — エージェント決済スタック全体マップ</li>
+<li>[[MOC_Regulation]] — CFES 等の規制・ガイドライン</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.prune", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "search.share", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

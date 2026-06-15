@@ -1,0 +1,957 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rianlien.github.io/stablecoin_payment_knowledge-/04_Protocols/ucp-universal-cart-protocol/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>UCP（Universal Commerce Protocol） - Stablecoin & Agentic Commerce Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans JP";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ucpuniversal-commerce-protocol" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="Stablecoin &amp; Agentic Commerce Research" class="md-header__button md-logo" aria-label="Stablecoin & Agentic Commerce Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stablecoin & Agentic Commerce Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UCP（Universal Commerce Protocol）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ダークモードに切り替え"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切り替え" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ライトモードに切り替え"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切り替え" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="共有" aria-label="共有" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Stablecoin &amp; Agentic Commerce Research" class="md-nav__button md-logo" aria-label="Stablecoin & Agentic Commerce Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Stablecoin & Agentic Commerce Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_Inbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ニュース
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Daily-Briefs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily Brief
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Weekly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weekly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Topics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    トピック
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    プロトコル
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_MOCs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_Entities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    企業
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        プロトコルの概要
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="プロトコルの概要">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        何を解決するか
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2026-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要コンポーネント（2026-05 時点）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ap2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AP2 との役割分担
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        展開状況
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="展開状況">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2026-05_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ローンチパートナー加盟店（2026-05 時点）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ucp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UCP 実装プラットフォームパートナー
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tech-council-2026-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Council 参加（2026 年 4 月時点）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        地理展開
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        カテゴリ拡張（予定）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要イベント年表
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        関連ニュース
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        現状の論点
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        監視ポイント
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考リンク
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        関連ページ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">Google</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">agent-identity</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">agentic-commerce</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">merchant-readiness</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">payment-protocol</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="ucpuniversal-commerce-protocol">UCP（Universal Commerce Protocol）<a class="headerlink" href="#ucpuniversal-commerce-protocol" title="Permanent link">&para;</a></h1>
+<p>Google が主導し、Shopify・Stripe・Salesforce らが実装パートナーとして参加するオープンなエージェント商取引プロトコル。AI エージェントが任意の加盟店に接続し、商品発見・カタログ取得・カート構築・チェックアウトを一気通貫で実行するための「コマースの共通言語」として設計されている。2026 年 4 月時点で Amazon・Meta・Microsoft・Salesforce・Stripe が Tech Council に加わり、Shopify が全加盟店を自動オプトインさせたことで、エージェント商取引インフラとして最大規模のリーチを持つ標準に育った。</p>
+<p>この vault では、UCP を「AP2（Agent Payments Protocol）と対をなす加盟店側エージェント接続層」として追う。AP2 が認証・支払い委任を担うのに対し、UCP はカタログ・ID 連携・カート操作を担う役割分担と捉える。</p>
+<hr />
+<h2 id="_1">プロトコルの概要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">何を解決するか<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>加盟店が AI エージェントの購買意図を受け取るために必要なインターフェースが標準化されていなかった問題を解決する。2026 年 5 月時点の調査（PayPal Agentic Commerce Pulse Report）では、加盟店の 95% が AI エージェントトラフィックを確認しているにもかかわらず、機械読取可能なカタログを整備している加盟店は 20% にとどまっていた。UCP はこのギャップを埋める供給側インフラとして機能する。</p>
+<h3 id="2026-05">主要コンポーネント（2026-05 時点）<a class="headerlink" href="#2026-05" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>コンポーネント</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Catalog API</strong></td>
+<td>エージェントが加盟店のリアルタイム商品情報（バリアント・在庫・価格）を取得するエンドポイント</td>
+</tr>
+<tr>
+<td><strong>Identity Linking</strong></td>
+<td>AI エージェントがユーザーの既存会員 ID・ロイヤルティ特典・会員価格を引き継ぐ仕組み</td>
+</tr>
+<tr>
+<td><strong>マルチアイテムカート</strong></td>
+<td>エージェントが複数商品を一セッションで保存・処理できるカート操作 API</td>
+</tr>
+<tr>
+<td><strong>Checkout</strong></td>
+<td>エージェント起点のチェックアウトフロー（AP2 の Spending Mandate と連携）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ap2">AP2 との役割分担<a class="headerlink" href="#ap2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>[ユーザー / エージェント]
+       ↓ 委任・認証（AP2 / FIDO Alliance）
+[Identity Linking → Catalog API → Cart → Checkout]
+       ↑ ここが UCP の担当レイヤー
+       ↓ 支払い実行（AP2 Payment Mandate → x402 / Stripe MPP 等）
+[決済レール]
+</code></pre></div>
+<hr />
+<h2 id="_3">展開状況<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="2026-05_1">ローンチパートナー加盟店（2026-05 時点）<a class="headerlink" href="#2026-05_1" title="Permanent link">&para;</a></h3>
+<p>Nike・Sephora・Target・Ulta Beauty・Walmart・Wayfair・Shopify 加盟店（Fenty・Steve Madden 等）</p>
+<h3 id="ucp">UCP 実装プラットフォームパートナー<a class="headerlink" href="#ucp" title="Permanent link">&para;</a></h3>
+<p>Commerce Inc・Salesforce・Stripe（近日対応予定、2026-05-28 発表）</p>
+<h3 id="tech-council-2026-4">Tech Council 参加（2026 年 4 月時点）<a class="headerlink" href="#tech-council-2026-4" title="Permanent link">&para;</a></h3>
+<p>Shopify・Google の創設メンバーに加え、Amazon・Meta・Microsoft・Salesforce・Stripe が参加。</p>
+<h3 id="_4">地理展開<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>米国：2026 年夏に Search + Gemini app でロールアウト</li>
+<li>Canada・Australia：拡大済み（2026-05-28 発表）</li>
+<li>UK：後日対応予定</li>
+</ul>
+<h3 id="_5">カテゴリ拡張（予定）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ホテル予約・ローカルフード配達への拡張を予定</li>
+</ul>
+<hr />
+<h2 id="_6">主要イベント年表<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>日付</th>
+<th>イベント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-04-03</td>
+<td>Google が AP2（Agent Payments Protocol）を発表。UCP はその頃から AP2 と対をなすプロトコルとして設計</td>
+</tr>
+<tr>
+<td>2026-04-28</td>
+<td>AP2 v0.2 を FIDO Alliance に寄贈。Human Not Present（人不在決済）機能追加</td>
+</tr>
+<tr>
+<td>2026-05-10</td>
+<td>Consensus Miami で PayPal・Google Cloud が「エージェント商取引はクリプトレールで動く」と表明</td>
+</tr>
+<tr>
+<td>2026-05-19</td>
+<td>Google I/O 2026 で Universal Cart を発表。AP2 FIDO Alliance 移管を公式アナウンス</td>
+</tr>
+<tr>
+<td>2026-05-28</td>
+<td>Google Marketing Live 2026 で UCP 新機能 3 件（Identity Linking・Catalog API・マルチアイテムカート）と国際展開を発表</td>
+</tr>
+<tr>
+<td>2026-05-29</td>
+<td>Shopify が UCP Catalog を全開発者に開放。数百万加盟店・数十億商品が UCP 経由でアクセス可能に</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">関連ニュース<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>日付</th>
+<th>ノート</th>
+<th>位置づけ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-04-28</td>
+<td>[[2026-04-28_Google_ap2-fido-alliance]]</td>
+<td>AP2 v0.2 FIDO Alliance 寄贈・Human Not Present 決済追加</td>
+</tr>
+<tr>
+<td>2026-05-10</td>
+<td>[[2026-05-10_PayPal-Google_consensus-miami-agentic-commerce]]</td>
+<td>Consensus Miami でのクリプトレール不可避論・加盟店カタログ整備の遅れ（95% vs 20%）を定量化</td>
+</tr>
+<tr>
+<td>2026-05-19</td>
+<td>[[2026-05-19_Google_universal-cart-ap2-io2026]]</td>
+<td>Google I/O 2026 での Universal Cart 発表・AP2 FIDO Alliance 移管公式アナウンス</td>
+</tr>
+<tr>
+<td>2026-05-28</td>
+<td>[[2026-05-28_Google_ucp-update-identity-linking-catalog-marketing-live]]</td>
+<td>Google Marketing Live 2026：UCP 新機能 3 件・Stripe / Salesforce パートナー参加・国際展開</td>
+</tr>
+<tr>
+<td>2026-05-29</td>
+<td>[[2026-05-29_Shopify_ucp-catalog-developer-agentic-commerce]]</td>
+<td>Shopify が UCP Catalog を全開発者に開放、全加盟店自動オプトイン</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_8">現状の論点<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>AP2 との役割境界</strong>：UCP がカタログ・カート・ID 連携を担い、AP2 が認証・支払い委任を担うとされているが、実装レベルの役割分担仕様（どのエンドポイントがどちらの責務か）は公開仕様から読み切れていない</li>
+<li><strong>加盟店の自動オプトイン問題</strong>：Shopify 加盟店は設定なしに UCP Catalog に掲載される。エージェントからの注文に対する返品・詐欺対応フローが整備されていない加盟店でトラブルが発生するリスクがある</li>
+<li><strong>Identity Linking の認証設計</strong>：エージェントがユーザーの既存会員 ID を引き継ぐ際の OAuth スコープ・同意取得フローが未公開。GDPR・改正 PSD2 との整合確認が必要</li>
+<li><strong>支払い方法の選択肢</strong>：UCP 経由の注文が Stripe MPP（カード）か x402（USDC）か選択可能か、あるいは一方に固定されるかは未確認</li>
+<li><strong>非 Shopify 加盟店の対応遅れ</strong>：WooCommerce・Magento・BigCommerce 等の UCP 対応状況は未公開。Shopify への AI トラフィック集中が他プラットフォームとの格差を生む可能性</li>
+</ul>
+<hr />
+<h2 id="_9">監視ポイント<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Stripe の UCP 実装 API スペックの公開（2026 年夏以降と想定）</li>
+<li>Shopify UCP 経由の AI エージェント購買件数の初回開示（2026 年 Q2/Q3 決算）</li>
+<li>Google Merchant Center 新オンボーディングフローの展開（数ヶ月内と告知）</li>
+<li>AP2 仕様（GitHub: google-agentic-commerce/AP2）の UCP 新機能対応アップデートの有無</li>
+<li>UK 展開のタイムライン確定</li>
+<li>UCP 注文に対するチャージバック・詐欺事例の発生と業界対応指針</li>
+</ul>
+<hr />
+<h2 id="_10">参考リンク<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://blog.google/products-and-platforms/products/shopping/google-shopping-cart/">Google Blog — Universal Cart 発表（2026-05-19）</a></li>
+<li><a href="https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live/">Google Blog — Google Marketing Live 2026 UCP 新機能（2026-05-28）</a></li>
+<li><a href="https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/">Google Blog — Agentic Commerce 小売・プラットフォーム向け（2026-05-28）</a></li>
+<li><a href="https://www.shopify.com/news/ai-commerce-at-scale">Shopify Newsroom — UCP Catalog 全開発者開放（2026-05-29）</a></li>
+<li><a href="https://shopify.dev/docs/agents">shopify.dev/agents — 開発者向けドキュメント</a></li>
+<li><a href="https://searchengineland.com/google-expands-universal-commerce-protocol-and-launches-new-agentic-shopping-tools-478113">Search Engine Land — UCP 新機能報道（2026-05-28）</a></li>
+</ul>
+<hr />
+<h2 id="_11">関連ページ<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[[2026-04-28_Google_ap2-fido-alliance]]（AP2 プロトコル本体）</li>
+<li>[[ERC-8183_Agentic-Commerce]]（Ethereum 上のエージェント間エスクロー標準）</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.prune", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "search.share", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

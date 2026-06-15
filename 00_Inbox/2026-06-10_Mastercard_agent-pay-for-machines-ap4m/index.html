@@ -1,0 +1,1331 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://rianlien.github.io/stablecoin_payment_knowledge-/00_Inbox/2026-06-10_Mastercard_agent-pay-for-machines-ap4m/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Mastercard、AI エージェント向け機械間決済プロトコル「Agent Pay for Machines（AP4M）」を正式ローンチ——35社超のパートナーと共にカード・口座・ステーブルコイン対応 - Stablecoin & Agentic Commerce Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans JP";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="Stablecoin &amp; Agentic Commerce Research" class="md-header__button md-logo" aria-label="Stablecoin & Agentic Commerce Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stablecoin & Agentic Commerce Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mastercard、AI エージェント向け機械間決済プロトコル「Agent Pay for Machines（AP4M）」を正式ローンチ——35社超のパートナーと共にカード・口座・ステーブルコイン対応
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ダークモードに切り替え"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切り替え" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="ライトモードに切り替え"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切り替え" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="共有" aria-label="共有" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Stablecoin &amp; Agentic Commerce Research" class="md-nav__button md-logo" aria-label="Stablecoin & Agentic Commerce Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Stablecoin & Agentic Commerce Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ニュース
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Daily-Briefs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daily Brief
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Weekly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Weekly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Topics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    トピック
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_Protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    プロトコル
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_MOCs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MOC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_Entities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    企業
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        何が起きたか
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        確認された事実
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        なぜ重要か
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="なぜ重要か">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        決済事業者視点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        加盟店視点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        プロダクト視点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        規制 / リスク視点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        我々への示唆
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ありそうな示唆
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推測 / 監視ポイント
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifiable-intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifiable Intent 技術詳細
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verifiable Intent 技術詳細">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3delegation-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全体構造：3層の署名チェーン（Delegation Chain）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        各層の詳細
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="各層の詳細">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l1ap4m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L1：発行銀行が署名（AP4M 口座登録時に一度発行）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L2：ユーザーが署名（委任設定時）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l3autonomous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L3：エージェントが取引実行時に生成（Autonomous モードのみ）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#credential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credential 有効期間まとめ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        鍵管理（PKI）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        取引の検証フロー（5ステップ）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        セキュリティ・不正検知
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ブロックチェーンの正確な役割
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        技術仕様の参考リンク
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        未解決の論点
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考リンク
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重要度
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        確からしさ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">agent-identity</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">agentic-commerce</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">machine-payments</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">multi-rail</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">stablecoin-payments</span>
+      
+    
+  </nav>
+
+
+
+  <h1>Mastercard、AI エージェント向け機械間決済プロトコル「Agent Pay for Machines（AP4M）」を正式ローンチ——35社超のパートナーと共にカード・口座・ステーブルコイン対応</h1>
+
+<h2 id="_1">概要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Mastercard が 2026 年 6 月 10 日、AI エージェントおよびソフトウェアシステムが人間の介入なしに相互決済できる「Agent Pay for Machines（AP4M）」を正式ローンチ。カード・銀行口座・ステーブルコインを統合したマルチレールプロトコルで、Mastercard がエンドポイント間の決済を保証する。35 社超の launch partner を擁し、TradFi・PSP・crypto-native 企業が横断的に参加する業界初の大型エージェント決済コンソーシアムとなった。</p>
+<h2 id="_2">何が起きたか<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>AP4M の概要</strong>：</li>
+<li>AI エージェント・機械間の自律決済を支援するオープンプロトコル</li>
+<li>ユースケース：マイクロペイメント（0.01 セント以下）から大規模 B2B 取引まで対応</li>
+<li>レール：カード（Mastercard ネットワーク）・銀行口座・ステーブルコイン（USDC 中心、RLUSD も対応）</li>
+<li>
+<p>設計：オフチェーン認証情報（速度優先）+ オンチェーン認可記録（検証可能性）のハイブリッド</p>
+</li>
+<li>
+<p><strong>Verifiable Intent（検証可能な意図）</strong>：</p>
+</li>
+<li>各エージェントに支出上限・認可ルールを定義した「Verifiable Intent」を割り当て</li>
+<li>認可情報をパブリックブロックチェーン（Polygon・Solana・Base）に記録</li>
+<li>誰でもチェーンを参照することでエージェントが人間が認可したスコープ内で動いているかを確認可能</li>
+<li>
+<p>中央集権的な Mastercard データベースへの依存を排除</p>
+</li>
+<li>
+<p><strong>Launch Partner（35 社超）</strong>：</p>
+</li>
+<li><strong>PSP / Acquirer</strong>：Adyen、Checkout.com、Getnet by Santander、Global Payments、Stripe</li>
+<li><strong>Crypto-native</strong>：Aave Labs、Alchemy、Anchorage Digital、Coinbase、Coinflow、Crossmint、MoonPay、OKX、Polygon、Rain、Ripple（RLUSD / XRPL）、Skyfire、Solana Foundation、t54 Labs</li>
+<li><strong>Infrastructure</strong>：Cloudflare、Basis Theory、Turnkey、Utila</li>
+<li>
+<p><strong>Payments-adjacent</strong>：Ant International、BVNK、Catena、Lovable、Mastercard Merchant Cloud、Nevermined、PayOS、Sapiom、Tempo</p>
+</li>
+<li>
+<p><strong>決済確定</strong>：Mastercard がすべての AP4M 取引の最終決済を保証。チェーン上の認可スマートコントラクトを参照しながら、実行はオフチェーン認証情報ベースで行う</p>
+</li>
+<li>
+<p><strong>今後の計画</strong>：2026 年内にさらに多くのブロックチェーンへの対応を拡大予定</p>
+</li>
+</ul>
+<h2 id="_3">確認された事実<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>発表日：2026-06-10</li>
+<li>参加パートナー数：35 社超（プレスリリース確認）</li>
+<li>対応チェーン（Verifiable Intent 記録用）：Polygon・Solana・Base</li>
+<li>対応ステーブルコイン：USDC（Base・Polygon・Arbitrum・Solana）、RLUSD（XRPL 経由、Ripple パートナーシップ）</li>
+<li>決済レール：カード・銀行口座・ステーブルコイン（マルチレール）</li>
+<li>出典：Mastercard プレスリリース・The Block・The Defiant・CoinDesk・CryptoBriefing 等複数メディアが同日報道</li>
+</ul>
+<h2 id="_4">なぜ重要か<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">決済事業者視点<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Stripe・Adyen・Global Payments が「エージェント決済の標準インフラ」として AP4M に参加したことで、既存 PSP のエージェント決済対応が「API 追加」ではなく「Mastercard 保証のマルチレール統合」として確立される</li>
+<li>Mastercard の決済保証は、x402 や AP2 にはない「決済リスクのファーストパーティ引き受け」機能。これは PSP が加盟店にエージェント決済を提案する際のセールスポイントになる</li>
+</ul>
+<h3 id="_6">加盟店視点<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>加盟店は「エージェント決済 = チャージバック・詐欺リスクが高い新規チャネル」という懸念なく、AP4M を通じて AI エージェントからの支払いを受け入れられる</li>
+<li>Mastercard 保証とオンチェーン認可検証により、「エージェントが認可された範囲内でのみ支払う」ことが技術的に保証される</li>
+</ul>
+<h3 id="_7">プロダクト視点<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Verifiable Intent の「オンチェーン公開認可」設計は、AP2 の W3C Verifiable Credentials・x402 のセッションキー（ERC-7715）と共存可能か、またはいずれかを代替するかが重要な設計判断点</li>
+<li>Tempo（MPP）が AP4M のパートナーに入ったことで、MPP と AP4M の相互運用性または統合が期待できる。Rain（ステーブルコインカード）と Crossmint の参加もエコシステムの厚みを示す</li>
+</ul>
+<h3 id="_8">規制 / リスク視点<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Verifiable Intent のオンチェーン記録は、GENIUS Act の AML/CFT 要件（トランザクションモニタリング）との整合性が高い可能性がある——認可記録が公的に検証可能であれば、規制当局が要求する「エージェントの行動追跡性」を技術的に実現できる</li>
+<li>ただし、GENIUS Act のマイクロペイメント de minimis 免除（AML 閾値）の扱いと Mastercard の決済保証責任の交差点が規制上の未解決事項として残る</li>
+</ul>
+<h2 id="_9">我々への示唆<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<ul>
+<li>いま検討すべきこと:</li>
+<li>自社プロダクトが採用している決済レール（x402・AP2・MPP）と AP4M の相互運用性を評価する。特に Tempo が AP4M に参加した事実から、MPP ↔ AP4M の統合パスが存在する可能性を確認する</li>
+<li>AP4M の Verifiable Intent 仕様が公開され次第、自社エージェントの認可設計（支出上限・許可カテゴリ）の移行コストを評価する</li>
+<li>後で深掘りすべきこと:</li>
+<li>Verifiable Intent の技術仕様（どのスマートコントラクト標準を使っているか）——AP2 の W3C VC・x402 の ERC-7715 との互換性が設計の分岐点になる</li>
+<li>Mastercard の決済保証がチャージバック・詐欺補填にどこまで及ぶか——これが加盟店採用の最大の差別化要因になりうる</li>
+<li>GENIUS Act 準拠設計の詳細（PPSI として認定されたステーブルコインのみ使うのか、あるいはラッピング設計があるのか）</li>
+<li>今は優先度が低いこと:</li>
+<li>AP4M 外のパートナー（Aave Labs 等 DeFi プロトコル）が実際にどの決済ユースケースに参加するか（現時点では技術的詳細不明）</li>
+</ul>
+<h2 id="_10">ありそうな示唆<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li>AP4M・x402・AP2・MPP の「プロトコル競争」は、今後の Mastercard の動向次第で「AP4M が標準レイヤー、x402 が支払いレール、AP2 が認可設計」という役割分担に収束する可能性がある</li>
+<li>35 社超のパートナーのうち、既存 PSP（Stripe・Adyen・Global Payments）が参加したことで、AP4M は「決済業界の事実上の標準」に向けた最初のステップになりうる</li>
+</ul>
+<h2 id="_11">推測 / 監視ポイント<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li>x402 Foundation との関係：t54 Labs が AP4M パートナーかつ x402 の XRPL 対応貢献者であることから、両者は競合ではなく補完関係として設計されている可能性が高い</li>
+<li>AllUnity（SEK ステーブルコイン）・Circle（USDC）・Paxos（USDP）等が AP4M の次波パートナーとして参加するかどうか</li>
+<li>AP4M の「GENIUS Act 準拠 PPSI ステーブルコインのみ対応」か「あらゆるステーブルコイン対応」かの設計詳細——前者であれば GENIUS Act 施行後の採用が加速する</li>
+</ul>
+<h2 id="verifiable-intent">Verifiable Intent 技術詳細<a class="headerlink" href="#verifiable-intent" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>公開仕様書（<a href="https://verifiableintent.dev/spec/credential-format/">verifiableintent.dev</a>）および <a href="https://github.com/agent-intent/verifiable-intent/">GitHub リポジトリ</a> に基づく。FIDO Alliance・EMVCo・IETF・W3C の標準仕様を組み合わせた SD-JWT ベースの設計。</p>
+</blockquote>
+<h3 id="3delegation-chain">全体構造：3層の署名チェーン（Delegation Chain）<a class="headerlink" href="#3delegation-chain" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>L1（銀行が署名）
+ ↓  sd_hash = SHA-256(L1 JWT) を L2 に埋め込む
+L2（ユーザーが署名）
+ ↓  sd_hash = SHA-256(L2 JWT) を L3 に埋め込む
+L3（エージェントが署名）
+</code></pre></div>
+<p>各層が前層のハッシュを含むため、チェーンを辿ることで「この取引がどの人間の承認に基づくか」が一意に証明される。偽造するには銀行またはユーザーの秘密鍵を破るか、SHA-256 衝突を起こす必要がある。</p>
+<hr />
+<h3 id="_12">各層の詳細<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h4 id="l1ap4m">L1：発行銀行が署名（AP4M 口座登録時に一度発行）<a class="headerlink" href="#l1ap4m" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>タイミング</td>
+<td>AP4M 登録時。ユーザー操作のタイミングではない</td>
+</tr>
+<tr>
+<td>署名者</td>
+<td>発行銀行（銀行の秘密鍵）</td>
+</tr>
+<tr>
+<td>常に可視のフィールド</td>
+<td><code>iss</code>, <code>sub</code>, <code>iat</code>, <code>exp</code>, <code>vct</code>, <code>cnf</code>（ユーザーの公開鍵）, <code>pan_last_four</code>, <code>scheme</code></td>
+</tr>
+<tr>
+<td>選択的開示フィールド</td>
+<td><code>email</code> 等の身元情報（SD-JWT）</td>
+</tr>
+<tr>
+<td>有効期間</td>
+<td>最大 <strong>1年</strong></td>
+</tr>
+<tr>
+<td>役割</td>
+<td>「このユーザーはこのカードを持つ本人」という CA 的な証明</td>
+</tr>
+</tbody>
+</table>
+<p><code>cnf.jwk</code> にユーザーの公開鍵が埋め込まれることが後続レイヤー検証の起点になる。</p>
+<h4 id="l2">L2：ユーザーが署名（委任設定時）<a class="headerlink" href="#l2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>タイミング</td>
+<td>ユーザーがバンキングアプリで委任設定した瞬間</td>
+</tr>
+<tr>
+<td>署名者</td>
+<td>ユーザー（L1 の <code>cnf.jwk</code> に対応する秘密鍵）</td>
+</tr>
+<tr>
+<td>含まれる情報</td>
+<td>制約パラメータ一式・エージェントの公開鍵（<code>cnf.jwk</code>）・<code>sd_hash</code>（L1 へのコミット）・<code>nonce</code>（リプレイ防止）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>制約パラメータの粒度（機械強制可能）：</strong></p>
+<table>
+<thead>
+<tr>
+<th>パラメータ</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>許可 MCC</td>
+<td><code>MCC 5411</code>（食料品）のみ、など</td>
+</tr>
+<tr>
+<td>1回あたり上限</td>
+<td><code>$50</code> 以内</td>
+</tr>
+<tr>
+<td>累計上限</td>
+<td><code>$300</code> 以内</td>
+</tr>
+<tr>
+<td>日次・週次バケット</td>
+<td>1日 <code>$100</code> まで（任意）</td>
+</tr>
+<tr>
+<td>有効期間</td>
+<td>最大 30日（モード依存）</td>
+</tr>
+<tr>
+<td>地域制限</td>
+<td>国・地域単位</td>
+</tr>
+</tbody>
+</table>
+<p><strong>L2 の2モード：</strong></p>
+<table>
+<thead>
+<tr>
+<th>モード</th>
+<th>L2 に何が入るか</th>
+<th>L3 が必要か</th>
+<th>有効期間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Immediate（即時）</strong></td>
+<td>最終的な金額・商品まで確定（ユーザーが直接指定）</td>
+<td>不要（L2 が終端）</td>
+<td>最大 <strong>15分</strong></td>
+</tr>
+<tr>
+<td><strong>Autonomous（自律）</strong></td>
+<td>制約のみ（「$300 以内で headphone を買え」）</td>
+<td>必要</td>
+<td><strong>24時間〜30日</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Autonomous モードでは、まだ <code>checkout_jwt</code> が存在しない段階でも <code>conditional_transaction_id</code>（checkout mandate disclosure のハッシュ）を使って事前コミットが可能。</p>
+<h4 id="l3autonomous">L3：エージェントが取引実行時に生成（Autonomous モードのみ）<a class="headerlink" href="#l3autonomous" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>タイミング</td>
+<td>エージェントが具体的な取引を決定した瞬間</td>
+</tr>
+<tr>
+<td>署名者</td>
+<td>エージェント（L2 の <code>cnf.jwk</code> に対応する秘密鍵）</td>
+</tr>
+<tr>
+<td>含まれる情報</td>
+<td>具体的な金額・商人・商品・<code>sd_hash</code>（L2 へのコミット）</td>
+</tr>
+<tr>
+<td>有効期間</td>
+<td><strong>5分</strong>（最大1時間）← リプレイ攻撃防止のための設計</td>
+</tr>
+<tr>
+<td>終端性</td>
+<td><strong>エージェントは別のエージェントに再委任できない</strong>（L3 が終端）</td>
+</tr>
+</tbody>
+</table>
+<p>L3 は2つに分かれ、それぞれ別の相手に送られる：</p>
+<div class="highlight"><pre><span></span><code>L3a → 決済ネットワーク：金額・支払先のみ開示
+L3b → マーチャント：購入品目・商人 ID のみ開示
+
+checkout_hash（L3b）= transaction_id（L3a）= SHA-256(checkout_jwt)
+</code></pre></div>
+<p>この等価性により「同一取引を指している」ことを双方が確認できる。決済ネットワークは何を買ったか知らず、マーチャントはカード情報を知らない。</p>
+<hr />
+<h3 id="credential">Credential 有効期間まとめ<a class="headerlink" href="#credential" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Credential</th>
+<th>推奨</th>
+<th>最大</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1</td>
+<td>1年</td>
+<td>1年</td>
+</tr>
+<tr>
+<td>L2 Immediate</td>
+<td>15分</td>
+<td>15分</td>
+</tr>
+<tr>
+<td>L2 Autonomous</td>
+<td>24時間〜30日</td>
+<td>L1 の期限以内</td>
+</tr>
+<tr>
+<td>L3a・L3b</td>
+<td>5分</td>
+<td>1時間</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="pki">鍵管理（PKI）<a class="headerlink" href="#pki" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>銀行の秘密鍵
+  → L1 全体に署名（「このユーザーは本物」を保証）
+  → 銀行が管理。ユーザーには渡らない
+
+ユーザーの公開鍵
+  → L1 の cnf.jwk に埋め込まれる
+  → ユーザーが生成して銀行に登録
+
+ユーザーの秘密鍵
+  → L2 の署名に使う
+  → 銀行には渡らない。デバイス/ウォレット側で管理
+
+エージェントの公開鍵
+  → L2 の cnf.jwk にユーザーが指定
+
+エージェントの秘密鍵
+  → L3 の署名に使う
+  → エージェント事業者側で管理
+</code></pre></div>
+<p><strong>ユーザーの秘密鍵の保管場所</strong>（仕様書は強制していない・実装依存）：</p>
+<table>
+<thead>
+<tr>
+<th>保管場所</th>
+<th>特徴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>デバイスの Secure Enclave / TEE</td>
+<td>鍵がハードウェアから出ない。最も安全</td>
+</tr>
+<tr>
+<td>サーバー側 HSM</td>
+<td>ウォレットプロバイダーが管理。プロバイダーへの信頼が必要</td>
+</tr>
+<tr>
+<td>ソフトウェアウォレット</td>
+<td>実装依存</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>仕様書明記：ユーザーの秘密鍵が漏洩した場合、L1 の有効期間中は完全なアカウント乗っ取りとして扱う</p>
+</blockquote>
+<hr />
+<h3 id="5">取引の検証フロー（5ステップ）<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>1. ユーザー → バンキングアプリで Mandate を承認（L2 生成・署名）
+2. 銀行 → 署名済み L1 をエージェント事業者に発行
+3. エージェント → L3a・L3b を生成し、それぞれ決済ネットワーク・マーチャントに提示
+4. マーチャント → Mastercard API で署名チェーンをローカル検証（ミリ秒）
+5. ユーザー → オーソリ完了前にリアルタイムのプッシュ通知（介入可能）
+</code></pre></div>
+<p>署名検証は Mastercard ネットワーク上でミリ秒完結。ブロックチェーンへの問い合わせは不要。</p>
+<hr />
+<h3 id="_13">セキュリティ・不正検知<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p><strong>不正検知の観点（3つ）：</strong>
+- 同一 Credential の並行使用（Credential reuse patterns の監視）
+- 予期しないネットワークアドレスからの提示
+- 行動分析ではなく「パラメータ逸脱」ベースのスコアリング（L2 制約との比較）</p>
+<p><strong>Credential 盗難リスク：</strong>
+Credential 自体が高価値な攻撃ターゲットになるため、エージェント事業者側の保管セキュリティが重要（仕様書が明記）。</p>
+<hr />
+<h3 id="_14">ブロックチェーンの正確な役割<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>「偽造不能」の核心は署名チェーンであり、ブロックチェーンではない。</p>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>実装</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>取引の署名検証</td>
+<td>Mastercard ネットワーク上でローカル完結</td>
+</tr>
+<tr>
+<td>エージェントの公開鍵レジストリ</td>
+<td>Polygon・Solana・Base 上に記録（誰でも参照可能）</td>
+</tr>
+<tr>
+<td>パーミッション情報の公開記録</td>
+<td>同上（改ざん不可能な台帳として機能）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_15">技術仕様の参考リンク<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://verifiableintent.dev/spec/credential-format/">Verifiable Intent 公式仕様書 – Credential Format</a></li>
+<li><a href="https://github.com/agent-intent/verifiable-intent/">GitHub – agent-intent/verifiable-intent</a></li>
+<li><a href="https://www.digitalapplied.com/blog/mastercard-verifiable-intent-trust-agentic-commerce">Mastercard Verifiable Intent 解説 – Digital Applied</a></li>
+<li><a href="https://shanedeconinck.be/posts/mastercard-verifiable-intent-agents-can-prove-what-you-approved/">Shane De Coninck – 技術解説</a></li>
+</ul>
+<hr />
+<h2 id="_16">未解決の論点<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<ul>
+<li>~~Verifiable Intent の技術仕様（スマートコントラクト構造・W3C VC との関係）~~ → 公開仕様書で確認済み（上記セクション参照）</li>
+<li>Mastercard の「決済保証」の責任範囲：エージェントが認可外の取引を実行した場合の責任分担</li>
+<li>カード決済・銀行口座・ステーブルコインの 3 レールが同じ「Verifiable Intent」フレームワークで同時に処理されるかどうか（レール別に異なる認可フローが存在する可能性）</li>
+<li>ブロックチェーン上に具体的に何がどう記録されるかの一次情報未取得（エージェントの公開鍵レジストリの実装詳細）</li>
+<li>ユーザー秘密鍵の保管場所のリファレンス実装（仕様書は強制していないため、各実装がどこに落ち着くか未確認）</li>
+</ul>
+<h2 id="_17">参考リンク<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<ul>
+<li>一次情報: <a href="https://www.theblock.co/amp/post/404288/mastercard-agent-pay-machines-support-autonomous-ai-transactions-stablecoins">The Block（2026-06-10）</a></li>
+<li>補足情報: <a href="https://cryptobriefing.com/mastercard-launches-agent-pay-for-machines-settle-ai-driven-microtransactions-network-scale/">CryptoBriefing（2026-06-10）</a></li>
+<li>補足情報: <a href="https://www.coindesk.com/business/2026/06/10/mastercard-prepares-for-a-future-where-ai-agents-make-payments-with-latest-introduction">CoinDesk（2026-06-10）</a></li>
+<li>補足情報: <a href="https://thedefiant.io/converge/tradfi-and-fintech/mastercard-agent-pay-machines-ap4m-ai-agents-crypto-partners">The Defiant（2026-06-10）</a></li>
+<li>補足情報: <a href="https://news.bitcoin.com/mastercards-ai-payment-debut-brings-coinbase-ripple-and-30-partners-into-agent-commerce/">news.bitcoin.com（2026-06-10）</a></li>
+</ul>
+<h2 id="_18">重要度<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<ul>
+<li>High</li>
+</ul>
+<h2 id="_19">確からしさ<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<ul>
+<li>High（Mastercard 公式プレスリリース・複数専門メディアによる確認）</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.prune", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "search.share", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
