@@ -44,6 +44,8 @@ plugins:
 
 nav:
   - ホーム: index.md
+  - ニュース: 00_Inbox/index.md
+  - Daily Brief: 01_Daily-Briefs/index.md
   - トピック:
     - x402 エコシステム: 03_Topics/x402-ecosystem.md
     - エージェント決済認可: 03_Topics/agent-payment-authorization.md

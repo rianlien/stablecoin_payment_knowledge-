@@ -26,6 +26,76 @@ jobs:
             rm -f docs/$d
             cp -r $d docs/
           done
+      - name: Generate listing index pages
+        run: |
+          python3 - <<'PYEOF'
+          import os, glob, re
+          from pathlib import Path
+          from collections import defaultdict
+
+          def get_title(filepath):
+              try:
+                  with open(filepath, encoding='utf-8') as f:
+                      content = f.read()
+                  m = re.match(r'^---\n(.*?)\n---', content, re.DOTALL)
+                  if m:
+                      for line in m.group(1).split('\n'):
+                          if line.startswith('title:'):
+                              return line.split(':', 1)[1].strip().strip('"\'')
+              except Exception:
+                  pass
+              return Path(filepath).stem
+
+          # --- ニュース一覧 ---
+          inbox_files = sorted(glob.glob('docs/00_Inbox/*.md'), reverse=True)
+          by_month = defaultdict(list)
+          for f in inbox_files:
+              fname = Path(f).name
+              m = re.match(r'^(\d{4})-(\d{2})-\d{2}', fname)
+              if not m:
+                  continue
+              month = f'{m.group(1)}-{m.group(2)}'
+              date = fname[:10]
+              title = get_title(f)
+              by_month[month].append((date, title, fname))
+
+          lines = ['---', 'title: ニュース一覧', 'hide:', '  - toc', '---', '', '# ニュース一覧', '']
+          for month in sorted(by_month.keys(), reverse=True):
+              lines.append(f'## {month}')
+              lines.append('')
+              for date, title, fname in sorted(by_month[month], key=lambda x: x[0], reverse=True):
+                  lines.append(f'- [{title}]({fname}) <small>{date}</small>')
+              lines.append('')
+
+          with open('docs/00_Inbox/index.md', 'w', encoding='utf-8') as f:
+              f.write('\n'.join(lines))
+
+          # --- Daily Brief 一覧 ---
+          brief_files = sorted(glob.glob('docs/01_Daily-Briefs/**/*.md', recursive=True))
+          by_month2 = defaultdict(list)
+          for f in brief_files:
+              fname = Path(f).name
+              parent = Path(f).parent.name
+              m = re.match(r'^(\d{4}-\d{2}-\d{2})\.md$', fname)
+              if not m:
+                  continue
+              date = m.group(1)
+              month = date[:7]
+              by_month2[month].append((date, f'{parent}/{fname}'))
+
+          lines2 = ['---', 'title: Daily Brief', 'hide:', '  - toc', '---', '', '# Daily Brief', '']
+          for month in sorted(by_month2.keys(), reverse=True):
+              lines2.append(f'## {month}')
+              lines2.append('')
+              for date, rel in sorted(by_month2[month], key=lambda x: x[0], reverse=True):
+                  lines2.append(f'- [{date}]({rel})')
+              lines2.append('')
+
+          with open('docs/01_Daily-Briefs/index.md', 'w', encoding='utf-8') as f:
+              f.write('\n'.join(lines2))
+
+          print('Generated: 00_Inbox/index.md, 01_Daily-Briefs/index.md')
+          PYEOF
       - run: mkdocs build
       - uses: peaceiris/actions-gh-pages@v4
         with:
