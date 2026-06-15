@@ -12,11 +12,13 @@ jobs:
       pull-requests: write
     steps:
       - name: Check mergeable and merge
+        id: merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR=${{ github.event.pull_request.number }}
           REPO=${{ github.repository }}
+          MERGED=false
 
           for i in 1 2 3 4 5 6; do
             STATUS=$(gh api repos/$REPO/pulls/$PR --jq '.mergeable')
@@ -24,12 +26,20 @@ jobs:
             if [ "$STATUS" = "true" ]; then
               echo "No conflicts — merging PR #$PR"
               gh pr merge $PR --repo $REPO --merge
-              exit 0
+              MERGED=true
+              break
             elif [ "$STATUS" = "false" ]; then
               echo "Conflicts detected — skipping auto merge"
-              exit 0
+              break
             fi
             sleep 10
           done
 
-          echo "Could not determine mergeable status after retries — skipping"
+          echo "merged=$MERGED" >> $GITHUB_OUTPUT
+          [ "$MERGED" = "false" ] && echo "Could not merge or had conflicts"
+
+      - name: Trigger MkDocs deploy
+        if: steps.merge.outputs.merged == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy-docs.yml --repo ${{ github.repository }} --ref main
