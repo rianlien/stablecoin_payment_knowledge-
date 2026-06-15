@@ -40,7 +40,41 @@ plugins:
       lang: ja
   - tags
   - roamlinks
-  - awesome-pages
+
+nav:
+  - ホーム: index.md
+  - トピック:
+    - x402 エコシステム: 03_Topics/x402-ecosystem.md
+    - エージェント決済認可: 03_Topics/agent-payment-authorization.md
+    - PSP・マーチャント対応: 03_Topics/psp-merchant-readiness.md
+    - ステーブルコインペイアウト: 03_Topics/stablecoin-payouts-platforms.md
+    - B2B クロスボーダー: 03_Topics/stablecoin-b2b-crossborder.md
+    - トークン化預金: 03_Topics/tokenized-deposits.md
+    - エージェントウォレット: 03_Topics/agent-wallets.md
+    - CLARITY Act: 03_Topics/CLARITY-Act.md
+    - GENIUS Act: 03_Topics/GENIUS-Act.md
+  - プロトコル:
+    - Circle CPN: 04_Protocols/circle-cpn.md
+    - UCP（Universal Cart）: 04_Protocols/ucp-universal-cart-protocol.md
+    - x402 バッチ決済: 04_Protocols/x402/x402-batch-settlement.md
+  - MOC:
+    - プロトコル全体像: 05_MOCs/MOC_Protocols.md
+    - 規制動向: 05_MOCs/MOC_Regulation.md
+    - ステーブルコイン決済: 05_MOCs/MOC_Stablecoin_Payments.md
+    - 企業マップ: 05_MOCs/MOC_Companies.md
+  - 企業:
+    - Circle: 06_Entities/Companies/Circle.md
+    - Coinbase: 06_Entities/Companies/Coinbase.md
+    - Stripe: 06_Entities/Companies/Stripe.md
+    - Fireblocks: 06_Entities/Companies/Fireblocks.md
+    - Mastercard: 06_Entities/Companies/Mastercard.md
+    - Visa: 06_Entities/Companies/Visa.md
+    - Google: 06_Entities/Companies/Google.md
+    - Block / CashApp: 06_Entities/Companies/Block-CashApp.md
+    - Western Union: 06_Entities/Companies/WesternUnion.md
+    - AllUnity: 06_Entities/Companies/AllUnity.md
+    - Robinhood: 06_Entities/Companies/Robinhood.md
+    - Parallel: 06_Entities/Companies/Parallel.md
 
 markdown_extensions:
   - meta
