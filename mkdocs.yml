@@ -47,6 +47,7 @@ nav:
   - ニュース: 00_Inbox/index.md
   - Daily Brief: 01_Daily-Briefs/index.md
   - トピック:
+    - 03_Topics/index.md
     - x402 エコシステム: 03_Topics/x402-ecosystem.md
     - エージェント決済認可: 03_Topics/agent-payment-authorization.md
     - PSP・マーチャント対応: 03_Topics/psp-merchant-readiness.md
@@ -57,15 +58,18 @@ nav:
     - CLARITY Act: 03_Topics/CLARITY-Act.md
     - GENIUS Act: 03_Topics/GENIUS-Act.md
   - プロトコル:
+    - 04_Protocols/index.md
     - Circle CPN: 04_Protocols/circle-cpn.md
     - UCP（Universal Cart）: 04_Protocols/ucp-universal-cart-protocol.md
     - x402 バッチ決済: 04_Protocols/x402/x402-batch-settlement.md
   - MOC:
+    - 05_MOCs/index.md
     - プロトコル全体像: 05_MOCs/MOC_Protocols.md
     - 規制動向: 05_MOCs/MOC_Regulation.md
     - ステーブルコイン決済: 05_MOCs/MOC_Stablecoin_Payments.md
     - 企業マップ: 05_MOCs/MOC_Companies.md
   - 企業:
+    - 06_Entities/Companies/index.md
     - Circle: 06_Entities/Companies/Circle.md
     - Coinbase: 06_Entities/Companies/Coinbase.md
     - Stripe: 06_Entities/Companies/Stripe.md
