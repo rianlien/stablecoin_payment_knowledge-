@@ -62,6 +62,9 @@ Coinbase の戦略は、Base や x402 を使って「開発者がオンチェー
 | 2026-04-21 | [[2026-04-21_Coinbase-x402_agentic-market-launch]] | x402 上の Agentic.market をローンチ |
 | 2026-05-07 | [[2026-05-07_AWS_bedrock-agentcore-payments-x402]] | AWS AgentCore Payments が x402 / Coinbase wallet infrastructure を採用 |
 | 2026-05-05 | [[2026-05-05_Solana-GoogleCloud_pay-sh-x402-agent-payments]] | Google Cloud / Solana 側で x402 ベースの Pay.sh が登場 |
+| 2026-05-26 | [[2026-05-26_Coinbase-Base_mcp-ai-agent-wallet]] | Base 上の MCP 対応 AI エージェントウォレット発表 |
+| 2026-06-02 | [[2026-06-02_Coinbase-Checkout_stablecoin-merchant-payments]] | マーチャント向けステーブルコイン決済受け取りソリューション |
+| 2026-06-11 | [[2026-06-11_MassPay-Coinbase_stablecoin-payouts]] | MassPay が Coinbase USDC インフラを活用してグローバルペイアウト |
 
 ### B2B 決済・流動性
 

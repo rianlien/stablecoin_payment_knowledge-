@@ -6,29 +6,59 @@ theme:
   language: ja
   palette:
     - scheme: default
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/brightness-7
         name: ダークモードに切り替え
     - scheme: slate
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/brightness-4
         name: ライトモードに切り替え
+  font:
+    text: Noto Sans JP
+    code: JetBrains Mono
   features:
-    - navigation.tabs
+    - navigation.sections
     - navigation.indexes
+    - navigation.prune
+    - navigation.top
+    - navigation.footer
     - search.highlight
     - search.suggest
+    - search.share
     - content.code.copy
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
 
 plugins:
   - search:
       lang: ja
   - tags
+  - roamlinks
+
+nav:
+  - ホーム: index.md
+  - ニュース: 00_Inbox/
+  - Daily Brief: 01_Daily-Briefs/
+  - Weekly: 02_Weekly/
+  - トピック: 03_Topics/
+  - プロトコル: 04_Protocols/
+  - MOC: 05_MOCs/
+  - 企業: 06_Entities/
 
 markdown_extensions:
   - meta
   - attr_list
+  - md_in_html
   - admonition
   - toc:
       permalink: true
   - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
