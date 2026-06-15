@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - run: pip install mkdocs-material mkdocs-roamlinks-plugin
+      - run: pip install mkdocs-material mkdocs-roamlinks-plugin mkdocs-awesome-pages-plugin
       - name: Resolve symlinks into docs/
         run: |
           for d in 00_Inbox 01_Daily-Briefs 02_Weekly 03_Topics 04_Protocols 05_MOCs 06_Entities; do
