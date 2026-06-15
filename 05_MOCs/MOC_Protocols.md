@@ -1,18 +1,101 @@
 ---
 title: "MOC: ステーブルコイン決済プロトコル・インフラ"
 type: moc
-updated: 2026-04-27
+updated: 2026-06-15
 tags:
   - stablecoin
   - payments
   - x402
   - agentic-commerce
+  - agent-payments
 ---
 
 # MOC: ステーブルコイン決済プロトコル・インフラ
 
 決済を支えるプロトコル・SDK・ネットワーク層の動向を整理するマップ。
 「誰が何のために使う基盤か」を軸に分類する。
+
+---
+
+## エージェント決済プロトコル全体像
+
+AI エージェントが自律的に決済を行うために必要な「層」を整理する。各プロトコルは排他的な競合ではなく、解いている問題のレイヤーが異なる。
+
+```
+[ 認証・アイデンティティ層 ]  AP2（Google/FIDO）, Visa TAP, ERC-8004
+         ↓
+[ 支払いプロトコル層     ]  x402（HTTP）, MPP（Stripe）, Mastercard A2A
+         ↓
+[ 決済実行層           ]  USDC（Circle/Coinbase）, Tether WDK
+         ↓
+[ 取引・エスクロー層     ]  ERC-8183（Agentic Commerce）
+         ↓
+[ 調整・ルーティング層   ]  OTL（Fireblocks/Checkout.com/Robinhood）
+```
+
+### 認証・アイデンティティ層
+
+| プロトコル | 主体 | 概要 |
+|---|---|---|
+| AP2（Agentic Payment Protocol） | Google / FIDO Alliance | デバイスバインドの passkey でエージェントのアイデンティティを証明。エンドユーザーの委任を安全に表現 |
+| Visa TAP（Trusted Agent Protocol） | Visa | カードネットワークがエージェントの信頼を保証。既存加盟店・PSP と互換 |
+| ERC-8004（Trustless Agents） | Ethereum Foundation | オンチェーンの ID・評判・バリデーションレジストリ。AI エージェント間の信頼確立 |
+
+関連ノート:
+- [[2026-04-28_Google_ap2-fido-alliance]]
+- [[2026-05-28_Visa-Replit_trusted-agent-protocol]]
+- [[ERC-8004_Trustless-Agents]]
+
+### 支払いプロトコル層
+
+| プロトコル | 主体 | 概要 |
+|---|---|---|
+| x402 | Coinbase / Linux Foundation | HTTP 402 拡張。API・コンテンツ・AI サービスをリクエスト単位でオンチェーン決済。OSSで標準化済み |
+| MPP（Machine Payments Protocol） | Stripe | Stripe インフラを通じてエージェントが加盟店へ決済。既存カード/銀行レールを活用 |
+| Mastercard A2A | Mastercard | エージェント間（B2B）の清算フレームワーク。Mastercard のカードネットワーク上で動作 |
+| AP4M（Agent Pay for Machines） | Mastercard | A2A をマシン間決済に特化させた拡張。2026-06-10 発表 |
+| Circle Agent Stack | Circle | USDC 上のナノペイメント・エージェントウォレット・認可スコープ管理のコンポーネント群 |
+
+関連ノート:
+- [[2026-04-02_x402-Foundation_linux-foundation-launch]]
+- [[2026-04-30_Stripe-Sessions-2026_MPP-agentic-payments]]
+- [[2026-04-30_Mastercard_q1-2026-agent-to-agent-payments]]
+- [[2026-06-10_Mastercard_agent-pay-for-machines-ap4m]]
+- [[2026-05-11_Circle_agent-stack-nanopayments-agentic-economy]]
+
+詳細 → [[x402-ecosystem]] · [[agent-payment-authorization]]
+
+### 取引・エスクロー層
+
+| プロトコル | 主体 | 概要 |
+|---|---|---|
+| ERC-8183（Agentic Commerce） | Ethereum Foundation + Virtuals Protocol | AI エージェント間でのジョブ委託・評価・決済を仲裁なしで行うオンチェーン・エスクロー標準 |
+
+関連ノート:
+- [[ERC-8183_Agentic-Commerce]]
+
+### 調整・ルーティング層
+
+| プロトコル | 主体 | 概要 |
+|---|---|---|
+| OTL（Open Transaction Layer） | Fireblocks / Checkout.com / Robinhood | エージェント間の支払い調整・ルーティングを担うオープンレイヤー。2026-05 に構想公開 |
+
+関連ノート:
+- [[2026-05-28_OTL_open-transaction-layer-agentic-coordination]]
+
+---
+
+### プロトコル比較表
+
+| 観点 | x402 | MPP | AP2/TAP | A2A/AP4M |
+|---|---|---|---|---|
+| **レール** | オンチェーン（USDC/ERC-20） | カード/銀行 | カード/標準 | カード |
+| **主な利用場面** | API 課金・AI マイクロペイメント | 加盟店決済 | 委任・認証 | B2B・機械間 |
+| **標準化** | Linux Foundation（OSSで公開済み） | Stripe 独自 | FIDO Alliance / Visa | Mastercard |
+| **AWS AgentCore での扱い** | 採用 | 採用 | — | — |
+| **実取引実績** | 1億件超（Base、2026-06-03時点） | 未公開 | — | — |
+
+---
 
 ---
 
