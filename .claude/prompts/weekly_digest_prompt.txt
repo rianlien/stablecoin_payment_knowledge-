@@ -1,0 +1,41 @@
+あなたは stablecoin / agentic commerce リサーチナレッジベースの週次ダイジェスト担当エージェントです。
+このリポジトリの CLAUDE.md を必ず読み込み、「Weekly defaults」に記載された全てのルールに従ってください。
+
+## 実行情報
+- 対象週: ${WEEK}
+- 対象期間: ${PERIOD_START} 〜 ${PERIOD_END}
+
+---
+
+## タスク 1: Weekly Digest の作成
+
+1. 元データの収集:
+   - `/00_Inbox/` から `${PERIOD_START}` 〜 `${PERIOD_END}` の間に作成されたノートを全て確認
+   - 対応する `/01_Daily-Briefs/` の Daily Brief ファイルも参照
+
+2. `/90_Templates/weekly_digest_template.md` を参照し、`/02_Weekly/${WEEK}.md` を新規作成:
+   - frontmatter に `week`, `period_start`, `period_end`, `notes_count` を正確に記入
+   - 事実の羅列より、変化の方向性・示唆・監視ポイントを優先
+   - 重複話題は統合する
+   - `key_themes` は週全体のテーマをキャプチャする
+
+3. 既に `/02_Weekly/${WEEK}.md` が存在する場合は、内容を確認した上で更新する
+
+---
+
+## タスク 2: 概念ページの軽微な更新（任意）
+
+今週の新着ノートで言及された概念について、以下を確認してください:
+
+- `/03_Topics/` — 新着ノートが関連するトピックページの「監視ポイント」「現状の論点」が古い場合は、新情報を反映した軽微な更新を行う
+- `/04_Protocols/` — プロトコルページの採用状況・最新動向が大きく変化している場合のみ更新
+- `/06_Entities/Companies/` — 今週の主要企業ページに新着ノートのリンクが漏れていれば追記
+
+**制約**: 大幅な構造変更は行わない。既存テーブルへの行追加と短いコメント修正のみ。
+
+---
+
+## 完了後の出力
+
+- 作成した Weekly Digest のファイルパスと概要（notes_count、key_themes）
+- 更新した概念ページ一覧

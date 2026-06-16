@@ -27,6 +27,7 @@ TODAY = _DATE_OVERRIDE if _DATE_OVERRIDE else NOW_JST.strftime("%Y-%m-%d")
 YEAR_MONTH = TODAY[:7]
 
 WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL", "")
+SITE_URL    = os.environ.get("SITE_URL", "").rstrip("/")
 
 REPO_ROOT = Path(
     subprocess.check_output(
@@ -211,14 +212,16 @@ def build_payload(data: dict) -> dict:
             },
         ]
 
+    if SITE_URL:
+        site_brief_url = f"{SITE_URL}/01_Daily-Briefs/{YEAR_MONTH}/{TODAY}/"
+        footer_text = f"詳細 → <{site_brief_url}|サイトで開く>　　<{github_url}|GitHub>"
+    else:
+        footer_text = f"詳細 → <{github_url}|GitHub で開く>"
     blocks += [
         {"type": "divider"},
         {
             "type": "section",
-            "text": {
-                "type": "mrkdwn",
-                "text": f"詳細 → <{github_url}|GitHub で開く>",
-            },
+            "text": {"type": "mrkdwn", "text": footer_text},
         },
     ]
 

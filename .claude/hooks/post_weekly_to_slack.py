@@ -18,6 +18,7 @@ from pathlib import Path
 
 WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL", "")
 WEEKLY_FILE = os.environ.get("WEEKLY_FILE", "")
+SITE_URL    = os.environ.get("SITE_URL", "").rstrip("/")
 
 REPO_ROOT = Path(
     subprocess.check_output(
@@ -289,14 +290,13 @@ def build_payload(data: dict, github_url: str) -> dict:
         blocks.append({"type": "divider"})
 
     # Footer
+    if SITE_URL:
+        site_weekly_url = f"{SITE_URL}/02_Weekly/{data['week']}/"
+        footer_text = f"詳細 → <{site_weekly_url}|サイトで開く>　　<{github_url}|GitHub>"
+    else:
+        footer_text = f"詳細 → <{github_url}|GitHub で開く>"
     blocks.append(
-        {
-            "type": "section",
-            "text": {
-                "type": "mrkdwn",
-                "text": f"詳細 → <{github_url}|GitHub で開く>",
-            },
-        }
+        {"type": "section", "text": {"type": "mrkdwn", "text": footer_text}}
     )
 
     return {"blocks": blocks}
