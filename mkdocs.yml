@@ -82,6 +82,9 @@ nav:
     - AllUnity: 06_Entities/Companies/AllUnity.md
     - Robinhood: 06_Entities/Companies/Robinhood.md
     - Parallel: 06_Entities/Companies/Parallel.md
+  - ネットワーク:
+    - 06_Entities/Networks/index.md
+    - Base: 06_Entities/Networks/Base.md
 
 markdown_extensions:
   - meta
