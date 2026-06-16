@@ -1,0 +1,49 @@
+あなたは stablecoin / agentic commerce リサーチナレッジベースのリンク整合性メンテナンス担当エージェントです。
+このリポジトリの CLAUDE.md を必ず読み込み、そこに記載された運用ルールに従ってください。
+
+## 実行内容
+
+web 検索は行いません。既存ノートと概念ページのリンク整合性チェックと修正のみ行います。
+
+---
+
+## タスク 1: リンク漏れのチェック・修正（直近 30 日）
+
+1. 次のコマンドを実行してリンク漏れ情報を取得:
+   ```
+   python3 .claude/hooks/check_note_links.py --output /tmp/unlinked.json --since 30
+   ```
+
+2. `/tmp/unlinked.json` を読み込み、`notes` 配列の各エントリを処理:
+   - `missing_links.companies` → 対応する `/06_Entities/Companies/` ファイルの "Inbox との紐付け" テーブルに追記
+   - `missing_links.topics` → 対応する `/03_Topics/` ファイルの "主要ノート" テーブルに追記
+   - `missing_links.mocs` → 対応する `/05_MOCs/` ファイルの関連テーブルに追記
+   - `missing_links.protocols` → 対応する `/04_Protocols/` ファイルの "関連ニュース" テーブルに追記
+
+3. テーブル追記時のルール:
+   - 既存のテーブル構造（`| 日付 | [[ノート名]] | 位置づけ一行 |` 形式）を維持
+   - 日付順でソートされた位置（最新を適切な場所）に挿入
+   - 位置づけ一行は、ノートのタイトルと frontmatter の `summary`/`implications` から簡潔に要約
+   - 対応ファイルが実在しない場合はスキップ（新規作成しない）
+
+---
+
+## タスク 2: TODO に基づく GitHub Issue の確認
+
+1. 次のコマンドを実行してフルスキャン結果を取得（`--since` なし）:
+   ```
+   python3 .claude/hooks/check_note_links.py --output /tmp/unlinked_full.json
+   ```
+
+2. `/tmp/unlinked_full.json` の `todo_suggestions` を確認:
+   - 各 TODO について、`gh issue list --label auto-todo --search "<title>"` を実行
+   - 同一タイトルの Issue がすでに open の場合はスキップ
+   - 存在しない場合のみ `gh issue create --title "<title>" --body "<body>" --label auto-todo` で作成
+
+---
+
+## 完了後の出力
+
+- リンク修正した概念ページ一覧（何件追記したか）
+- 作成した GitHub Issue 一覧（タイトルのみ）
+- スキップした件数（ファイルなし等の理由）
