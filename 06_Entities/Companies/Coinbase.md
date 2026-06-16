@@ -12,7 +12,6 @@ tags:
 aliases:
   - Coinbase Developer Platform
   - CDP
-  - Base
   - x402
 ---
 
@@ -21,6 +20,8 @@ aliases:
 Coinbase は、取引所・カストディ事業から、USDC 決済、x402、Base、Agentic Wallet、B2B 支払いインフラへ広げている。
 
 この vault では、Coinbase を「オンチェーン決済の開発者基盤と機関向け流動性を押さえ、AI エージェント決済の標準化を主導する企業」として追う。
+
+ネットワークとしての Base は [[Base]] を参照。
 
 ---
 
@@ -62,7 +63,7 @@ Coinbase の戦略は、Base や x402 を使って「開発者がオンチェー
 | 2026-04-21 | [[2026-04-21_Coinbase-x402_agentic-market-launch]] | x402 上の Agentic.market をローンチ |
 | 2026-05-07 | [[2026-05-07_AWS_bedrock-agentcore-payments-x402]] | AWS AgentCore Payments が x402 / Coinbase wallet infrastructure を採用 |
 | 2026-05-05 | [[2026-05-05_Solana-GoogleCloud_pay-sh-x402-agent-payments]] | Google Cloud / Solana 側で x402 ベースの Pay.sh が登場 |
-| 2026-05-26 | [[2026-05-26_Coinbase-Base_mcp-ai-agent-wallet]] | Base 上の MCP 対応 AI エージェントウォレット発表 |
+| 2026-05-26 | [[2026-05-26_Coinbase-Base_mcp-ai-agent-wallet]] | [[Base]] 上の MCP 対応 AI エージェントウォレット発表 |
 | 2026-06-02 | [[2026-06-02_Coinbase-Checkout_stablecoin-merchant-payments]] | マーチャント向けステーブルコイン決済受け取りソリューション |
 | 2026-06-03 | [[2026-06-03_Chainalysis_x402-100m-agentic-payments]] | Chainalysis が x402 の 1 億件突破を分析——Base がメイン環境 |
 | 2026-06-03 | [[2026-06-03_Chainalysis_x402-100m-transactions-base]] | Chainalysis による x402 トランザクション 1 億件達成の統計データ |

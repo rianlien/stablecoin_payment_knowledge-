@@ -12,6 +12,7 @@
 - Topics / MOC: `/03_Topics/`
 - Protocol research: `/04_Protocols/`
 - Entities / Companies: `/06_Entities/Companies/`
+- Entities / Networks: `/06_Entities/Networks/`
 - テンプレート: `/90_Templates/`
 
 ## Common rules
@@ -44,6 +45,7 @@
 ## Concept page linking rules
 - ニュースノートを `/00_Inbox/` に作成した後、以下の概念ページに当該ノートのリンクを追記する
   - `/06_Entities/Companies/` — 記事の主体企業に対応するファイル（"Inbox との紐付け" テーブルに追加）
+  - `/06_Entities/Networks/` — 記事の主体が企業ではなく blockchain network / L2 / 決済実行環境の場合に対応するファイル（"Inbox との紐付け" テーブルに追加）
   - `/04_Protocols/` — 記事が関連するプロトコル（"関連ニュース" テーブルに追加）
   - `/05_MOCs/` — 記事が関連する MOC（規制、エンティティ、プロトコル等）
   - `/03_Topics/` — 記事が関連するトピック概念ページ
