@@ -123,7 +123,10 @@ Fireblocks インフラ（決済処理・コンプライアンス・セトルメ
 |---|---|---|
 | 2026-05-20 | [[2026-05-20_Fireblocks_x402-foundation-agentic-payments-suite]] | Agentic Payments Suite（Gateway + Wallets）ローンチと x402 Foundation 参加の正式発表 |
 | 2026-05-20 | [[2026-05-20_Sui-Fireblocks_gasless-stablecoin-transfers]] | Sui との連携でガスレスのステーブルコイン送金を実現 |
+| 2026-05-20 | [[2026-05-20_Fireblocks_agentic-payments-suite-x402-foundation]] | Agentic Payments Suite（Gateway + Wallets）ローンチと x402 Foundation 参加の詳細発表 |
+| 2026-05-23 | [[2026-05-20_Fireblocks_agentic-payments-suite-x402]] | x402 Foundation 連携によるエージェント決済スイート詳細（PSP・フィンテック向け） |
 | 2026-06-02 | [[2026-06-02_Fireblocks_flow-stablecoin-acceptance-psp-fintech]] | Flow プロダクト：PSP・フィンテック向けステーブルコイン受け取りソリューション |
+| 2026-06-02 | [[2026-06-02_Fireblocks_flow-psp-stablecoin-acceptance]] | Flutterwave・Nuvion 経由の PSP 向けステーブルコイン受け入れソリューション展開 |
 
 ### 関連エコシステム動向
 
