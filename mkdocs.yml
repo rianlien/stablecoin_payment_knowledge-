@@ -85,6 +85,9 @@ nav:
   - ネットワーク:
     - 06_Entities/Networks/index.md
     - Base: 06_Entities/Networks/Base.md
+  - 組織:
+    - 06_Entities/Organizations/index.md
+    - x402 Foundation: "06_Entities/Organizations/x402 Foundation.md"
 
 markdown_extensions:
   - meta
