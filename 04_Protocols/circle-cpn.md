@@ -87,6 +87,7 @@ Kyriba の Trusted Agentic AI（TAI）との統合事例（2026 年 4 月 28 日
 |---|---|---|
 | 2026-04-26 | [[2026-04-26_Coinbase-Nium_usdc-global-190-countries]] | Coinbase × Nium 統合、CPN との競合構造が明確化 |
 | 2026-04-28 | [[2026-04-28_Kyriba-Circle_usdc-enterprise-treasury]] | Kyriba TMS への USDC 統合、エンタープライズ財務 AI 自律決済 |
+| 2026-06-11 | [[2026-06-11_MassPay-Coinbase_stablecoin-payouts]] | MassPay が Coinbase 経由で CPN + USDC を使ったグローバルペイアウトを展開 |
 
 ---
 

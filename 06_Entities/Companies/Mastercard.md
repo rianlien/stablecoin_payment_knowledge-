@@ -46,6 +46,8 @@ Mastercard の戦略は「カードレールの上にエージェント決済・
 | 2026-04-30 | [[2026-04-30_Mastercard_q1-2026-agent-to-agent-payments]] | Q1 決算で Agent Pay のグローバル全展開・OpenAI との agent-to-agent 決済協業を開示 |
 | 2026-05-18 | [[2026-05-18_Mastercard-JDcom_agent-pay-strategic-partnership]] | JD.com と Agent Pay によるアジェンティック購買ソリューションの共同探索を発表 |
 | 2026-06-02 | [[2026-06-02_Worldline-ING-Mastercard_agentic-payments-europe]] | Worldline・ING と欧州で本番 agentic payment フローを実装 |
+| 2026-06-02 | [[2026-06-02_Worldline-ING-Mastercard_first-european-agentic-payment]] | Worldline・ING・Mastercard が欧州初の本番 agentic payment フローを実装（一次情報ベース） |
+| 2026-06-04 | [[2026-06-02_Worldline-ING-Mastercard_europe-first-live-agentic-payment]] | 欧州初ライブ agentic payment の続報：技術詳細と体制 |
 | 2026-06-10 | [[2026-06-10_Mastercard_agent-pay-for-machines-ap4m]] | AP4M 正式ローンチ：35 社超パートナー、Verifiable Intent オンチェーン公開、マルチレール対応 |
 
 ### ステーブルコイン決済・決済レール
@@ -55,6 +57,9 @@ Mastercard の戦略は「カードレールの上にエージェント決済・
 | 2026-05-04 | [[2026-05-04_Rain-Mastercard_stablecoin-card-settlement]] | Rain が Mastercard のステーブルコインカード決済パートナーとして登場 |
 | 2026-05-04 | [[2026-05-04_Rain_mastercard-principal-member]] | Rain が Mastercard のプリンシパルメンバーに就任 |
 | 2026-06-03 | [[2026-06-03_Mastercard_stablecoin-settlement-24-7-onchain]] | USDC・PYUSD・RLUSD を 8 チェーンで 24/7 受け付けるステーブルコイン決済を本番展開 |
+| 2026-06-03 | [[2026-06-03_Mastercard_stablecoin-settlement-expansion]] | 24/7 ステーブルコイン決済の詳細：8 チェーン対応と決済保証の枠組み |
+| 2026-06-03 | [[2026-06-03_Stripe-Visa-Mastercard-Coinbase_stablecoin-consortium]] | Stripe・Visa・Coinbase との共同ステーブルコインプラットフォーム発表 |
+| 2026-06-04 | [[2026-06-03_Stripe-Visa-Mastercard_joint-stablecoin-platform-report]] | Stripe・Visa・Coinbase 共同ステーブルコインプラットフォームレポート |
 
 ### 地域展開・パートナーシップ
 

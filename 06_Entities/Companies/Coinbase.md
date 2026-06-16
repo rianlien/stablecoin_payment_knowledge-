@@ -64,6 +64,11 @@ Coinbase の戦略は、Base や x402 を使って「開発者がオンチェー
 | 2026-05-05 | [[2026-05-05_Solana-GoogleCloud_pay-sh-x402-agent-payments]] | Google Cloud / Solana 側で x402 ベースの Pay.sh が登場 |
 | 2026-05-26 | [[2026-05-26_Coinbase-Base_mcp-ai-agent-wallet]] | Base 上の MCP 対応 AI エージェントウォレット発表 |
 | 2026-06-02 | [[2026-06-02_Coinbase-Checkout_stablecoin-merchant-payments]] | マーチャント向けステーブルコイン決済受け取りソリューション |
+| 2026-06-03 | [[2026-06-03_Chainalysis_x402-100m-agentic-payments]] | Chainalysis が x402 の 1 億件突破を分析——Base がメイン環境 |
+| 2026-06-03 | [[2026-06-03_Chainalysis_x402-100m-transactions-base]] | Chainalysis による x402 トランザクション 1 億件達成の統計データ |
+| 2026-06-03 | [[2026-06-03_Stripe-Visa-Mastercard-Coinbase_stablecoin-consortium]] | Stripe・Visa・Mastercard との共同ステーブルコインプラットフォーム発表 |
+| 2026-06-04 | [[2026-06-03_Stripe-Visa-Mastercard_joint-stablecoin-platform-report]] | Stripe・Visa・Mastercard 共同ステーブルコインプラットフォームレポート |
+| 2026-06-09 | [[2026-06-09_Injective_x402-agent-payments]] | Injective Protocol が Coinbase × x402 で AI エージェント決済を実装 |
 | 2026-06-11 | [[2026-06-11_MassPay-Coinbase_stablecoin-payouts]] | MassPay が Coinbase USDC インフラを活用してグローバルペイアウト |
 
 ### B2B 決済・流動性

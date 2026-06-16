@@ -48,6 +48,7 @@ Visa は「Agentic-Ready」という認定プログラムを用意し、Visa Tru
 | 2026-05-27 | [[2026-05-27_Highnote-Visa_agentic-commerce-ai-initiated-payments]] | Highnote が Visa と連携してエージェント起点の B2C 決済を実装 |
 | 2026-05-27 | [[2026-05-27_Highnote-Visa_agentic-commerce-b2b-payments]] | 同連携の B2B 決済拡張 |
 | 2026-05-28 | [[2026-05-28_Visa-Replit_trusted-agent-protocol]] | Replit と TAP の実装連携。開発者環境でのエージェント決済テスト |
+| 2026-06-10 | [[2026-06-10_Visa_payments-forum-openai-agentic-commerce]] | Visa Payments Forum：OpenAI 連携・Agent Score・Agentic Registry 発表 |
 | 2026-06-11 | [[2026-06-11_Visa-OpenAI_chatgpt-agent-payments]] | ChatGPT 内の Visa カード連動によるエージェント決済。最大規模の統合事例 |
 
 ### Mastercard — A2A + 欧州展開
@@ -57,12 +58,18 @@ Visa は「Agentic-Ready」という認定プログラムを用意し、Visa Tru
 | 2026-04-30 | [[2026-04-30_Mastercard_q1-2026-agent-to-agent-payments]] | A2A（Agent-to-Agent）決済フレームワークの進捗を Q1 決算で公表 |
 | 2026-05-18 | [[2026-05-18_Mastercard-JDcom_agent-pay-strategic-partnership]] | JD.com とのパートナーシップ。アジア EC でのエージェント決済実装 |
 | 2026-06-02 | [[2026-06-02_Worldline-ING-Mastercard_agentic-payments-europe]] | Worldline・ING・Mastercard が欧州向けエージェント決済基盤を共同発表 |
+| 2026-06-02 | [[2026-06-02_Worldline-ING-Mastercard_first-european-agentic-payment]] | 欧州初の本番 agentic payment フロー実装の詳細 |
+| 2026-06-04 | [[2026-06-02_Worldline-ING-Mastercard_europe-first-live-agentic-payment]] | 欧州初ライブ agentic payment の続報：体制と技術詳細 |
+| 2026-06-05 | [[2026-06-03_Mastercard_stablecoin-settlement-24-7-onchain]] | Mastercard の 24/7 ステーブルコイン決済本番展開——PSP 受け取りへの含意 |
 
 ### Fireblocks Flow — PSP 向けステーブルコイン受け取り
 
 | 日付 | ノート | 概要 |
 |---|---|---|
+| 2026-05-20 | [[2026-05-20_Fireblocks_agentic-payments-suite-x402-foundation]] | Agentic Payments Suite（Gateway + Wallets）ローンチと x402 Foundation 参加 |
+| 2026-05-23 | [[2026-05-20_Fireblocks_agentic-payments-suite-x402]] | x402 Foundation 連携によるエージェント決済スイート詳細（PSP・フィンテック向け） |
 | 2026-06-02 | [[2026-06-02_Fireblocks_flow-stablecoin-acceptance-psp-fintech]] | Fireblocks Flow：PSP・フィンテックがステーブルコイン受け取りを組み込めるインフラ |
+| 2026-06-02 | [[2026-06-02_Fireblocks_flow-psp-stablecoin-acceptance]] | Flutterwave・Nuvion 経由 PSP ステーブルコイン受け取りの展開 |
 
 ### Crossmint — エージェント向けカード発行
 
@@ -79,7 +86,15 @@ Visa は「Agentic-Ready」という認定プログラムを用意し、Visa Tru
 | 2026-05-10 | [[2026-05-10_PayPal-Google_consensus-miami-agentic-commerce]] | PayPal と Google が Consensus Miami でエージェントコマースの連携を発表 |
 | 2026-05-11 | [[2026-05-11_Cryptorefills_x402-merchant-agent-payments-checkout]] | Cryptorefills が x402 対応チェックアウトを実装。ギフトカード・通話クレジット販売 |
 | 2026-05-14 | [[2026-05-14_Stellagent_agentic-commerce-studio-merchant-readiness]] | Stellagent が AI エージェントに対応したマーチャントオンボーディングスタジオを提供 |
+| 2026-05-20 | [[2026-05-20_Sui_gasless-stablecoin-transfers-fireblocks]] | Sui・Fireblocks のガスレスステーブルコイン送金：PSP・マーチャントの受け取りコスト削減 |
+| 2026-05-22 | [[2026-05-19_Google_universal-cart-ap2-io2026]] | Google I/O 2026：Universal Cart・AP2 対応でマーチャントの AI エージェント対応加速 |
+| 2026-05-26 | [[2026-05-26_Alipay_ai-wallet-token-pay-agentic-payments]] | Alipay AI Wallet・Token Pay：アジア市場向けエージェント決済 API |
+| 2026-05-27 | [[2026-05-27_Robinhood_agentic-credit-card-trading]] | Robinhood Agentic Credit Card：カードレール上のエージェント決済実装 |
+| 2026-05-27 | [[2026-05-27_Robinhood_agentic-trading-credit-card-agent-payments]] | Robinhood Agentic Trading + Credit Card：AI エージェントへの支出権限委任の先行実装 |
+| 2026-05-28 | [[2026-05-28_Google_ucp-update-identity-linking-catalog-marketing-live]] | Google UCP/AP2 アップデート：アイデンティティリンク・カタログ・マーケティング本番化 |
+| 2026-05-29 | [[2026-05-29_Shopify_ucp-catalog-developer-agentic-commerce]] | Shopify が UCP カタログ対応を開発者向けに展開——マーチャント readiness の具体例 |
 | 2026-06-02 | [[2026-06-02_HeySavi-PayPal_uk-agentic-commerce-checkout]] | HeySavi が PayPal 連携で英国向けエージェントコマースチェックアウトを実装 |
+| 2026-06-02 | [[2026-06-02_Coinbase-Checkout_stablecoin-merchant-payments]] | Coinbase × Checkout.com：マーチャント向けステーブルコイン決済受け取りソリューション |
 
 ---
 

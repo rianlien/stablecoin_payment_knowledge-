@@ -44,6 +44,7 @@ Robinhoodの実装が示した最も重要なことは「カードレールとMC
 | 2026-05-27 | [[2026-05-27_Robinhood_agentic-trading-credit-card-agent-payments]] | 一次情報（Robinhood Newsroom）ベース。認可設計の詳細・消費者コントロール・規制論点を網羅 |
 | 2026-05-27 | [[2026-05-27_Robinhood_agentic-trading-agentic-credit-card]] | CNBC 独自取材ベース。MCP 統合・spending mandate の設計思想・Goldman Sachs 評価を記録 |
 | 2026-05-27 | [[2026-05-27_Robinhood_agentic-credit-card-trading]] | Fortune / CNBC / Bloomberg ベース。加盟店視点・カードレール vs ステーブルコインの比較論点を記録 |
+| 2026-05-28 | [[2026-05-28_OTL_open-transaction-layer-agentic-coordination]] | OTL エージェント決済調整レイヤー構想：Robinhood が参加者の一社として登場 |
 
 ---
 
