@@ -71,6 +71,7 @@ Coinbase の戦略は、Base や x402 を使って「開発者がオンチェー
 | 2026-06-04 | [[2026-06-03_Stripe-Visa-Mastercard_joint-stablecoin-platform-report]] | Stripe・Visa・Mastercard 共同ステーブルコインプラットフォームレポート |
 | 2026-06-09 | [[2026-06-09_Injective_x402-agent-payments]] | Injective Protocol が Coinbase × x402 で AI エージェント決済を実装 |
 | 2026-06-11 | [[2026-06-11_MassPay-Coinbase_stablecoin-payouts]] | MassPay が Coinbase USDC インフラを活用してグローバルペイアウト |
+| 2026-06-15 | [[2026-06-15_AWS-Coinbase_x402-cloudfront-waf-ai-traffic-monetization]] | AWS WAF が Coinbase x402 を採用し CloudFront 全体に AI トラフィック課金を展開。インターネット約 25% 規模の x402 有料ゲートウェイが成立 |
 
 ### B2B 決済・流動性
 
