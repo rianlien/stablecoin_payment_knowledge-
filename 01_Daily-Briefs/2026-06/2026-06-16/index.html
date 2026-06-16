@@ -1908,6 +1908,17 @@
 <p>リンク: <a href="https://cryptonews.com/news/clarity-act-july-4-deadline-ethics-section-604-collapse/">CryptoNews（2026-06-13）</a></p>
 </li>
 <li>
+<p><a href="../../../00_Inbox/2026-06-15_AWS-Coinbase_x402-cloudfront-waf-ai-traffic-monetization/">2026-06-15_AWS-Coinbase_x402-cloudfront-waf-ai-traffic-monetization</a></p>
+</li>
+<li>概要: AWS WAF が Coinbase x402 を使った AI トラフィック課金（AI Traffic Monetization）を CloudFront 全体で GA（2026-06-15）。AI エージェントが保護リソースへアクセスすると HTTP 402 を返し、USDC 支払い証明で認証・アクセスを提供。コンソール変更のみで既存 CloudFront ユーザーが有料 AI ゲートウェイになれる。Amazon Bedrock AgentCore Payments（2026-05）との統合で AWS 上の x402 エコシステムが支払い側・受け取り側の両方で完結。CloudFront はインターネット約 25% のトラフィックをカバー</li>
+<li>重要度: High</li>
+<li>確からしさ: High（AWS 公式 What's New ページで確認、複数メディア報道と一致）</li>
+<li>主要カテゴリ: machine-payments / API-billing / x402</li>
+<li>情報元: AWS What's New / Genfinity / BanklessTimes / Crypto Economy</li>
+<li>
+<p>リンク: <a href="https://aws.amazon.com/about-aws/whats-new/2026/06/aws-waf-ai-traffic-monetization/">AWS What's New（2026-06-15）</a></p>
+</li>
+<li>
 <p><a href="../../../00_Inbox/2026-06-16_Adyen_agentic-commerce-api-suite/">2026-06-16_Adyen_agentic-commerce-api-suite</a></p>
 </li>
 <li>概要: Adyen がエンタープライズ向けエージェントコマース API スイート「Adyen Agentic」を発表。Agentic Feed・Agentic Cart・Agentic Payments の 3 層モジュール構成。Amex・Mastercard・Visa・Salesforce をパートナーに迎え、米国でリミテッドアベイラビリティ開始</li>
@@ -1931,6 +1942,9 @@
 <h2 id="_3">今日の重要論点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
+<p><strong>AWS WAF x402 GA が示す「x402 の標準化軸の転換」——プロトコル標準からクラウドインフラ標準へ</strong>：これまで x402 の普及は「開発者が SDK をインストールする」という能動的な採用が前提だった。今回の AWS WAF GA は、既存 CloudFront ユーザーがコンソール変更のみで有料 AI ゲートウェイになれる受動的採用モデルに転換する。CloudFront 上のサイト（インターネット約 25%）が潜在的な x402 加盟店になる規模感は、これまでの x402 エコシステム拡大のどのステップとも異なる。CLARITY Act が未確定の中、AWS という regulated entity が x402 のゲートキーパーになることで、Section 604 リスクから切り離された x402 実装経路が制度的に確立される意味もある。</p>
+</li>
+<li>
 <p><strong>「倫理条項の代替構造」が存在するか——Gallego・Alsobrooks の 2 票を失うと 60 票は不可能</strong>：Senator Gallego と Alsobrooks は委員会で賛成票を投じた 2 名の民主党議員だが、両者とも倫理条項の解決を本会議賛成票の条件として維持している。この 2 票なしに共和党（53 席）から 60 票は達成できない。共和党が受け入れられる「独立した執行機構」——例えば Inspector General 的な仕組みや特別委員会での調査権限——が提案されない限り、解決は難しい。Thune が「倫理条項は後回し、Section 604 先決で採決」という判断をするなら Gallego・Alsobrooks の離脱を意味し、採決しても否決されるため非現実的。</p>
 </li>
 <li>
@@ -1946,6 +1960,9 @@
 <h2 id="_4">共通して見える変化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
+<p><strong>AWS CloudFront + WAF x402 GA により x402 の「採用コスト」が実質ゼロに下がった</strong>：Mastercard AP4M（6/10）・Visa Agentic Commerce（6/10）が TradFi 保証型の「エージェントへの支払い経路」を整備したのに対し、AWS WAF は「AI エージェントからの受け取り経路」を整備した。支払い側（AgentCore Payments）と受け取り側（WAF）が同じ AWS インフラで完結するエコシステムが整い、エンタープライズ向け x402 の採用障壁が一段低下した。</p>
+</li>
+<li>
 <p><strong>CLARITY Act の「2 軸崩壊」により x402/AP2 の法的灰色地帯リスクが中期的に固定化しつつある</strong>：Section 604（法執行機関 vs デベロッパー）と倫理条項（Trump 利益相反 vs 独立執行）は性質の異なる 2 つの問題。前者はテキスト修正で技術的解決が可能だが後者は政治構造問題。後者の解決なしに前者だけで採決を試みれば Gallego/Alsobrooks を失う——この「論理的な罠」が CLARITY Act を本会議採決すら難しくしている</p>
 </li>
 <li>
@@ -1957,6 +1974,8 @@
 <ul>
 <li>CLARITY Act 不成立シナリオ（Polymarket 49%）が「ほぼ均等」な現在、x402 の DeFi 統合部分（Injective・XRPL・Arbitrum DEX ルート）を「CLARITY Act 成立後に本格展開」と位置づけ、現時点での中央集権型フォールバック（CPN・Coinbase Commerce 経由）を必ず代替として維持する設計方針を法務確認する</li>
 <li>AP4M（Mastercard）・Visa Intelligent Commerce との統合を「CLARITY Act リスクのない先行経路」として優先度を一段上げる判断材料が揃った</li>
+<li>AWS WAF x402 GA（6/15）：自社サービス・API が CloudFront/AWS WAF を使用している場合、AI トラフィック課金の設定を検討する（コンソール変更のみで試験導入可能）。USDC 受け取りの低コスト PoC として適切</li>
+<li>Adyen Agentic（6/16）：グローバル Top-5 PSP の参入により、エージェントコマースを既存加盟店側（Adyen 決済端末・PSP インフラ）から取り込む経路が整った。Stripe MPP・Visa Intelligent Commerce・Mastercard AP4M に続く 4 番目の TradFi 保証型インフラが出揃った形</li>
 </ul>
 <h3 id="authorization-identity">Authorization / Identity<a class="headerlink" href="#authorization-identity" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1981,7 +2000,7 @@
 </ul>
 <h3 id="market-direction">Market Direction<a class="headerlink" href="#market-direction" title="Permanent link">&para;</a></h3>
 <ul>
-<li>今週の大局観：「倫理条項崩壊により CLARITY Act の 8 月前成立確率が五分五分以下に近づき、TradFi 保証型エージェント決済（AP4M・Visa）が法的安定性で先行する構図が明確化した。GENIUS Act（7/18）と MiCA（7/1）は予定通り確定軌道上にあり、USDC が グローバルエージェント決済の規制対応デフォルト通貨として固まっていく基盤は変わらない」</li>
+<li>今週の大局観：「倫理条項崩壊により CLARITY Act の 8 月前成立確率が五分五分以下に近づき、TradFi 保証型エージェント決済（AP4M・Visa・Adyen）が法的安定性で先行する構図が明確化した。GENIUS Act（7/18）と MiCA（7/1）は予定通り確定軌道上にあり、USDC が グローバルエージェント決済の規制対応デフォルト通貨として固まっていく基盤は変わらない」</li>
 </ul>
 <h2 id="_6">我々への示唆<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2003,20 +2022,27 @@
 <h2 id="_7">関連ノート<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../../../00_Inbox/2026-06-13_CLARITY-Act_ethics-collapse-july4-deadline-dead/">2026-06-13_CLARITY-Act_ethics-collapse-july4-deadline-dead</a>（本日新規）</li>
+<li><a href="../../../00_Inbox/2026-06-15_AWS-Coinbase_x402-cloudfront-waf-ai-traffic-monetization/">2026-06-15_AWS-Coinbase_x402-cloudfront-waf-ai-traffic-monetization</a>（本日新規——AWS WAF x402 AI トラフィック課金 GA）</li>
+<li><a href="../../../00_Inbox/2026-06-16_Adyen_agentic-commerce-api-suite/">2026-06-16_Adyen_agentic-commerce-api-suite</a>（本日新規——Adyen Agentic 3 層 API スイート）</li>
+<li><a href="../../../00_Inbox/2026-06-16_Zip-Stripe_shared-payment-tokens-agentic/">2026-06-16_Zip-Stripe_shared-payment-tokens-agentic</a>（本日新規——Zip US × Stripe SPT BNPL 拡張）</li>
 <li><a href="../../../00_Inbox/2026-06-10_CLARITY-Act_white-house-law-enforcement-section604/">2026-06-10_CLARITY-Act_white-house-law-enforcement-section604</a>（Section 604 White House 会合——倫理条項崩壊と同週の前段）</li>
 <li><a href="../../../00_Inbox/2026-06-08_CLARITY-Act_200firms-senate-floor-push/">2026-06-08_CLARITY-Act_200firms-senate-floor-push</a>（200 社書簡・Galaxy 60%——同時決裂前の産業界圧力）</li>
 <li><a href="../../../00_Inbox/2026-06-15_AllUnity_sekau-june-target-missed/">2026-06-15_AllUnity_sekau-june-target-missed</a>（AllUnity SEKAU 6 月目標未達——6/15 Brief で新規採録）</li>
 <li><a href="../../../00_Inbox/2026-06-11_MiCA_july1-deadline-14-exchanges-eu/">2026-06-11_MiCA_july1-deadline-14-exchanges-eu</a>（EU MiCA 7/1 デッドライン——USDC/EURC 専用化の背景）</li>
 <li><a href="../../../00_Inbox/2026-06-09_GENIUS-Act_nprm-comment-deadline-fdic-fincen/">2026-06-09_GENIUS-Act_nprm-comment-deadline-fdic-fincen</a>（GENIUS Act FinCEN/OFAC コメント期限——最終規則フェーズの起点）</li>
+<li><a href="../../../00_Inbox/2026-05-07_AWS_bedrock-agentcore-payments-x402/">2026-05-07_AWS_bedrock-agentcore-payments-x402</a>（Amazon Bedrock AgentCore Payments——AWS WAF x402 の前提インフラ）</li>
 </ul>
 <h2 id="_8">備考<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ul>
 <li>収集対象は 2026-06-09〜2026-06-16（JST）</li>
 <li><strong>CLARITY Act 倫理条項崩壊（6/10）</strong>：前 run（6/15 Brief）は AllUnity SEKAU 目標未達のみ新規採録。今回の run で 6/10 の倫理条項崩壊会合（具体的参加者・提案内容・拒否理由）と 6/13 の Eleanor Terrett 「July 4 論理的に不可能」宣言が未採録であることを確認し、新規ノート化。前 run（6/14 Brief）が採録した <a href="../../../00_Inbox/2026-06-10_CLARITY-Act_white-house-law-enforcement-section604/">2026-06-10_CLARITY-Act_white-house-law-enforcement-section604</a> は Section 604 の White House 法執行機関会合のみを対象にしており、倫理条項の具体的な崩壊経緯と Terrett 宣言は別 underlying event として今回採録</li>
+<li><strong>AWS WAF x402 AI トラフィック課金 GA（6/15）</strong>：前 run（6/15 Brief）は「6/12〜6/15 の採録対象は AllUnity SEKAU 目標未達のみ」と判断していたが、AWS What's New が 2026-06-15 付けで AI Traffic Monetization 機能の GA を公告していた。6/15 Brief の run 時点では情報収集に含まれておらず、今回の run で初確認。AWS 公式ページ・複数メディア報道で underlying event date = 2026-06-15 を確認。CLAUDE.md の「machine payments / API billing / x402 に直接関係する場合のみ採用」を満たし、今回初採録</li>
+<li><strong>Adyen Agentic（6/16）</strong>：別の run で採録済み。グローバル Top-5 PSP がエンタープライズ向けエージェントコマース API スイートを本番化。Agentic Feed・Cart・Payments の 3 層モジュール構成</li>
+<li><strong>Zip US × Stripe SPT（6/16）</strong>：別の run で採録済み。Stripe MPP エコシステムへの BNPL 拡張</li>
 <li><strong>AllUnity SEKAU</strong>：6/16（月）時点でも BaFin 最終承認・公式ローンチ発表なし。前 run（6/15 Brief）の <a href="../../../00_Inbox/2026-06-15_AllUnity_sekau-june-target-missed/">2026-06-15_AllUnity_sekau-june-target-missed</a> でノート化済み。今回は続報なし（7/1 前のラスト窓口として継続監視）</li>
 <li><strong>MiCA 7/1・GENIUS Act 7/18</strong>：いずれも継続監視中。今週（6/9〜6/16）の新規 underlying event なし（前 run までに採録済み）</li>
 <li><strong>Japan 三大銀行（MUFG・Mizuho・SMBC）stablecoin MOU（6/10）</strong>：6/10 に 2027 年 3 月ローンチ目標の円建て共同ステーブルコイン MOU を締結した報道を確認。ただし agent-led commerce / x402 / AP2 への直接接続がなく（企業間取引向け・2027 年目標）、CLAUDE.md の stablecoin 採用基準を満たさないため今回は除外</li>
-<li><strong>新規採録数 1 件</strong>：今週（6/9〜6/16）は CLARITY Act 倫理条項崩壊（6/10）+ July 4 期限宣言（6/13）の 1 件のみが採録基準を満たした</li>
+<li><strong>新規採録数 4 件</strong>：今週（6/9〜6/16）は ① CLARITY Act 倫理条項崩壊＋July 4 期限宣言（6/10〜6/13）、② AWS WAF x402 AI トラフィック課金 GA（6/15）、③ Adyen Agentic 発表（6/16）、④ Zip US × Stripe SPT BNPL 拡張（6/16）</li>
 </ul>
 
 
