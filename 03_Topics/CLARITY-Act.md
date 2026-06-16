@@ -141,3 +141,6 @@ Build Now Act の同梱は、上院本会議で住宅法案に反対する共和
 - [[2026-05-09_CLARITY-Act_banking-lobby-rejection-may14-markup]] — 銀行 5 団体正式拒否
 - [[2026-05-11_CLARITY-Act_309page-text-senate-banking-markup]] — 309 ページ最終テキスト公開
 - [[2026-05-14_CLARITY-Act_senate-banking-committee-cleared]] — 委員会通過（13-11）確定
+- [[2026-06-08_CLARITY-Act_200firms-senate-floor-push]] — 200 社書簡・60 CEO 書簡、Galaxy 60% 推計
+- [[2026-06-10_CLARITY-Act_white-house-law-enforcement-section604]] — Section 604 White House 法執行機関会合・Polymarket 47% 割れ
+- [[2026-06-13_CLARITY-Act_ethics-collapse-july4-deadline-dead]] — 倫理条項交渉崩壊・July 4 期限死亡確認・8 月休会前が最終窓口
