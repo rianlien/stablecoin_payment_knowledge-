@@ -59,6 +59,10 @@ nav:
     - GENIUS Act: 03_Topics/GENIUS-Act.md
   - プロトコル:
     - 04_Protocols/index.md
+    - x402: 04_Protocols/x402.md
+    - Machine Payments Protocol（MPP）: 04_Protocols/mpp-machine-payments-protocol.md
+    - Agent Payments Protocol（AP2）: 04_Protocols/ap2-agent-payments-protocol.md
+    - Visa Trusted Agent Protocol（TAP）: 04_Protocols/visa-tap-trusted-agent-protocol.md
     - Circle CPN: 04_Protocols/circle-cpn.md
     - UCP（Universal Cart）: 04_Protocols/ucp-universal-cart-protocol.md
     - x402 バッチ決済: 04_Protocols/x402/x402-batch-settlement.md
