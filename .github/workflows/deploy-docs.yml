@@ -16,8 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0   # git log --since を使うため全履歴が必要
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
@@ -103,38 +101,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
-
-      - name: Post Daily Brief URL to Slack
-        if: success()
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SKIP_MTIME_CHECK: "1"
-          SITE_URL: https://rianlien.github.io/stablecoin_payment_knowledge-/
-        run: |
-          TODAY=$(TZ=Asia/Tokyo date +%Y-%m-%d)
-          YEAR_MONTH=$(TZ=Asia/Tokyo date +%Y-%m)
-          BRIEF_FILE="01_Daily-Briefs/${YEAR_MONTH}/${TODAY}.md"
-          # 今日コミットされたブリーフのみ投稿（重複ガード）
-          COMMITTED=$(git log --since="${TODAY}T00:00:00+09:00" --pretty="%H" -- "$BRIEF_FILE" 2>/dev/null | head -1)
-          if [ -n "$COMMITTED" ] && [ -f "$BRIEF_FILE" ]; then
-            echo "Posting Daily Brief for $TODAY"
-            BRIEF_DATE="$TODAY" python3 .claude/hooks/post_brief_to_slack.py
-          else
-            echo "No new Daily Brief today — skipping"
-          fi
-
-      - name: Post Weekly Digest URL to Slack
-        if: success()
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SITE_URL: https://rianlien.github.io/stablecoin_payment_knowledge-/
-        run: |
-          # 直近 7 日以内にコミットされた Weekly Digest ファイルを検出
-          WEEKLY_FILE=$(git log --since="7 days ago" --name-only --format="" \
-            -- '02_Weekly/*.md' 2>/dev/null | grep '02_Weekly/' | head -1)
-          if [ -n "$WEEKLY_FILE" ] && [ -f "$WEEKLY_FILE" ]; then
-            echo "Posting Weekly Digest: $WEEKLY_FILE"
-            WEEKLY_FILE="$WEEKLY_FILE" python3 .claude/hooks/post_weekly_to_slack.py
-          else
-            echo "No recent Weekly Digest — skipping"
-          fi
