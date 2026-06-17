@@ -16,7 +16,7 @@ jobs:
       - name: Find changed brief date
         id: brief
         run: |
-          BRIEF_FILE=$(git diff --name-only HEAD~1 HEAD 2>/dev/null \
+          BRIEF_FILE=$(git diff --name-only --diff-filter=A HEAD~1 HEAD 2>/dev/null \
             | grep '^01_Daily-Briefs/.*\.md$' | head -1 || true)
           if [ -z "$BRIEF_FILE" ]; then
             # Fallback for initial commit
