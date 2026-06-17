@@ -46,6 +46,7 @@ nav:
   - ホーム: index.md
   - ニュース: 00_Inbox/index.md
   - Daily Brief: 01_Daily-Briefs/index.md
+  - Weekly: 02_Weekly/index.md
   - トピック:
     - 03_Topics/index.md
     - x402 エコシステム: 03_Topics/x402-ecosystem.md
