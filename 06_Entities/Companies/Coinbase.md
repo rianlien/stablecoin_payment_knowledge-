@@ -48,7 +48,7 @@ Coinbase の戦略は、Base や x402 を使って「開発者がオンチェー
 | L0 / チェーン | Base、Solana、Polygon 等への x402 facilitator 対応 | 開発者が複数チェーンで支払いを受けられる |
 | L1 / ウォレット | Agentic Wallet / Coinbase wallet infrastructure | AI エージェントが支払い主体を持てる |
 | L2 / 流動性・カストディ | USDC、Coinbase Prime、custody | B2B 決済・機関運用の裏側を担う |
-| L3 / プロトコル | x402 | API / AI / コンテンツ課金を HTTP 上で実行 |
+| L3 / プロトコル | [[x402]] | API / AI / コンテンツ課金を HTTP 上で実行 |
 | L5 / アプリ | Agentic.market | エージェントが購入できるサービス面を持つ |
 
 ---
@@ -59,7 +59,7 @@ Coinbase の戦略は、Base や x402 を使って「開発者がオンチェー
 
 | 日付 | ノート | 位置づけ |
 |---|---|---|
-| 2026-04-02 | [[2026-04-02_x402-Foundation_linux-foundation-launch]] | x402 を Linux Foundation に移管し、業界標準化へ |
+| 2026-04-02 | [[2026-04-02_x402-Foundation_linux-foundation-launch]] | [[x402]] を [[x402 Foundation]] に移管し、業界標準化へ |
 | 2026-04-21 | [[2026-04-21_Coinbase-x402_agentic-market-launch]] | x402 上の Agentic.market をローンチ |
 | 2026-05-07 | [[2026-05-07_AWS_bedrock-agentcore-payments-x402]] | AWS AgentCore Payments が x402 / Coinbase wallet infrastructure を採用 |
 | 2026-05-05 | [[2026-05-05_Solana-GoogleCloud_pay-sh-x402-agent-payments]] | Google Cloud / Solana 側で x402 ベースの Pay.sh が登場 |
