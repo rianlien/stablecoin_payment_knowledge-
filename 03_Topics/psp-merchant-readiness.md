@@ -104,6 +104,7 @@ Visa は「Agentic-Ready」という認定プログラムを用意し、Visa Tru
 | 2026-05-29 | [[2026-05-29_Shopify_ucp-catalog-developer-agentic-commerce]] | Shopify が UCP カタログ対応を開発者向けに展開——マーチャント readiness の具体例 |
 | 2026-06-02 | [[2026-06-02_HeySavi-PayPal_uk-agentic-commerce-checkout]] | HeySavi が PayPal 連携で英国向けエージェントコマースチェックアウトを実装 |
 | 2026-06-02 | [[2026-06-02_Coinbase-Checkout_stablecoin-merchant-payments]] | Coinbase × Checkout.com：マーチャント向けステーブルコイン決済受け取りソリューション |
+| 2026-06-15 | [[2026-06-15_AWS-Coinbase_x402-cloudfront-waf-ai-traffic-monetization]] | AWS WAF が CloudFront 全体に x402 AI トラフィック課金を GA——コンソール変更のみで USDC ペイウォール設置可能に |
 
 ---
 
