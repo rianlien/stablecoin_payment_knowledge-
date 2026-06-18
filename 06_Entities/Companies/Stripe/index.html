@@ -653,7 +653,7 @@
     
   
   
-    <span class="md-status md-status--上院銀行委員会通過（2026-05-14）→ 上院本会議待ち"></span>
+    <span class="md-status md-status--上院本会議審議中——倫理条項交渉崩壊・7/4 期限死亡確認・8 月休会前が最終窓口（Polymarket ~47%）"></span>
   
 
   
@@ -2595,14 +2595,17 @@
 <h2 id="_1">現状の要約<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">何をしているか<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>ステーブルコイン決済の PSP 化</strong>: Link / Checkout / Payment Links / Elements など既存 Stripe フローにステーブルコイン受け取りを組み込む。</li>
-<li><strong>Bridge によるオン/オフランプ・清算レイヤー化</strong>: Bridge を通じて、多通貨・多チェーン・企業向け送金の裏側を担う。</li>
-<li><strong>Tempo / MPP による機械決済</strong>: AI エージェントやサービスがプログラムで支払える Machine Payments Protocol（MPP）を Stripe / Tempo 系の標準として展開。</li>
+<li><strong>ステーブルコイン決済の PSP 化</strong>: Link / Checkout / Payment Links / Elements など既存 Stripe フローにステーブルコイン受け取りを組み込む。32 市場追加（Sessions 2026）。</li>
+<li><strong>Bridge によるオン/オフランプ・清算レイヤー化</strong>: Bridge を通じて多通貨・多チェーン・企業向け送金の裏側を担う。Celo に対応（2026-05-12）し 66 か国以上の USDC オンランプ・オフランプが単一 API で利用可能に。</li>
+<li><strong>Tempo / MPP による機械決済</strong>: AI エージェントやサービスがプログラムで支払える Machine Payments Protocol（MPP）を展開。Stripe × Tempo によるストリーミング決済（AI トークン利用量に応じた課金）も実装（2026-05-13）。</li>
+<li><strong>Shared Payment Tokens（SPT）によるエージェント決済の支払い手段拡張</strong>: 2026-06-16 に Zip US が SPT 経由で BNPL をエージェントコマースに統合。エージェント起点取引における支払い手段が Stripe カード決済から BNPL 等へ拡張。</li>
 <li><strong>Privy / Link によるウォレット化</strong>: エージェント・ユーザー・クリエイター向けのウォレット発行、支出管理、受け取り導線を整える。</li>
 <li><strong>Treasury / stablecoin payouts の拡張</strong>: 企業残高、グローバル送金、ステーブルコイン払い出しを既存の金融オペレーションに近い形で提供する。</li>
+<li><strong>Visa・Mastercard・Coinbase との共同ステーブルコインプラットフォーム計画（報道段階）</strong>: 2026-06-03 に The Information が報道。Stripe が既存ネットワーク各社と組んで独自ステーブルコインを発行するプラットフォームを検討中。詳細・発表時期は未確定。</li>
 </ul>
 <h3 id="_3">見立て<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>Stripe の戦略は「暗号資産らしさ」を前面に出すより、加盟店やプラットフォームが意識せず使える金融 API にステーブルコインを吸収すること。Bridge、Tempo、Privy、Link、Treasury を組み合わせることで、受け取り・保管・送金・ウォレット・エージェント決済まで垂直統合しようとしている。</p>
+<p>Visa・Mastercard・Coinbase との共同ステーブルコインプラットフォーム計画の報道（2026-06-03）は、Stripe が単独 PSP から業界連合の一角へと転換する可能性を示す。実現すれば Bridge による清算インフラと自社発行ステーブルコインが連携し、Circle USDC との差別化軸が鮮明になる。ただし情報リーク段階であり、設計・発表時期は未確定。</p>
 <hr />
 <h2 id="_4">主要レイヤー<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
@@ -2779,11 +2782,13 @@
 <hr />
 <h2 id="_9">監視ポイント<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
-<li>MPP 仕様が公開標準としてどこまで外部実装可能になるか</li>
-<li>Link stablecoin acceptance の対象国・対象フローの拡大</li>
-<li>Bridge の対応通貨・チェーン・KYC/AML 責任分担</li>
-<li>Tempo の実稼働トランザクション量と主要採用企業</li>
-<li>Stripe が x402 と MPP をどう棲み分けるか</li>
+<li><strong>Visa・Mastercard・Coinbase 共同ステーブルコインプラットフォームの詳細</strong>: 名称・トークン設計・準備金構造・発行体・公式発表タイミング</li>
+<li><strong>SPT（Shared Payment Tokens）の拡張</strong>: Affirm・Klarna 等他 BNPL プロバイダーの対応状況、エージェントが BNPL を選択した際のキャンセル・リスク管理設計</li>
+<li><strong>MPP 仕様が公開標準としてどこまで外部実装可能になるか</strong></li>
+<li><strong>Tempo ストリーミング決済の実稼働トランザクション量と主要採用企業</strong></li>
+<li><strong>Bridge の Celo 対応後の新興国向けオフランプ実績</strong>（66 か国・単一 API の実取引量）</li>
+<li><strong>Link stablecoin acceptance の対象国・対象フローの拡大</strong></li>
+<li><strong>Stripe が x402 と MPP をどう棲み分けるか</strong></li>
 </ul>
 <hr />
 <h2 id="moc">関連 MOC<a class="headerlink" href="#moc" title="Permanent link">&para;</a></h2>

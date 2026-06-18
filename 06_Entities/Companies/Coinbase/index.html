@@ -653,7 +653,7 @@
     
   
   
-    <span class="md-status md-status--上院銀行委員会通過（2026-05-14）→ 上院本会議待ち"></span>
+    <span class="md-status md-status--上院本会議審議中——倫理条項交渉崩壊・7/4 期限死亡確認・8 月休会前が最終窓口（Polymarket ~47%）"></span>
   
 
   
@@ -2596,14 +2596,18 @@
 <h2 id="_1">現状の要約<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">何をしているか<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>x402 の標準化</strong>: HTTP 402 を使った API / AI / machine payments の支払い標準を Linux Foundation に移管し、業界連合化している。</li>
+<li><strong>x402 の標準化</strong>: HTTP 402 を使った API / AI / machine payments の支払い標準を Linux Foundation に移管し、業界連合化している。2026-06-03 に Chainalysis が累計1億件突破を確認（ただし成長の大部分は PING ミームコインに依存）。</li>
+<li><strong>Base MCP Server</strong>: 2026-05-26 ローンチ。ChatGPT・Claude 等の AI エージェントが Base Account（スマートウォレット）に接続し、自然言語でトークン送金・スワップ・DeFi 操作を実行できる。秘密鍵は TEE セキュアエンクレーブで管理。エージェントごとの支出上限・ホワイトリストをインフラ層で強制できる設計。</li>
+<li><strong>AWS CloudFront への x402 統合</strong>: 2026-06-15 に AWS WAF が AI トラフィック課金機能を CloudFront 全体に展開。コンソール変更のみで既存 CloudFront ユーザー（インターネット約 25% をカバー）が x402 有料ゲートウェイを設置可能になった。</li>
 <li><strong>Agentic.market の流通面構築</strong>: x402 対応サービスを発見・比較・利用できるマーケットプレイスを作り、AI エージェントの購買導線を用意している。</li>
-<li><strong>Base / Solana / Polygon 等の決済対応拡大</strong>: CDP facilitator を通じて複数チェーンで USDC / ERC-20 決済を処理する方向。</li>
+<li><strong>Base / Solana / Polygon 等の決済対応拡大</strong>: CDP facilitator を通じて複数チェーンで USDC / ERC-20 決済を処理する方向。x402 は Arbitrum にも拡張済み（2026-05-14）。</li>
+<li><strong>Checkout.com との加盟店展開</strong>: 2026-06-02 に Checkout.com 傘下の 1,000 社超エンタープライズ加盟店へ USDC/USDT 決済を解禁。加盟店は暗号資産統合なしで USD 着金のまま受け取り可能。</li>
 <li><strong>B2B クロスボーダー決済インフラ</strong>: Nium などの決済インフラ企業に Coinbase の USDC / custody / liquidity を組み込む。</li>
 <li><strong>機関向けトレジャリー・運用</strong>: CUSHY など、ステーブルコイン残高を機関向けクレジット商品へ接続する動き。</li>
 </ul>
 <h3 id="_3">見立て<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>Coinbase の戦略は、Base や x402 を使って「開発者がオンチェーン決済を組み込む入口」を押さえること。Stripe が加盟店・法定通貨側から入るのに対し、Coinbase はプロトコル、ウォレット、カストディ、チェーン、USDC 流動性をまとめて提供する。</p>
+<p>x402 の累計1億件突破（Chainalysis, 2026-06-03）と AWS CloudFront 統合（2026-06-15）により、x402 の潜在利用可能規模が一気に拡大した。一方で、Stripe・Visa・Mastercard との共同ステーブルコインプラットフォーム計画が報道されており（2026-06-03）、Coinbase の参加可否（Circle USDC との収益分配契約との兼ね合い）が今後の戦略の分水嶺になる可能性がある。</p>
 <hr />
 <h2 id="_4">主要レイヤー<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <table>
@@ -2820,12 +2824,15 @@
 <hr />
 <h2 id="_8">監視ポイント<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ul>
-<li>x402 の実取引量とテスト取引の比率</li>
-<li>Agentic.market のサービス数、課金単価、日次利用量</li>
-<li>AWS AgentCore Payments の GA タイミング</li>
-<li>CDP facilitator の対応チェーン・対応トークン拡張</li>
-<li>Nium 経由の B2B 決済実績</li>
-<li>CUSHY の Q2 ローンチ条件、適格投資家要件、規制整理</li>
+<li><strong>x402 の取引品質</strong>: PING ミームコインを除いた純粋な AI エージェント・API 取引の件数と金額（Chainalysis の次レポートで確認）</li>
+<li><strong>AWS CloudFront × x402 の採用状況</strong>: CloudFront 上の AI トラフィック課金有効化サイト数・USDC 決済量の公開データ</li>
+<li><strong>Stripe・Visa・Mastercard 共同プラットフォームへの参加可否</strong>: 参加すれば Circle USDC との収益分配契約と競合する可能性。不参加なら標準化競争に対抗する独自路線を強化する必要</li>
+<li><strong>Checkout.com 加盟店でのステーブルコイン決済量</strong>: 1,000 社超のうち実際に有効化した比率と取引量が普及度の指標</li>
+<li><strong>Base MCP の x402 決済との統合</strong>: エージェントが DeFi 操作と x402 決済を同一コンテキストで実行できるか</li>
+<li><strong>Agentic.market のサービス数、課金単価、日次利用量</strong></li>
+<li><strong>CDP facilitator の対応チェーン・対応トークン拡張</strong></li>
+<li><strong>Nium 経由の B2B 決済実績</strong></li>
+<li><strong>CUSHY の適格投資家要件、規制整理</strong></li>
 </ul>
 <hr />
 <h2 id="moc">関連 MOC<a class="headerlink" href="#moc" title="Permanent link">&para;</a></h2>
