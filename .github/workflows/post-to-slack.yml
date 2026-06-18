@@ -5,6 +5,12 @@ on:
     branches: [main]
     paths:
       - '01_Daily-Briefs/**/*.md'
+  workflow_dispatch:
+    inputs:
+      brief_date:
+        description: 'Date of the brief to post (YYYY-MM-DD). Leave empty to auto-detect from latest commit.'
+        required: false
+        type: string
 
 jobs:
   post-to-slack:
@@ -17,6 +23,12 @@ jobs:
       - name: Find changed brief date
         id: brief
         run: |
+          # workflow_dispatch: use provided date if given
+          if [ -n "${{ inputs.brief_date }}" ]; then
+            echo "date=${{ inputs.brief_date }}" >> "$GITHUB_OUTPUT"
+            echo "Using dispatched date: ${{ inputs.brief_date }}"
+            exit 0
+          fi
           BRIEF_FILE=$(git diff --name-only --diff-filter=A HEAD~1 HEAD 2>/dev/null \
             | grep '^01_Daily-Briefs/.*\.md$' | head -1 || true)
           if [ -z "$BRIEF_FILE" ]; then

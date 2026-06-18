@@ -10,8 +10,10 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      actions: write
     steps:
       - name: Check mergeable and merge
+        id: merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -24,6 +26,7 @@ jobs:
             if [ "$STATUS" = "true" ]; then
               echo "No conflicts — merging PR #$PR"
               gh pr merge $PR --repo $REPO --merge
+              echo "merged=true" >> "$GITHUB_OUTPUT"
               exit 0
             elif [ "$STATUS" = "false" ]; then
               echo "Conflicts detected — skipping auto merge"
@@ -33,3 +36,20 @@ jobs:
           done
 
           echo "Could not determine mergeable status after retries — skipping"
+
+      - name: Trigger Slack post if daily brief was added
+        if: steps.merge.outputs.merged == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR=${{ github.event.pull_request.number }}
+          REPO=${{ github.repository }}
+          BRIEF_FILE=$(gh api repos/$REPO/pulls/$PR/files --jq '.[].filename' \
+            | grep '^01_Daily-Briefs/.*\.md$' | head -1 || true)
+          if [ -n "$BRIEF_FILE" ]; then
+            DATE=$(basename "$BRIEF_FILE" .md)
+            echo "Daily brief found: $BRIEF_FILE — dispatching post-to-slack (date=$DATE)"
+            gh workflow run post-to-slack.yml --repo $REPO --field brief_date=$DATE
+          else
+            echo "No daily brief in this PR — skipping Slack dispatch"
+          fi
