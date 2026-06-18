@@ -2,6 +2,7 @@ name: Post Weekly Digest to Slack
 
 on:
   push:
+    branches: [main]
     paths:
       - '02_Weekly/**/*.md'
 
