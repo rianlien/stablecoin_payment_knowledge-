@@ -1,0 +1,27 @@
+# Checkout / Merchant Acceptance
+
+加盟店・PSP・commerce platform が stablecoin acceptance を導入するための checkout / acceptance surface。
+
+- [[base-pay|Base Account SDK Payments and Subscriptions]]
+- [[beep-sdk|BEEP SDK]]
+- [[checkout-com-stablecoin-acceptance|Checkout.com stablecoin acceptance]]
+- [[crossmint-checkout-telegram-agent|Crossmint Checkout Telegram Agent]]
+- [[cryptorefills|Cryptorefills]]
+- [[fireblocks-flow|Fireblocks Flow]]
+- [[gbits|Gbits]]
+- [[ingenico-walletconnect-pay|Ingenico + WalletConnect Pay]]
+- [[mnee-pay|MNEE Pay]]
+- [[modern-treasury-payments|Modern Treasury Payments]]
+- [[moonpay-headless-onramps|MoonPay Headless Onramps]]
+- [[paydao|PayDAO]]
+- [[ppro-coinbase-stablecoin-payments|PPRO + Coinbase stablecoin payments]]
+- [[stable-genius|Stable Genius]]
+- [[stable-sea|Stable Sea Enterprise API]]
+- [[strabo|Strabo]]
+- [[stripe-x402|Stripe x402 integration]]
+- [[unblockpay|UnblockPay]]
+- [[unwind|Unwind]]
+- [[uqpay-x402-platform|UQPAY x402 Stablecoin Platform]]
+- [[utexo|Utexo]]
+- [[uwapi|UWAPI]]
+- [[volt-stablecoin-checkout|Volt stablecoin checkout]]

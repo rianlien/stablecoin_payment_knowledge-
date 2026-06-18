@@ -82,6 +82,14 @@ nav:
     - AllUnity: 06_Entities/Companies/AllUnity.md
     - Robinhood: 06_Entities/Companies/Robinhood.md
     - Parallel: 06_Entities/Companies/Parallel.md
+  - プロダクト:
+    - 06_Entities/Products/index.md
+    - Agent Payments / x402: 06_Entities/Products/Agent-Payments-x402/index.md
+    - Checkout / Merchant Acceptance: 06_Entities/Products/Checkout-Merchant-Acceptance/index.md
+    - Invoicing / Business Ops: 06_Entities/Products/Invoicing-Business-Ops/index.md
+    - Settlement / Payouts: 06_Entities/Products/Settlement-Payouts/index.md
+    - Wallets / Cards: 06_Entities/Products/Wallets-Cards/index.md
+    - Compliance / Risk: 06_Entities/Products/Compliance-Risk/index.md
 
 markdown_extensions:
   - meta
