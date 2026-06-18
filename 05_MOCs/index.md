@@ -14,3 +14,4 @@ hide:
 | [規制動向](MOC_Regulation.md) | GENIUS Act・CLARITY Act・各国規制の進行状況 |
 | [ステーブルコイン決済](MOC_Stablecoin_Payments.md) | ステーブルコイン決済全体の動向マップ |
 | [企業マップ](MOC_Companies.md) | 主要プレイヤーの立ち位置と動向の俯瞰 |
+| [プロダクトノート](../06_Entities/Products/index.md) | PM視点でステーブルコイン決済プロダクトをカテゴリ別に比較 |
