@@ -52,4 +52,5 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           BRIEF_DATE: ${{ steps.brief.outputs.date }}
           SKIP_MTIME_CHECK: "1"
+          SITE_URL: "https://rianlien.github.io/stablecoin_payment_knowledge-"
         run: python3 .claude/hooks/post_brief_to_slack.py

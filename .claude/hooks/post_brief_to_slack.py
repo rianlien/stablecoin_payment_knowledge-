@@ -76,15 +76,16 @@ def parse_note_links(text: str) -> dict[str, str]:
 
 def parse_topics(section: str, note_links: dict[str, str]) -> list[tuple[str, str, str]]:
     """
-    Parse 今日の要点 bullets → [(title, first_sentence, url), ...].
+    Parse 今日の要点 bullets/numbered items → [(title, first_sentence, url), ...].
     URL is looked up from note_links by matching entity keywords against the title.
     Handles both:
       - **Title（date）**：desc   (date inside bold)
       - **Title**（date）：desc   (date outside bold)
+      1. **Title**：desc          (numbered list)
     """
     items = []
     for m in re.finditer(
-        r"-\s+\*\*(.*?)\*\*[^：:]*[：:]\s*(.*?)(?=\n-\s+\*\*|\Z)", section, re.DOTALL
+        r"(?:-|\d+\.)\s+\*\*(.*?)\*\*[^：:]*[：:]\s*(.*?)(?=\n(?:-|\d+\.)\s+\*\*|\Z)", section, re.DOTALL
     ):
         title = m.group(1).strip()
         desc = m.group(2).strip().replace("\n", " ")
