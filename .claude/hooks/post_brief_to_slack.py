@@ -215,9 +215,9 @@ def build_payload(data: dict) -> dict:
 
     if SITE_URL:
         site_brief_url = f"{SITE_URL}/01_Daily-Briefs/{YEAR_MONTH}/{TODAY}/"
-        footer_text = f"詳細 → <{site_brief_url}|サイトで開く>　　<{github_url}|GitHub>"
+        footer_text = f"詳細 → <{site_brief_url}|サイトで見る>　　<{github_url}|GitHub>"
     else:
-        footer_text = f"詳細 → <{github_url}|GitHub で開く>"
+        footer_text = f"詳細 → <{github_url}|サイトで見る>"
     blocks += [
         {"type": "divider"},
         {
