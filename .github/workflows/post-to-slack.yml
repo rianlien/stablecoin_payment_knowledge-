@@ -22,11 +22,13 @@ jobs:
 
       - name: Find changed brief date
         id: brief
+        env:
+          INPUT_BRIEF_DATE: ${{ inputs.brief_date }}
         run: |
           # workflow_dispatch: use provided date if given
-          if [ -n "${{ inputs.brief_date }}" ]; then
-            echo "date=${{ inputs.brief_date }}" >> "$GITHUB_OUTPUT"
-            echo "Using dispatched date: ${{ inputs.brief_date }}"
+          if [ -n "$INPUT_BRIEF_DATE" ]; then
+            echo "date=$INPUT_BRIEF_DATE" >> "$GITHUB_OUTPUT"
+            echo "Using dispatched date: $INPUT_BRIEF_DATE"
             exit 0
           fi
           BRIEF_FILE=$(git diff --name-only --diff-filter=A HEAD~1 HEAD 2>/dev/null \
