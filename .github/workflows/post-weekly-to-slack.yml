@@ -16,7 +16,7 @@ jobs:
       - name: Find changed weekly digest
         id: weekly
         run: |
-          WEEKLY_FILE=$(git diff --name-only HEAD~1 HEAD 2>/dev/null \
+          WEEKLY_FILE=$(git diff --name-only --diff-filter=A HEAD~1 HEAD 2>/dev/null \
             | grep '^02_Weekly/.*\.md$' | head -1 || true)
           if [ -z "$WEEKLY_FILE" ]; then
             # Fallback for initial commit

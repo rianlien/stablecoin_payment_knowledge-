@@ -18,6 +18,10 @@ from pathlib import Path
 
 WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL", "")
 WEEKLY_FILE = os.environ.get("WEEKLY_FILE", "")
+SITE_URL    = os.environ.get("SITE_URL", "").rstrip("/")
+
+_WEEK_SLUG = Path(WEEKLY_FILE).stem if WEEKLY_FILE else ""
+SENTINEL = Path(f"/tmp/stablecoin_weekly_slack_posted_{_WEEK_SLUG}.lock") if _WEEK_SLUG else None
 
 REPO_ROOT = Path(
     subprocess.check_output(
@@ -289,14 +293,13 @@ def build_payload(data: dict, github_url: str) -> dict:
         blocks.append({"type": "divider"})
 
     # Footer
+    if SITE_URL:
+        site_weekly_url = f"{SITE_URL}/02_Weekly/{data['week']}/"
+        footer_text = f"詳細 → <{site_weekly_url}|サイトで開く>　　<{github_url}|GitHub>"
+    else:
+        footer_text = f"詳細 → <{github_url}|GitHub で開く>"
     blocks.append(
-        {
-            "type": "section",
-            "text": {
-                "type": "mrkdwn",
-                "text": f"詳細 → <{github_url}|GitHub で開く>",
-            },
-        }
+        {"type": "section", "text": {"type": "mrkdwn", "text": footer_text}}
     )
 
     return {"blocks": blocks}
@@ -336,6 +339,10 @@ def main() -> None:
         print(f"[slack] weekly digest not found: {path} — skipping")
         return
 
+    if SENTINEL and SENTINEL.exists():
+        print(f"[slack] already posted {_WEEK_SLUG} — skipping")
+        return
+
     rel = str(path.relative_to(REPO_ROOT))
     github_url = f"{GITHUB_BASE}/{rel}"
 
@@ -343,6 +350,8 @@ def main() -> None:
         data = parse_digest(path)
         payload = build_payload(data, github_url)
         post(payload)
+        if SENTINEL:
+            SENTINEL.touch()
         print(f"[slack] posted Weekly Digest {data['week']} to Slack ✓")
     except Exception as exc:
         print(f"[slack] ERROR: {exc}")

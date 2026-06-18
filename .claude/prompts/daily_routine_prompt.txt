@@ -1,0 +1,66 @@
+あなたは stablecoin / agentic commerce リサーチナレッジベースの日次メンテナンス担当エージェントです。
+このリポジトリの CLAUDE.md を必ず読み込み、そこに記載された全ての運用ルールに従ってください。
+
+## 実行日
+- TODAY: ${TODAY}
+- YEAR_MONTH: ${YEAR_MONTH}
+- START_DATE: ${START_DATE}（= TODAY から 7 日前）
+
+---
+
+## タスク 1: 新規ニュースノートの作成
+
+CLAUDE.md の「Daily agentic-commerce routine defaults」に従い、以下を実行してください。
+
+1. `start_date=${START_DATE}`、`end_date=${TODAY}` で Web 検索を実行
+2. 採用基準を厳守:
+   - `underlying_event_date` が期間内のもののみ
+   - 一般 AI ニュース、一般 stablecoin 価格ニュース、意見記事、古い発表の再報道は除外
+   - `/00_Inbox/` と `/01_Daily-Briefs/` を確認して重複を避ける
+3. `/90_Templates/news_note_template.md` を参照し、最大 10 件の新規ノートを `/00_Inbox/` に作成
+   - ファイル名形式: `YYYY-MM-DD_<entity>_<short-slug>.md`
+4. ノート作成後、CLAUDE.md「Concept page linking rules」に従い、対応する概念ページにリンクを追記:
+   - `/06_Entities/Companies/` — entity に対応するファイルの "Inbox との紐付け" テーブルに追加
+   - `/04_Protocols/` — 関連プロトコルの "関連ニュース" テーブルに追加
+   - `/05_MOCs/` — 関連 MOC に追加
+   - `/03_Topics/` — 関連トピックに追加
+   - テーブル形式: `| 日付 | [[ノート名]] | 位置づけ一行 |`
+   - 対応する概念ページが存在しない場合はスキップ
+
+---
+
+## タスク 2: リンク漏れの修正
+
+以下の手順でリンク漏れを修正してください。
+
+1. 次のコマンドを実行してリンク漏れ情報を取得:
+   ```
+   python3 .claude/hooks/check_note_links.py --output /tmp/unlinked.json --since 14
+   ```
+2. `/tmp/unlinked.json` を読み込み、`notes` 配列の各エントリを処理:
+   - `missing_links.companies` が空でない場合 → 対応する `/06_Entities/Companies/` ファイルにリンク追記
+   - `missing_links.topics` が空でない場合 → 対応する `/03_Topics/` ファイルにリンク追記
+   - `missing_links.mocs` が空でない場合 → 対応する `/05_MOCs/` ファイルにリンク追記
+   - `missing_links.protocols` が空でない場合 → 対応する `/04_Protocols/` ファイルにリンク追記
+3. 既存のテーブル構造（`| 日付 | [[ノート名]] | 位置づけ一行 |` 形式）を必ず維持する
+4. 対応する概念ページが実在しない場合はスキップ（新規作成はしない）
+
+---
+
+## タスク 3: Daily Brief の作成・更新
+
+1. `/90_Templates/daily_brief_template.md` を参照
+2. `/01_Daily-Briefs/${YEAR_MONTH}/${TODAY}.md` を作成または更新:
+   - タスク 1 で新規採用したノートのみを記載（0 件の場合も「該当なし」と明記してファイルを作成）
+   - `new_notes_count` に採用件数を記入
+   - リンク形式: `[Source Name（YYYY-MM-DD）](URL)`
+   - Daily Brief の内容は CLAUDE.md の形式に従う
+
+---
+
+## 完了後の出力
+
+以下を出力してください:
+- 新規作成したニュースノート一覧（ファイル名 + タイトル）
+- リンク修正した概念ページ一覧
+- Daily Brief の概要（件数・主要トピック）

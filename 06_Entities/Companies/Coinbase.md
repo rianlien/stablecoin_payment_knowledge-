@@ -12,7 +12,6 @@ tags:
 aliases:
   - Coinbase Developer Platform
   - CDP
-  - Base
   - x402
 ---
 
@@ -21,6 +20,8 @@ aliases:
 Coinbase は、取引所・カストディ事業から、USDC 決済、x402、Base、Agentic Wallet、B2B 支払いインフラへ広げている。
 
 この vault では、Coinbase を「オンチェーン決済の開発者基盤と機関向け流動性を押さえ、AI エージェント決済の標準化を主導する企業」として追う。
+
+ネットワークとしての Base は [[Base]] を参照。
 
 ---
 
@@ -47,7 +48,7 @@ Coinbase の戦略は、Base や x402 を使って「開発者がオンチェー
 | L0 / チェーン | Base、Solana、Polygon 等への x402 facilitator 対応 | 開発者が複数チェーンで支払いを受けられる |
 | L1 / ウォレット | Agentic Wallet / Coinbase wallet infrastructure | AI エージェントが支払い主体を持てる |
 | L2 / 流動性・カストディ | USDC、Coinbase Prime、custody | B2B 決済・機関運用の裏側を担う |
-| L3 / プロトコル | x402 | API / AI / コンテンツ課金を HTTP 上で実行 |
+| L3 / プロトコル | [[x402]] | API / AI / コンテンツ課金を HTTP 上で実行 |
 | L5 / アプリ | Agentic.market | エージェントが購入できるサービス面を持つ |
 
 ---
@@ -58,13 +59,19 @@ Coinbase の戦略は、Base や x402 を使って「開発者がオンチェー
 
 | 日付 | ノート | 位置づけ |
 |---|---|---|
-| 2026-04-02 | [[2026-04-02_x402-Foundation_linux-foundation-launch]] | x402 を Linux Foundation に移管し、業界標準化へ |
+| 2026-04-02 | [[2026-04-02_x402-Foundation_linux-foundation-launch]] | [[x402]] を [[x402 Foundation]] に移管し、業界標準化へ |
 | 2026-04-21 | [[2026-04-21_Coinbase-x402_agentic-market-launch]] | x402 上の Agentic.market をローンチ |
 | 2026-05-07 | [[2026-05-07_AWS_bedrock-agentcore-payments-x402]] | AWS AgentCore Payments が x402 / Coinbase wallet infrastructure を採用 |
 | 2026-05-05 | [[2026-05-05_Solana-GoogleCloud_pay-sh-x402-agent-payments]] | Google Cloud / Solana 側で x402 ベースの Pay.sh が登場 |
-| 2026-05-26 | [[2026-05-26_Coinbase-Base_mcp-ai-agent-wallet]] | Base 上の MCP 対応 AI エージェントウォレット発表 |
+| 2026-05-26 | [[2026-05-26_Coinbase-Base_mcp-ai-agent-wallet]] | [[Base]] 上の MCP 対応 AI エージェントウォレット発表 |
 | 2026-06-02 | [[2026-06-02_Coinbase-Checkout_stablecoin-merchant-payments]] | マーチャント向けステーブルコイン決済受け取りソリューション |
+| 2026-06-03 | [[2026-06-03_Chainalysis_x402-100m-agentic-payments]] | Chainalysis が x402 の 1 億件突破を分析——Base がメイン環境 |
+| 2026-06-03 | [[2026-06-03_Chainalysis_x402-100m-transactions-base]] | Chainalysis による x402 トランザクション 1 億件達成の統計データ |
+| 2026-06-03 | [[2026-06-03_Stripe-Visa-Mastercard-Coinbase_stablecoin-consortium]] | Stripe・Visa・Mastercard との共同ステーブルコインプラットフォーム発表 |
+| 2026-06-04 | [[2026-06-03_Stripe-Visa-Mastercard_joint-stablecoin-platform-report]] | Stripe・Visa・Mastercard 共同ステーブルコインプラットフォームレポート |
+| 2026-06-09 | [[2026-06-09_Injective_x402-agent-payments]] | Injective Protocol が Coinbase × x402 で AI エージェント決済を実装 |
 | 2026-06-11 | [[2026-06-11_MassPay-Coinbase_stablecoin-payouts]] | MassPay が Coinbase USDC インフラを活用してグローバルペイアウト |
+| 2026-06-15 | [[2026-06-15_AWS-Coinbase_x402-cloudfront-waf-ai-traffic-monetization]] | AWS WAF が Coinbase x402 を採用し CloudFront 全体に AI トラフィック課金を展開。インターネット約 25% 規模の x402 有料ゲートウェイが成立 |
 
 ### B2B 決済・流動性
 

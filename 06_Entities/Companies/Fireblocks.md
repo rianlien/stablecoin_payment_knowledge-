@@ -24,7 +24,7 @@ Fireblocks は、機関向けデジタル資産カストディ・ウォレット
 ### 何をしているか
 
 - **Agentic Payments Suite のローンチ**: AI エージェントが起点となる決済フローの全ライフサイクルをカバーするインフラを提供。送金側（エージェントが払う）と受け取り側（マーチャントが受ける）の両方を自社で押さえる。
-- **x402 Foundation への参加**: Linux Foundation が運営する x402 プロトコルのガバナンス組織に加盟。Google、Microsoft、AWS、Mastercard、Visa、Circle、Polygon Labs、Solana Foundation 等が参加するエコシステムに合流。
+- **[[x402 Foundation]] への参加**: Linux Foundation が運営する [[x402]] プロトコルのガバナンス組織に加盟。Google、Microsoft、AWS、Mastercard、Visa、Circle、Polygon Labs、Solana Foundation 等が参加するエコシステムに合流。
 - **x402 へのセキュリティ拡張の寄与**: プロトコル層に「リクエスト整合性 + 支出ガバナンス」のセキュリティ拡張を提供。自社インフラが標準の形成側に入る構造をつくっている。
 - **B2B2C モデルの維持**: エンドユーザーやマーチャントへの直販ではなく、PSP・フィンテックが自社サービスに組み込むインフラとして提供。
 
@@ -40,7 +40,7 @@ Fireblocks の動きは「暗号資産カストディ会社」から「エージ
 |---|---|---|
 | 受け取り側 | Agentic Payments Gateway（PSP 向け） | マーチャントがブロックチェーン知識なしで AI エージェントからの決済を受け取れる |
 | 送金側 | Agentic Wallets（フィンテック向け） | エンドユーザーが AI エージェントに支出権限を安全に委任できる |
-| プロトコル | x402 Foundation 参加・セキュリティ拡張の寄与 | 業界標準の設計に入ることで自社インフラが標準に準拠するだけでなく標準を形成する側になる |
+| プロトコル | [[x402 Foundation]] 参加・セキュリティ拡張の寄与 | 業界標準の設計に入ることで自社インフラが標準に準拠するだけでなく標準を形成する側になる |
 | コンプライアンス | オフランプ・変換・照合・セトルメントデータ生成 | 規制対応金融機関でも使えるグレードのコンプライアンス処理を内包 |
 
 ---
@@ -123,7 +123,10 @@ Fireblocks インフラ（決済処理・コンプライアンス・セトルメ
 |---|---|---|
 | 2026-05-20 | [[2026-05-20_Fireblocks_x402-foundation-agentic-payments-suite]] | Agentic Payments Suite（Gateway + Wallets）ローンチと x402 Foundation 参加の正式発表 |
 | 2026-05-20 | [[2026-05-20_Sui-Fireblocks_gasless-stablecoin-transfers]] | Sui との連携でガスレスのステーブルコイン送金を実現 |
+| 2026-05-20 | [[2026-05-20_Fireblocks_agentic-payments-suite-x402-foundation]] | Agentic Payments Suite（Gateway + Wallets）ローンチと x402 Foundation 参加の詳細発表 |
+| 2026-05-23 | [[2026-05-20_Fireblocks_agentic-payments-suite-x402]] | x402 Foundation 連携によるエージェント決済スイート詳細（PSP・フィンテック向け） |
 | 2026-06-02 | [[2026-06-02_Fireblocks_flow-stablecoin-acceptance-psp-fintech]] | Flow プロダクト：PSP・フィンテック向けステーブルコイン受け取りソリューション |
+| 2026-06-02 | [[2026-06-02_Fireblocks_flow-psp-stablecoin-acceptance]] | Flutterwave・Nuvion 経由の PSP 向けステーブルコイン受け入れソリューション展開 |
 
 ### 関連エコシステム動向
 
