@@ -1,6 +1,6 @@
 ---
 title: "CLARITY Act（Digital Asset Market Clarity Act）— 立法経緯・主要条項・含意"
-date_updated: 2026-05-18
+date_updated: 2026-06-18
 tags:
   - regulation
   - stablecoin
@@ -145,3 +145,4 @@ Build Now Act の同梱は、上院本会議で住宅法案に反対する共和
 - [[2026-06-08_CLARITY-Act_200firms-senate-floor-push]] — 200 社書簡・60 CEO 書簡、Galaxy 60% 推計
 - [[2026-06-10_CLARITY-Act_white-house-law-enforcement-section604]] — Section 604 White House 法執行機関会合・Polymarket 47% 割れ
 - [[2026-06-13_CLARITY-Act_ethics-collapse-july4-deadline-dead]] — 倫理条項交渉崩壊・July 4 期限死亡確認・8 月休会前が最終窓口
+- （2026-06-18 時点）超党派交渉継続中。Dusty Johnson（下院農業委員会 DA 小委員会長）が「上院通過なら下院即応」を表明。Polymarket 47〜55%。別ノート未作成（実質的新展開なし）
