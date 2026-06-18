@@ -1,7 +1,7 @@
 ---
 title: "Coinbase"
 type: company
-updated: 2026-05-14
+updated: 2026-06-18
 category: crypto-exchange
 tags:
   - stablecoin
@@ -29,15 +29,20 @@ Coinbase は、取引所・カストディ事業から、USDC 決済、x402、Ba
 
 ### 何をしているか
 
-- **x402 の標準化**: HTTP 402 を使った API / AI / machine payments の支払い標準を Linux Foundation に移管し、業界連合化している。
+- **x402 の標準化**: HTTP 402 を使った API / AI / machine payments の支払い標準を Linux Foundation に移管し、業界連合化している。2026-06-03 に Chainalysis が累計1億件突破を確認（ただし成長の大部分は PING ミームコインに依存）。
+- **Base MCP Server**: 2026-05-26 ローンチ。ChatGPT・Claude 等の AI エージェントが Base Account（スマートウォレット）に接続し、自然言語でトークン送金・スワップ・DeFi 操作を実行できる。秘密鍵は TEE セキュアエンクレーブで管理。エージェントごとの支出上限・ホワイトリストをインフラ層で強制できる設計。
+- **AWS CloudFront への x402 統合**: 2026-06-15 に AWS WAF が AI トラフィック課金機能を CloudFront 全体に展開。コンソール変更のみで既存 CloudFront ユーザー（インターネット約 25% をカバー）が x402 有料ゲートウェイを設置可能になった。
 - **Agentic.market の流通面構築**: x402 対応サービスを発見・比較・利用できるマーケットプレイスを作り、AI エージェントの購買導線を用意している。
-- **Base / Solana / Polygon 等の決済対応拡大**: CDP facilitator を通じて複数チェーンで USDC / ERC-20 決済を処理する方向。
+- **Base / Solana / Polygon 等の決済対応拡大**: CDP facilitator を通じて複数チェーンで USDC / ERC-20 決済を処理する方向。x402 は Arbitrum にも拡張済み（2026-05-14）。
+- **Checkout.com との加盟店展開**: 2026-06-02 に Checkout.com 傘下の 1,000 社超エンタープライズ加盟店へ USDC/USDT 決済を解禁。加盟店は暗号資産統合なしで USD 着金のまま受け取り可能。
 - **B2B クロスボーダー決済インフラ**: Nium などの決済インフラ企業に Coinbase の USDC / custody / liquidity を組み込む。
 - **機関向けトレジャリー・運用**: CUSHY など、ステーブルコイン残高を機関向けクレジット商品へ接続する動き。
 
 ### 見立て
 
 Coinbase の戦略は、Base や x402 を使って「開発者がオンチェーン決済を組み込む入口」を押さえること。Stripe が加盟店・法定通貨側から入るのに対し、Coinbase はプロトコル、ウォレット、カストディ、チェーン、USDC 流動性をまとめて提供する。
+
+x402 の累計1億件突破（Chainalysis, 2026-06-03）と AWS CloudFront 統合（2026-06-15）により、x402 の潜在利用可能規模が一気に拡大した。一方で、Stripe・Visa・Mastercard との共同ステーブルコインプラットフォーム計画が報道されており（2026-06-03）、Coinbase の参加可否（Circle USDC との収益分配契約との兼ね合い）が今後の戦略の分水嶺になる可能性がある。
 
 ---
 
@@ -117,12 +122,15 @@ Coinbase は USDC の発行体ではないが、USDC の流通・カストディ
 
 ## 監視ポイント
 
-- x402 の実取引量とテスト取引の比率
-- Agentic.market のサービス数、課金単価、日次利用量
-- AWS AgentCore Payments の GA タイミング
-- CDP facilitator の対応チェーン・対応トークン拡張
-- Nium 経由の B2B 決済実績
-- CUSHY の Q2 ローンチ条件、適格投資家要件、規制整理
+- **x402 の取引品質**: PING ミームコインを除いた純粋な AI エージェント・API 取引の件数と金額（Chainalysis の次レポートで確認）
+- **AWS CloudFront × x402 の採用状況**: CloudFront 上の AI トラフィック課金有効化サイト数・USDC 決済量の公開データ
+- **Stripe・Visa・Mastercard 共同プラットフォームへの参加可否**: 参加すれば Circle USDC との収益分配契約と競合する可能性。不参加なら標準化競争に対抗する独自路線を強化する必要
+- **Checkout.com 加盟店でのステーブルコイン決済量**: 1,000 社超のうち実際に有効化した比率と取引量が普及度の指標
+- **Base MCP の x402 決済との統合**: エージェントが DeFi 操作と x402 決済を同一コンテキストで実行できるか
+- **Agentic.market のサービス数、課金単価、日次利用量**
+- **CDP facilitator の対応チェーン・対応トークン拡張**
+- **Nium 経由の B2B 決済実績**
+- **CUSHY の適格投資家要件、規制整理**
 
 ---
 
