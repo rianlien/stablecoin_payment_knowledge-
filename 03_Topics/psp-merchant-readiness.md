@@ -94,6 +94,7 @@ Visa は「Agentic-Ready」という認定プログラムを用意し、Visa Tru
 | 2026-04-29 | [[2026-04-29_Meta_usdc-creator-payouts-stripe]] | Meta が Stripe 経由で USDC クリエイターペイアウトを展開 |
 | 2026-05-10 | [[2026-05-10_PayPal-Google_consensus-miami-agentic-commerce]] | PayPal と Google が Consensus Miami でエージェントコマースの連携を発表 |
 | 2026-05-11 | [[2026-05-11_Cryptorefills_x402-merchant-agent-payments-checkout]] | Cryptorefills が x402 対応チェックアウトを実装。ギフトカード・通話クレジット販売 |
+| 2026-05-11 | [[2026-05-11_Cryptorefills_x402-agent-checkout-mcp]] | Cryptorefills が x402 + MCP サーバー + オープンソース参照実装を公開——180 か国・6,600 ブランド対応のエージェント向けチェックアウト |
 | 2026-05-14 | [[2026-05-14_Stellagent_agentic-commerce-studio-merchant-readiness]] | Stellagent が AI エージェントに対応したマーチャントオンボーディングスタジオを提供 |
 | 2026-05-20 | [[2026-05-20_Sui_gasless-stablecoin-transfers-fireblocks]] | Sui・Fireblocks のガスレスステーブルコイン送金：PSP・マーチャントの受け取りコスト削減 |
 | 2026-05-22 | [[2026-05-19_Google_universal-cart-ap2-io2026]] | Google I/O 2026：Universal Cart・AP2 対応でマーチャントの AI エージェント対応加速 |
