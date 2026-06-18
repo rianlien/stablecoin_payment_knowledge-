@@ -44,6 +44,7 @@ Mastercard の戦略は「カードレールの上にエージェント決済・
 | 日付 | ノート | 位置づけ |
 |---|---|---|
 | 2026-04-30 | [[2026-04-30_Mastercard_q1-2026-agent-to-agent-payments]] | Q1 決算で Agent Pay のグローバル全展開・OpenAI との agent-to-agent 決済協業を開示 |
+| 2026-05-01 | [[2026-05-01_MoonPay_moonagents-card-mastercard-ai-agents]] | MoonPay が AI エージェント向け仮想 Mastercard デビットカード「MoonAgents Card」を発表——Solana USDC でステーブルコイン即時決済 |
 | 2026-05-18 | [[2026-05-18_Mastercard-JDcom_agent-pay-strategic-partnership]] | JD.com と Agent Pay によるアジェンティック購買ソリューションの共同探索を発表 |
 | 2026-06-02 | [[2026-06-02_Worldline-ING-Mastercard_agentic-payments-europe]] | Worldline・ING と欧州で本番 agentic payment フローを実装 |
 | 2026-06-02 | [[2026-06-02_Worldline-ING-Mastercard_first-european-agentic-payment]] | Worldline・ING・Mastercard が欧州初の本番 agentic payment フローを実装（一次情報ベース） |

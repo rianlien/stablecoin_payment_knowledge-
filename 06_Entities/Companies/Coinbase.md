@@ -88,8 +88,12 @@ Coinbase の戦略は、Base や x402 を使って「開発者がオンチェー
 |---|---|---|
 | 2026-04-23 | [[2026-04-23_CryptoCoalition_clarity-act-senate-letter]] | Coinbase を含む業界団体が CLARITY Act 対応で連名書簡 |
 | 2026-04-30 | [[2026-04-30_Coinbase_dai-usds-migration]] | DAI から USDS への移行告知 |
-| 2026-05-04 | [[2026-05-04_Coinbase_dai-delist-usds-migration]] | DAI 上場廃止・USDS 自動移行の実施 |
 | 2026-05-01 | [[2026-05-01_CLARITY-Act_stablecoin-yield-compromise]] | ステーブルコイン利回り規制に対する業界反応 |
+| 2026-05-01 | [[2026-05-01_ClarityAct_stablecoin-yield-compromise]] | CLARITY Act 利回り妥協テキスト公開に対する Coinbase の公開支持・マークアップ要求 |
+| 2026-05-04 | [[2026-05-04_Coinbase_dai-delist-usds-migration]] | DAI 上場廃止・USDS 自動移行の実施 |
+| 2026-05-06 | [[2026-05-06_Bermuda_usdc-digital-finance-forum]] | バミューダが USDC エアドロップと Digital Finance Forum 2026 でオンチェーン国民経済を推進（Coinbase が共同実施） |
+| 2026-05-13 | [[2026-05-13_x402_batch-settlement-sub-cent-ai-payments]] | x402 バッチ決済対応——$0.0001 以下の AI マイクロペイメントを Base 上で実現 |
+| 2026-05-14 | [[2026-05-14_x402_arbitrum-launch-agent-payments]] | x402 が Arbitrum に対応——AI エージェントが Arbitrum 上のステーブルコインでマイクロ決済可能に |
 
 ---
 
