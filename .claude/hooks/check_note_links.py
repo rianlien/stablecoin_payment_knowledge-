@@ -35,6 +35,7 @@ COMPANIES = REPO_ROOT / "06_Entities" / "Companies"
 PROTOCOLS = REPO_ROOT / "04_Protocols"
 MOCS      = REPO_ROOT / "05_MOCs"
 TOPICS    = REPO_ROOT / "03_Topics"
+PRODUCTS  = REPO_ROOT / "06_Entities" / "Products"
 
 JST = timezone(timedelta(hours=9))
 
@@ -136,6 +137,38 @@ def build_link_index(dirs: list[Path]) -> dict[str, set[str]]:
 
 def is_linked_in(note_stem: str, concept_path: Path, link_index: dict[str, set[str]]) -> bool:
     return note_stem in link_index.get(str(concept_path), set())
+
+# ── Products ファイル名マップ ─────────────────────────────────────────────────
+
+def build_product_map() -> dict[str, Path]:
+    """Product page の stem → Path マップを構築する。"""
+    mapping: dict[str, Path] = {}
+    if not PRODUCTS.is_dir():
+        return mapping
+    for f in PRODUCTS.rglob("*.md"):
+        if f.name == "index.md":
+            continue
+        key = f.stem.lower()
+        mapping[key] = f
+        mapping[key.replace("-", "")] = f
+    return mapping
+
+
+def candidate_products_from_wikilinks(note_body: str, product_map: dict[str, Path]) -> list[Path]:
+    """ノート本文の [[wikilink]] にマッチするプロダクトページを返す。
+
+    ニュースノートが明示的に [[product-stem]] と書いている場合のみ検出する。
+    これにより誤検知を防ぎ、product ページへのリンク追加は意図的な記述から始まる。
+    """
+    wikilinks = re.findall(r"\[\[([^\]|#]+)\]\]", note_body)
+    result: list[Path] = []
+    for link in wikilinks:
+        key = link.strip().lower()
+        cp = product_map.get(key) or product_map.get(key.replace("-", ""))
+        if cp and cp not in result:
+            result.append(cp)
+    return result
+
 
 # ── Companies ファイル名マップ ────────────────────────────────────────────────
 
@@ -347,8 +380,9 @@ def main():
                         help="直近 N 日以内のノートのみ対象")
     args = parser.parse_args()
 
-    link_index  = build_link_index([COMPANIES, PROTOCOLS, MOCS, TOPICS])
+    link_index  = build_link_index([COMPANIES, PROTOCOLS, MOCS, TOPICS, PRODUCTS])
     company_map = build_company_map()
+    product_map = build_product_map()
 
     cutoff = None
     if args.since:
@@ -373,7 +407,7 @@ def main():
         stem = inbox_file.stem
 
         missing: dict[str, list[str]] = {
-            "companies": [], "protocols": [], "mocs": [], "topics": []
+            "companies": [], "protocols": [], "mocs": [], "topics": [], "products": []
         }
 
         for cp in candidate_companies(fm.get("entity", ""), company_map):
@@ -391,6 +425,10 @@ def main():
         for tp in candidate_pages(fm, TOPICS, TOPIC_TAG_MAP):
             if not is_linked_in(stem, tp, link_index):
                 missing["topics"].append(tp.stem)
+
+        for pp in candidate_products_from_wikilinks(text, product_map):
+            if not is_linked_in(stem, pp, link_index):
+                missing["products"].append(pp.stem)
 
         if any(missing.values()):
             unlinked.append({

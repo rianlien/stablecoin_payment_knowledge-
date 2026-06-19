@@ -14,6 +14,7 @@
 - Entities / Companies: `/06_Entities/Companies/`
 - Entities / Networks: `/06_Entities/Networks/`
 - Entities / Organizations: `/06_Entities/Organizations/`
+- Entities / Products: `/06_Entities/Products/`（カテゴリサブディレクトリあり）
 - テンプレート: `/90_Templates/`
 
 ## Common rules
@@ -51,6 +52,9 @@
   - `/04_Protocols/` — 記事が関連するプロトコル（"関連ニュース" テーブルに追加）
   - `/05_MOCs/` — 記事が関連する MOC（規制、エンティティ、プロトコル等）
   - `/03_Topics/` — 記事が関連するトピック概念ページ
+  - `/06_Entities/Products/` — 記事が **特定のプロダクト** に関する場合、対応するプロダクトページの `## 関連ニュース` テーブルに追加（セクションがなければ `## Sources` 直前に新規作成）
+    - プロダクトページが存在する場合、ニュースノート本文にも `[[product-page-stem]]` の wikilink を追記する（これにより nightly routine の自動チェックが機能する）
+    - プロダクトページが存在しない場合はスキップ（新規作成しない）
 - 対応する概念ページが存在しない場合は、リンク追加をスキップしてよい（無理に作成しない）
 - 概念ページへのリンク追記は、ニュースノート作成と同じ run で行う
 - 追記する際は既存のテーブル構造に合わせ、`| 日付 | [[ノート名]] | 位置づけ一行 |` の形式を維持する

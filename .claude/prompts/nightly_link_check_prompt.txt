@@ -27,6 +27,9 @@ python3 .claude/hooks/check_note_links.py --output /tmp/unlinked_full.json
 - `missing_links.topics` → 対応する `/03_Topics/` ファイルの "主要ノート" テーブルに追記
 - `missing_links.mocs` → 対応する `/05_MOCs/` ファイルの関連テーブルに追記
 - `missing_links.protocols` → 対応する `/04_Protocols/` ファイルの "関連ニュース" テーブルに追記
+- `missing_links.products` → 対応する `/06_Entities/Products/` ファイルの `## 関連ニュース` テーブルに追記
+  - セクションが存在しない場合は `## Sources` の直前に新規作成する（`## 関連ニュース\n\n| 日付 | ノート | 概要一行 |\n|---|---|---|\n`）
+  - 対応ファイルはスクリプトが `missing_links.products` に返したファイル名（`/06_Entities/Products/` 以下の rglob で検索）
 
 テーブル追記時のルール:
 - 既存のテーブル構造（`| 日付 | [[ノート名]] | 位置づけ一行 |` 形式）を維持
@@ -51,7 +54,9 @@ python3 .claude/hooks/check_note_links.py --output /tmp/unlinked_full.json
 
 ### 対象ファイルの特定
 
-以下のディレクトリを対象とする:
+以下の 2 グループに分けて処理する:
+
+**グループ A: frontmatter あり（`updated:` で鮮度判定）**
 - `/06_Entities/Companies/`
 - `/06_Entities/Networks/`
 - `/06_Entities/Organizations/`
@@ -59,11 +64,16 @@ python3 .claude/hooks/check_note_links.py --output /tmp/unlinked_full.json
 - `/04_Protocols/`
 - `/05_MOCs/`
 
-`updated:` が `today - 14日` より古いもの、またはタスク 1 で新規リンクを追記したものを対象とする。
+対象条件: `updated:` が `today - 14日` より古い、またはタスク 1 で新規リンクを追記したもの
+
+**グループ B: frontmatter なし（`updated:` なし）— プロダクトページ**
+- `/06_Entities/Products/`（サブディレクトリ含む）
+
+対象条件: タスク 1 で新規リンクを追記したもの（日付ベースの鮮度判定は行わない）
 
 ### 更新手順
 
-対象の概念ページごとに:
+**グループ A の概念ページ**ごとに:
 
 1. **新規ノートの読み込み**: `updated:` 以降の日付を持ち、その概念ページにリンクされているノート（Inbox との紐付けテーブル参照）を全件読む
 
@@ -85,6 +95,22 @@ python3 .claude/hooks/check_note_links.py --output /tmp/unlinked_full.json
    - `updated:` が 7 日以内（直近更新済み）かつ新規リンク追記なしの場合はスキップ
    - 新規ノートがゼロの場合はスキップ
    - ノートを読んでも既存コンテンツと差分がない場合はスキップ（`updated:` 日付のみ変更しない）
+
+**グループ B のプロダクトページ**ごとに:
+
+1. **新規ノートの読み込み**: タスク 1 でそのプロダクトページに追記されたリンク先ノートを読む
+
+2. **差分の評価**: 以下の観点で既存コンテンツとの差分を評価する
+   - **Overview / Core Workflow**: 新しい機能・仕様・実稼働状況が反映されているか
+   - **Pricing / Business Model**: 新情報があれば更新
+   - **Risks / Open Questions**: 解決済みの疑問点を削除、新たな論点を追加
+   - **Differentiation / Operational Notes**: 戦略的位置づけの変化があれば更新
+
+3. **編集ルール**:
+   - プロダクトページは frontmatter なし・固定セクション構造を維持
+   - 最小限の変更にとどめる
+   - `## Sources` セクションへの一次情報追加は積極的に行う
+   - 概念ページを新規作成しない
 
 ---
 
