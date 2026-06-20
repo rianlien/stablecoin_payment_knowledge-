@@ -1,7 +1,7 @@
 ---
 title: "MOC: 企業"
 type: moc
-updated: 2026-05-14
+updated: 2026-06-20
 tags:
   - company
   - stablecoin
@@ -23,6 +23,16 @@ tags:
 |---|---|---|
 | [[Stripe]] | PSP / Bridge / Tempo / Privy / Link を組み合わせ、法定通貨圏とステーブルコイン決済を接続 | stablecoin payments, MPP, Bridge, wallet |
 | [[Coinbase]] | x402 / Base / CDP / custody / USDC 流動性でオンチェーン決済の開発者基盤を形成 | x402, agentic commerce, USDC payments |
+| [[Circle]] | USDC 発行体・CPN・Arc・Agent Stack でエージェント経済の中央インフラ競争の主要プレイヤー | USDC, CPN, agent-stack, stablecoin payments |
+| [[Visa]] | TAP・VIC・Agentic Registry でカードネットワーク側のエージェント決済インフラを整備 | agentic commerce, TAP, stablecoin settlement |
+| [[Mastercard]] | AP4M・ステーブルコイン 24/7 オンチェーン清算・BVNK 買収でフルスタック化 | AP4M, agentic commerce, stablecoin settlement |
+| [[Google]] | AP2 / UCP 主導でエージェントコマースの ID・カタログ・決済承認の標準化を推進 | AP2, UCP, agentic commerce |
+| [[AllUnity]] | EU MiCA 準拠非 USD EMT（EURAU/CHFAU/SEKAU）+ x402 Agentic Payments で欧州エージェント決済レールを構築 | MiCA, x402, stablecoin-issuer, Europe |
+| [[Block-CashApp]] | Cash App の USDC 機能（6,000 万 MAU）で消費者向けステーブルコイン決済を主流化 | USDC, consumer payments, stablecoin payments |
+| [[Fireblocks]] | Agentic Payments Suite（Gateway + Wallets）+ x402 Foundation 参加で機関グレードエージェント決済インフラを提供 | x402, agentic commerce, custody |
+| [[Parallel]] | エージェント向けウェブ API（MPP/x402 実装）+ Index コンテンツ補償モデルで API billing の実装事例を提供 | x402, MPP, api-billing |
+| [[Robinhood]] | Agentic Trading・Agentic Credit Card で消費者エージェント決済を Mastercard レール上で実規模実装 | agentic commerce, consumer payments |
+| [[WesternUnion]] | USDPT・DAN・Stable Card で既存 200 カ国送金ネットワークをステーブルコインレールに転換中 | stablecoin payments, cross-border, offramp |
 
 ---
 
@@ -30,10 +40,6 @@ tags:
 
 | 企業 | 追加する理由 |
 |---|---|
-| Circle | USDC 発行体、CPN、Nanopayments、企業トレジャリーの中核 |
-| Visa | ステーブルコイン清算、agentic commerce、カードネットワーク接続 |
-| Mastercard | Agent Pay、Rain / Yellow Card、ステーブルコインカード清算 |
-| Google Cloud | AP2、Pay.sh、agentic commerce 標準化 |
 | AWS | AgentCore Payments、x402 採用、エージェント決済のクラウド実装 |
 | Tempo | Stripe / Paradigm 支援の決済特化チェーン。Stripe ページの補助から独立化余地あり |
 
