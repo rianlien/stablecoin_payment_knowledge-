@@ -618,6 +618,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#canton-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        機関向けブロックチェーン（Canton Network）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trust-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        セキュリティ拡張（trust-gate フック）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siwx-sdk-typescriptgo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIWX マルチ SDK 対応（TypeScript・Go）
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2427,6 +2460,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#canton-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        機関向けブロックチェーン（Canton Network）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trust-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        セキュリティ拡張（trust-gate フック）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siwx-sdk-typescriptgo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIWX マルチ SDK 対応（TypeScript・Go）
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2530,7 +2596,8 @@
 チェーン拡張
   ├ Base（Coinbase L2、主要環境）
   ├ Arbitrum（2026-05-14 拡張）
-  └ AllUnity SEK ステーブルコイン（北欧市場向け）
+  ├ AllUnity SEK ステーブルコイン（北欧市場向け）
+  └ Canton Network（Goldman Sachs・SIX Group 等参加の機関向け Daml 環境、2026-06-15）
 </code></pre></div>
 <hr />
 <h2 id="_2">主要ノード別の位置づけ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -2615,6 +2682,21 @@
 <td>2026-05-26</td>
 <td><a href="../../00_Inbox/2026-05-26_Coinbase-Base_mcp-ai-agent-wallet/">2026-05-26_Coinbase-Base_mcp-ai-agent-wallet</a></td>
 <td>Base 上の MCP 対応 AI エージェントウォレット：MCP プロトコルから x402 決済へのブリッジ</td>
+</tr>
+<tr>
+<td>2026-06-15</td>
+<td><a href="../../00_Inbox/2026-06-15_x402_canton-network-exact-scheme/">2026-06-15_x402_canton-network-exact-scheme</a></td>
+<td>Canton Network（Goldman Sachs・SIX Group 等参加の機関向け Daml ブロックチェーン）の exact scheme 対応を追加——EVM 以外の機関向け環境で x402 machine payments が利用可能に</td>
+</tr>
+<tr>
+<td>2026-06-17</td>
+<td><a href="../../00_Inbox/2026-06-17_x402_onpaymentrequired-trust-gate/">2026-06-17_x402_onpaymentrequired-trust-gate</a></td>
+<td>x402 クライアントに <code>onPaymentRequired</code> trust-gate フック追加——支払い前のペイアドレス検証・支出上限・外部信頼スコアリングを標準化（フィッシング対策）</td>
+</tr>
+<tr>
+<td>2026-06-19</td>
+<td><a href="../../00_Inbox/2026-06-19_x402_siwx-go-support/">2026-06-19_x402_siwx-go-support</a></td>
+<td>SIWX（Sign-In-With-X）が Go SDK に対応——TypeScript↔Go クロス SDK 互換性確認済み、エンタープライズ向け認証型アクセスが完成</td>
 </tr>
 </tbody>
 </table>
@@ -2745,6 +2827,12 @@
 <p>Base（主戦場）→ Arbitrum（コスト削減）→ Solana（高速決済）の順に拡張中。ファシリテーターが複数チェーンに対応することで、マーチャント側は1実装で複数チェーンからの受け取りが可能になる。</p>
 <h3 id="usd">非 USD ステーブルコイン<a class="headerlink" href="#usd" title="Permanent link">&para;</a></h3>
 <p>AllUnity SEK の参加が示すように、USDC 以外のステーブルコインが x402 エコシステムに入り始めている。非 USD 圏での agentic commerce 拡張に向けた布石。</p>
+<h3 id="canton-network">機関向けブロックチェーン（Canton Network）<a class="headerlink" href="#canton-network" title="Permanent link">&para;</a></h3>
+<p>2026-06-15 に Canton Network（Goldman Sachs・SIX Group・BNP Paribas・Citi 等参加の Daml ベース機関向けブロックチェーン）への exact scheme 対応が追加。EVM 非依存のプライベートブロックチェーンで x402 が動作し、TradFi 機関がエージェント決済エコシステムに参加するルートが開かれた。ファシリテーターは読み取り専用アクセスで決済検証するため、既存の Canton コンプライアンス・プライバシーポリシーとの衝突が最小化される。詳細 → <a href="../../00_Inbox/2026-06-15_x402_canton-network-exact-scheme/">2026-06-15_x402_canton-network-exact-scheme</a></p>
+<h3 id="trust-gate">セキュリティ拡張（trust-gate フック）<a class="headerlink" href="#trust-gate" title="Permanent link">&para;</a></h3>
+<p>2026-06-17 に x402 クライアントミドルウェアに optional な非同期コールバック <code>onPaymentRequired</code> が追加。支払い実行前にペイアドレス検証・支出上限・外部信頼スコアリングを適用できる標準拡張点。x402-kit フィッシングキャンペーンや V2 動的ペイアドレスルーティングへの対応として設計。詳細 → <a href="../../00_Inbox/2026-06-17_x402_onpaymentrequired-trust-gate/">2026-06-17_x402_onpaymentrequired-trust-gate</a></p>
+<h3 id="siwx-sdk-typescriptgo">SIWX マルチ SDK 対応（TypeScript・Go）<a class="headerlink" href="#siwx-sdk-typescriptgo" title="Permanent link">&para;</a></h3>
+<p>2026-06-19 に Go SDK が SIWX（Sign-In-With-X）に対応し、TypeScript↔Go のクロス SDK 互換性が Base Sepolia で確認済み。エージェントが一度認証すれば繰り返しアクセス時の都度課金を回避できる認証型アクセスが多言語スタックで実現した。詳細 → <a href="../../00_Inbox/2026-06-19_x402_siwx-go-support/">2026-06-19_x402_siwx-go-support</a></p>
 <hr />
 <h2 id="_10">監視ポイント<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2753,6 +2841,9 @@
 <li>x402 バッチ決済の採用率（取引量中のバッチ比率）</li>
 <li>Stripe MPP との競合・共存（AWS AgentCore では両社が共存）</li>
 <li>非 USD ステーブルコインの x402 対応拡大</li>
+<li>Canton Network 参加機関（Goldman Sachs 等）による x402 本番採用アナウンス</li>
+<li>trust-gate フック（onPaymentRequired）採用率と外部信頼スコアリングサービスの登場</li>
+<li>SIWX の Python SDK 対応完了と三言語クロス SDK 互換テスト</li>
 </ul>
 <hr />
 <h2 id="_11">関連ページ<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
