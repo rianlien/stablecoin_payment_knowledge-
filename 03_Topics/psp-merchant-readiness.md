@@ -1,7 +1,7 @@
 ---
 title: "PSP・マーチャントのエージェント決済対応"
 type: topic
-updated: 2026-06-15
+updated: 2026-06-21
 tags:
   - agentic-commerce
   - merchant-readiness
@@ -86,6 +86,12 @@ Visa は「Agentic-Ready」という認定プログラムを用意し、Visa Tru
 |---|---|---|
 | 2026-06-02 | [[2026-06-02_Crossmint_agentic-cards-visa-basis-theory]] | Crossmint が Visa + Basis Theory でエージェント向けプログラマブルカードを提供 |
 
+### Circle — 返金・チャージバックプロトコル
+
+| 日付 | ノート | 概要 |
+|---|---|---|
+| 2026-06-18 | [[2026-06-18_Circle_refund-protocol-release]] | Circle が非カストディアル仲裁型ステーブルコイン返金プロトコルを公開——受取側が資金管理権を維持しながら第三者アービターが紛争を仲裁。ステーブルコイン決済の「返金・チャージバック不可」障壁の解消に向けた参照実装（現在脆弱性修正中、本番採用はセキュリティ監査完了後を推奨） |
+
 ### マーチャント直接対応事例
 
 | 日付 | ノート | 概要 |
@@ -137,6 +143,7 @@ Visa は「Agentic-Ready」という認定プログラムを用意し、Visa Tru
 - Worldline-ING-Mastercard 欧州連合の実稼働タイミング
 - x402 対応マーチャントの増加速度（Agentic.market のサービス数で代替指標）
 - ChatGPT + Visa 統合の取引量（大規模なコンシューマー向け事例として最重要）
+- Circle refund protocol の脆弱性修正完了・セキュリティ監査結果と PSP 採用状況
 
 ---
 
