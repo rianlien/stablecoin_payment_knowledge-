@@ -104,8 +104,6 @@
 - 参考リンク
 
 ## Daily brief rules
-その日の実行では、`/01_Daily-Briefs/YYYY-MM-DD.md` を作成または更新する。
-
 その日のまとめファイルは `/01_Daily-Briefs/YYYY-MM/YYYY-MM-DD.md` に保存する（`YYYY-MM` サブディレクトリが必要）。
 
 日次まとめには以下を含める。
