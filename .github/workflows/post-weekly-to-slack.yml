@@ -5,6 +5,12 @@ on:
     branches: [main]
     paths:
       - '02_Weekly/**/*.md'
+  workflow_dispatch:
+    inputs:
+      weekly_file:
+        description: 'Repo-relative path to weekly digest (e.g. 02_Weekly/2026-W25.md)'
+        required: true
+        type: string
 
 jobs:
   post-to-slack:
@@ -17,20 +23,24 @@ jobs:
       - name: Find changed weekly digest
         id: weekly
         run: |
-          WEEKLY_FILE=$(git diff --name-only --diff-filter=A HEAD~1 HEAD 2>/dev/null \
-            | grep '^02_Weekly/.*\.md$' | head -1 || true)
-          if [ -z "$WEEKLY_FILE" ]; then
-            # Fallback for initial commit
-            WEEKLY_FILE=$(git show --name-only --format= HEAD \
+          # Manual dispatch: use provided input
+          if [ -n "${{ inputs.weekly_file }}" ]; then
+            WEEKLY_FILE="${{ inputs.weekly_file }}"
+          else
+            WEEKLY_FILE=$(git diff --name-only --diff-filter=A HEAD~1 HEAD 2>/dev/null \
               | grep '^02_Weekly/.*\.md$' | head -1 || true)
+            if [ -z "$WEEKLY_FILE" ]; then
+              WEEKLY_FILE=$(git show --name-only --format= HEAD \
+                | grep '^02_Weekly/.*\.md$' | head -1 || true)
+            fi
           fi
           if [ -n "$WEEKLY_FILE" ]; then
             WEEK=$(basename "$WEEKLY_FILE" .md)
             echo "week=$WEEK" >> "$GITHUB_OUTPUT"
             echo "file=$WEEKLY_FILE" >> "$GITHUB_OUTPUT"
-            echo "Found changed weekly: $WEEKLY_FILE (week=$WEEK)"
+            echo "Found weekly: $WEEKLY_FILE (week=$WEEK)"
           else
-            echo "No weekly digest changed in this push"
+            echo "No weekly digest found"
           fi
 
       - name: Post to Slack
