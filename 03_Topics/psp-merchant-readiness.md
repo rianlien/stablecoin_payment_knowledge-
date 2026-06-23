@@ -1,7 +1,7 @@
 ---
 title: "PSP・マーチャントのエージェント決済対応"
 type: topic
-updated: 2026-06-21
+updated: 2026-06-23
 tags:
   - agentic-commerce
   - merchant-readiness
@@ -91,6 +91,18 @@ Visa は「Agentic-Ready」という認定プログラムを用意し、Visa Tru
 | 日付 | ノート | 概要 |
 |---|---|---|
 | 2026-06-18 | [[2026-06-18_Circle_refund-protocol-release]] | Circle が非カストディアル仲裁型ステーブルコイン返金プロトコルを公開——受取側が資金管理権を維持しながら第三者アービターが紛争を仲裁。ステーブルコイン決済の「返金・チャージバック不可」障壁の解消に向けた参照実装（現在脆弱性修正中、本番採用はセキュリティ監査完了後を推奨） |
+
+### FV Bank — 規制銀行によるステーブルコイン請求書発行
+
+| 日付 | ノート | 概要 |
+|---|---|---|
+| 2026-06-18 | [[2026-06-18_FV-Bank_stablecoin-invoicing-agentic-platform]] | 米国チャーター銀行として初のステーブルコイン請求書発行（USDC/PYUSD→即時 USD 着金）ローンチ。agentic-ready 仮想カード・開発者 API を今後展開予定 |
+
+### MiniPay / Gnosis Pay — ステーブルコイン残高の Visa 加盟店利用
+
+| 日付 | ノート | 概要 |
+|---|---|---|
+| 2026-06-23 | [[2026-06-23_MiniPay-Visa_stablecoin-card-gnosis-pay]] | Opera MiniPay が Gnosis Pay 経由 Visa デビットカードをローンチ。16M+ ウォレット・65 カ国以上のステーブルコイン残高を 175M+ Visa 加盟店で利用可能に。欧州・アフリカ・東南アジア・中南米対応 |
 
 ### マーチャント直接対応事例
 
