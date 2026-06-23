@@ -42,8 +42,12 @@ x402 Foundation は AI エージェント向けオープン決済プロトコル
 | 2026-05-13 | [[2026-05-13_x402_batch-settlement-sub-cent-ai-payments]] | x402 バッチ決済追加——$0.0001 以下 AI マイクロペイメントが経済的に成立 |
 | 2026-05-14 | [[2026-05-14_x402_arbitrum-launch-agent-payments]] | x402 が Arbitrum に正式対応。対応チェーンが 5 本（→ 6 本）に |
 | 2026-05-20 | [[2026-05-20_Fireblocks_agentic-payments-suite-x402-foundation]] | Fireblocks が x402 Foundation に参加し Agentic Payments Suite を発表 |
+| 2026-05-23 | [[2026-05-20_Fireblocks_agentic-payments-suite-x402]] | Fireblocks Agentic Payments Suite 詳細——PSP 向け Gateway・フィンテック向け Wallets の 2 製品、x402/MPP 両対応 |
 | 2026-05-27 | [[2026-05-27_x402_approval-gap-volume-data]] | 承認ギャップ問題の定量化——月次出来高 77% 減・取引件数は回復 |
 | 2026-06-03 | [[2026-06-03_Chainalysis_x402-100M-agentic-payments-base]] | Chainalysis が x402 の 1 億件突破を報告。Base 上のエージェント決済主力に |
+| 2026-06-15 | [[2026-06-15_x402_canton-network-exact-scheme]] | x402 に Canton Network（機関向けブロックチェーン）の exact scheme 対応が追加——Goldman Sachs 等参加機関で x402 machine payments が利用可能に |
+| 2026-06-17 | [[2026-06-17_x402_onpaymentrequired-trust-gate]] | x402 クライアントに onPaymentRequired trust-gate フック追加——支払い前のペイアドレス検証・支出上限・外部信頼スコアリングを標準化 |
+| 2026-06-19 | [[2026-06-19_x402_siwx-go-support]] | x402 SIWX が Go 言語に対応——TypeScript・Python・Go のクロス SDK エージェント認証が完成 |
 
 ---
 
