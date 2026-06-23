@@ -112,6 +112,7 @@ Visa は「Agentic-Ready」という認定プログラムを用意し、Visa Tru
 | 2026-06-02 | [[2026-06-02_HeySavi-PayPal_uk-agentic-commerce-checkout]] | HeySavi が PayPal 連携で英国向けエージェントコマースチェックアウトを実装 |
 | 2026-06-02 | [[2026-06-02_Coinbase-Checkout_stablecoin-merchant-payments]] | Coinbase × Checkout.com：マーチャント向けステーブルコイン決済受け取りソリューション |
 | 2026-06-15 | [[2026-06-15_AWS-Coinbase_x402-cloudfront-waf-ai-traffic-monetization]] | AWS WAF が CloudFront 全体に x402 AI トラフィック課金を GA——コンソール変更のみで USDC ペイウォール設置可能に |
+| 2026-06-22 | [[2026-06-22_MoonPay-Entendre_agentic-finance-accounting-agents]] | MoonPay が AI 経理エージェント Entendre を買収——ステーブルコイン決済の back-office 自動化（仕訳 93%）を垂直統合 |
 
 ---
 
