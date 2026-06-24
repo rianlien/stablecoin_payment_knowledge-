@@ -1,7 +1,7 @@
 ---
 title: "Fireblocks"
 type: company
-updated: 2026-05-21
+updated: 2026-06-24
 category: payments
 tags:
   - stablecoin
@@ -27,10 +27,14 @@ Fireblocks は、機関向けデジタル資産カストディ・ウォレット
 - **[[x402 Foundation]] への参加**: Linux Foundation が運営する [[x402]] プロトコルのガバナンス組織に加盟。Google、Microsoft、AWS、Mastercard、Visa、Circle、Polygon Labs、Solana Foundation 等が参加するエコシステムに合流。
 - **x402 へのセキュリティ拡張の寄与**: プロトコル層に「リクエスト整合性 + 支出ガバナンス」のセキュリティ拡張を提供。自社インフラが標準の形成側に入る構造をつくっている。
 - **B2B2C モデルの維持**: エンドユーザーやマーチャントへの直販ではなく、PSP・フィンテックが自社サービスに組み込むインフラとして提供。
+- **Fireblocks Flow のローンチ（2026-06-02）**: PSP・フィンテック向けの stablecoin acceptance プロダクト「Fireblocks Flow」を Money20/20 Europe で正式公開。EVM・Solana・Bitcoin の 800 超ウォレットに対応し、既存の決済フローへの統合だけで stablecoin 受け取りが可能になる設計。ローンチパートナーはアフリカ最大 PSP の Flutterwave と B2B 多通貨バンキングの Nuvion。OTL（Open Transaction Layer）対応設計のため、OTL 参加 PSP が増えるにつれて接続性が自動拡張される。
+- **OTL（Open Transaction Layer）co-founding（2026-05-28）**: Checkout.com・Robinhood・MetaMask・Cross River Bank 等 30 超の金融機関・インフラ企業と共に OTL を立ち上げ。支払い・為替・コンプライアンス・メッセージングを跨ぐ複数ステップの取引調整を標準化する試みで、Fireblocks は中心的な founding member として仕様形成に関与している。
 
 ### 見立て
 
 Fireblocks の動きは「暗号資産カストディ会社」から「エージェント決済インフラのレールを両側から握る会社」へのポジション転換。Stripe が法定通貨フローへのステーブルコイン吸収を目指すのに対して、Fireblocks は機関グレードのセキュリティと規制対応を武器に、エージェント決済の新しいレールそのものを設計・提供しようとしている。
+
+Flow のローンチにより「エージェントが支払う側（Agentic Payments Suite）」「PSP が受け取る側（Flow）」「フロー調整（OTL co-founding）」の 3 層を自社と連合標準で押さえる構造が明確になった。Fireblocks 単体がエンドツーエンドのインフラ提供者になるのか、あるいは標準策定を通じてエコシステム全体の共通基盤を握る戦略なのかは引き続き注視が必要。
 
 ---
 
@@ -102,7 +106,9 @@ Fireblocks インフラ（決済処理・コンプライアンス・セトルメ
 
 ## 未解決・監視ポイント
 
-- Agentic Payments Gateway / Agentic Wallets が GA か、ベータか、ロードマップかは未確認
+- **Flow は GA**（2026-06-02 ローンチ済み）。Agentic Payments Gateway / Agentic Wallets と Flow の製品上の位置づけの差分を要確認
+- Flutterwave 経由の Flow 実採用指標（アフリカ展開のトラクション）
+- OTL が中立オープン標準として普及するか、founding alliance 中心の仕様に留まるか
 - x402 のセキュリティ拡張の具体的な OSS 公開状況
 - MPP（Stripe の Machine Payments Protocol）との競合・共存関係
 - Coinbase、Circle など他の機関向けインフラ企業との差別化
@@ -112,6 +118,8 @@ Fireblocks インフラ（決済処理・コンプライアンス・セトルメ
 ## 更新ログ
 
 - **2026-05-21**: Agentic Payments Suite（Agentic Payments Gateway + Agentic Wallets）ローンチ、x402 Foundation 参加を発表。確認済みパートナー: Tazapay、Agora（AUSD）、Wyoming Stable Token Commission。
+- **2026-05-28**: OTL（Open Transaction Layer）を Checkout.com・Robinhood・MetaMask 等と共同で立ち上げ。30 超の金融機関・インフラ企業が参加する取引調整標準。
+- **2026-06-02**: Fireblocks Flow（PSP・フィンテック向け stablecoin acceptance プロダクト）を Money20/20 Europe で正式ローンチ。ローンチパートナーは Flutterwave・Nuvion。OTL 対応設計。
 
 ---
 
