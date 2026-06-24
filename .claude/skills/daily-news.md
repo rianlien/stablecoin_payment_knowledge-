@@ -92,6 +92,10 @@
 例:
 `2026-04-23_circle_usdc_expansion.md`
 
+## Frontmatter format rules
+- `entity` は必ずスカラー文字列で書く。複数の場合は `"Company A / Company B"` 形式とし、YAML リスト形式（`entity:\n  - ...`）は使わない
+- `primary_category` は単一カテゴリを書く（例: `agentic-commerce`）。`category` に複合値を書く場合は `/` 区切りを使ってよい
+
 ## Note requirements
 各ニュースノートには以下を必ず含める。
 - 何が起きたか
