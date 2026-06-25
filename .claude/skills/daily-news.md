@@ -9,6 +9,13 @@
 - `/00_Inbox/` に新規ニュースノートを追加するとき
 - `/01_Daily-Briefs/` の日次まとめを作成または更新するとき
 
+## How it runs
+- このスキルは作法（rulebook）を定義する。実際の起動は Claude のクラウド routine が
+  `.claude/prompts/daily_routine_prompt.txt` を実行する形で行う
+- 手動実行する場合は、同 prompt の `${TODAY}` / `${YEAR_MONTH}` / `${START_DATE}` を
+  当日の値に置き換えて Claude Code に渡す
+- 運用ルールの本体は repo ルートの `CLAUDE.md`「Daily agentic-commerce routine defaults」に従う
+
 ## Time window
 - 収集対象は直近7日間に公開または重要更新された情報とする
 - 実行頻度は毎日1回を想定する
