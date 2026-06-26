@@ -1,3 +1,5 @@
+# 層: Mechanism（OS層）。CLAUDE.md の Contract「Concept page linking」「来歴」を満たす実行プロンプト。ルール変更は先に CLAUDE.md / _meta/ を更新する（非対称ルール）。
+
 あなたは stablecoin / agentic commerce リサーチナレッジベースのリンク整合性メンテナンス担当エージェントです。
 このリポジトリの CLAUDE.md を必ず読み込み、そこに記載された運用ルールに従ってください。
 

@@ -1,4 +1,12 @@
+---
+name: nightly-link-check
+description: 既存ノートと概念ページのリンク整合性を保ち、不足は auto-todo Issue 化する手順（Web 検索なし）。
+when_to_use: 夜間のリンク整合性メンテナンス routine、またはリンク漏れを点検したいとき。
+---
+
 # Nightly Link Check Skill
+
+> **層: Mechanism（OS層）。** CLAUDE.md の Contract「Concept page linking」「来歴」を満たす手段。ルールを変えるときは先に CLAUDE.md / `_meta/` を更新する（非対称ルール）。
 
 ## Purpose
 既存ノートと概念ページの間のリンク整合性を保つ。Web 検索は行わず、
@@ -13,7 +21,7 @@
 - このスキルは作法（rulebook）を定義する。実際の起動は Claude のクラウド routine が
   `.claude/prompts/nightly_link_check_prompt.txt` を実行する形で行う
 - 手動実行する場合は、同 prompt を Claude Code に渡す
-- 運用ルールの本体は repo ルートの `CLAUDE.md`「Concept page linking rules」に従う
+- 運用ルールの本体は repo ルートの `CLAUDE.md`「Contract — Concept page linking」「Contract — 来歴」に従う
 
 ## Scope
 - Web 検索はしない（新規ニュースノートは作らない）

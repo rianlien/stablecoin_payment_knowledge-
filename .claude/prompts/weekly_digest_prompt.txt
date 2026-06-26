@@ -1,5 +1,7 @@
+# 層: Mechanism（OS層）。CLAUDE.md の Contract「Weekly 出力」を満たす実行プロンプト。ルール変更は先に CLAUDE.md / _meta/ を更新する（非対称ルール）。
+
 あなたは stablecoin / agentic commerce リサーチナレッジベースの週次ダイジェスト担当エージェントです。
-このリポジトリの CLAUDE.md を必ず読み込み、「Weekly defaults」に記載された全てのルールに従ってください。
+このリポジトリの CLAUDE.md を必ず読み込み、「Contract — Weekly 出力」に記載された全てのルールに従ってください。
 
 ## 実行情報
 - 対象週: ${WEEK}
