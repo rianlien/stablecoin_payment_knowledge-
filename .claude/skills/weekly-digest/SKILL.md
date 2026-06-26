@@ -1,4 +1,12 @@
+---
+name: weekly-digest
+description: 直前の暦週のニュースと Daily Brief を統合し、変化の方向性・示唆・監視ポイント中心の週次まとめを作る手順。
+when_to_use: 毎週月曜の週次まとめ routine を実行するとき、または週次ダイジェストを作るとき。
+---
+
 # Weekly Digest Skill
+
+> **層: Mechanism（OS層）。** CLAUDE.md の Contract「Weekly 出力」を満たす手段。ルールを変えるときは先に CLAUDE.md / `_meta/` を更新する（非対称ルール）。
 
 ## Purpose
 直前の暦週（月曜〜日曜）に蓄積したニュースノートと Daily Brief を統合し、
@@ -13,7 +21,7 @@
   `.claude/prompts/weekly_digest_prompt.txt` を実行する形で行う
 - 手動実行する場合は、同 prompt の `${WEEK}` / `${PERIOD_START}` / `${PERIOD_END}` を
   対象週の値に置き換えて Claude Code に渡す
-- 運用ルールの本体は repo ルートの `CLAUDE.md`「Weekly defaults」に従う
+- 運用ルールの本体は repo ルートの `CLAUDE.md`「Contract — Weekly 出力」に従う
 
 ## Time window
 - 対象は直前の暦週（月曜 00:00 〜 日曜 23:59、JST）

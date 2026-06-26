@@ -59,7 +59,7 @@ jobs:
               title = get_title(f)
               by_month[month].append((date, title, fname))
 
-          lines = ['---', 'title: ニュース一覧', 'hide:', '  - toc', '---', '', '# ニュース一覧', '']
+          lines = ['---', 'title: ニュース一覧', 'hide:', '  - toc', '---', '', '# ニュース一覧', '', '> **層: Mechanism（事実・再収集可能）。** 論点の枠組みは 03_Topics / 05_MOCs 側で扱う。事実が既存の枠組みと矛盾する場合はトピック側で明示（surface）する。', '']
           for month in sorted(by_month.keys(), reverse=True):
               lines.append(f'## {month}')
               lines.append('')
@@ -83,7 +83,7 @@ jobs:
               month = date[:7]
               by_month2[month].append((date, f'{parent}/{fname}'))
 
-          lines2 = ['---', 'title: Daily Brief', 'hide:', '  - toc', '---', '', '# Daily Brief', '']
+          lines2 = ['---', 'title: Daily Brief', 'hide:', '  - toc', '---', '', '# Daily Brief', '', '> **層: Contract（出力）。** その run で新規採用したノートの要約。論点の枠組みの判断は 03_Topics / 05_MOCs 側で行う。', '']
           for month in sorted(by_month2.keys(), reverse=True):
               lines2.append(f'## {month}')
               lines2.append('')

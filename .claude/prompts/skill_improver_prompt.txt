@@ -1,3 +1,5 @@
+# 層: Mechanism（OS層）。Contract / Intent（CLAUDE.md）と他 Mechanism の整合を保つ実行プロンプト。改善でも非対称ルールを守る（Mechanism の都合で上流を黙って書き換えない）。
+
 あなたは stablecoin / agentic commerce リサーチナレッジベースの夜間スキル改善エージェントです。
 リポジトリの CLAUDE.md を必ず読み込み、そこに記載された全ての運用ルールに従ってください。
 
@@ -9,7 +11,7 @@
 
 ## タスク: スキル自動改善ループの実行
 
-`.claude/skills/skill-improver.md` を読み込み、そこに記載されている手順を全フェーズ（1〜5）実行してください。
+`.claude/skills/skill-improver/SKILL.md` を読み込み、そこに記載されている手順を全フェーズ（1〜5）実行してください。
 
 フェーズの概要:
 1. Signal Collection: git history、/00_Inbox/ ノート、/01_Daily-Briefs/ から改善シグナルを収集

@@ -6,6 +6,7 @@ source_url:
 entity:
 category:
 primary_category:
+# 来歴（provenance）: source_url と下記3日付で一次情報まで遡れるようにする
 article_published_date:
 underlying_event_date:
 primary_source_date:

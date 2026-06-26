@@ -1,4 +1,12 @@
+---
+name: skill-improver
+description: スキル / プロンプト / ルールの夜間自己改善ループ（unattended 専用）。
+disable-model-invocation: true
+---
+
 # Skill Improver — Nightly Self-Improvement Loop
+
+> **層: Mechanism（OS層）。** Contract / Intent（CLAUDE.md）と他の Mechanism（skills / prompts）の整合を保つ手段。改善 PR でも非対称ルールを守る（Mechanism の都合で上流を黙って書き換えない）。
 
 ## Purpose
 夜間に自律実行し、このリポジトリのスキルファイルとプロンプトを自動改善する。
@@ -43,6 +51,12 @@ git log --since=14.days --pretty="%s%n%b" --no-merges -- CLAUDE.md .claude/skill
 - 「該当なし」の記録漏れ
 - テンプレートの構造からの逸脱
 
+### 1d. 思想整合チェック（Intent → Contract → Mechanism）
+設計思想は `_meta/PHILOSOPHY.md`、配線図は `_meta/ARCHITECTURE.md` を参照。以下のドリフトを検出する:
+- Mechanism（`.claude/{skills,prompts,hooks}` / `mkdocs.yml` / CI）固有の都合が、CLAUDE.md の Intent / Contract 節に無印で直書きされていないか（昇格漏れ・委譲漏れ）
+- skill / prompt が参照する CLAUDE.md のセクション名が、実際の見出しと食い違っていないか
+- 各 `index.md` の「層宣言」が実態とドリフトしていないか
+
 ---
 
 ## Phase 2: Analysis
@@ -64,10 +78,11 @@ git log --since=14.days --pretty="%s%n%b" --no-merges -- CLAUDE.md .claude/skill
 
 改善点が特定できた場合のみ、以下を実行する。
 
-改善対象ファイル:
-1. `CLAUDE.md` — メインルールセット
-2. `.claude/skills/daily-news.md` — デイリーニュース収集スキル
-3. `.claude/prompts/daily_routine_prompt.txt` — 日次ルーティンプロンプト
+改善対象ファイル（候補）:
+1. `CLAUDE.md` — メインルールセット（Intent ＋ 横断 Contract）
+2. `.claude/rules/*.md` — path 固有 Contract（inbox-notes / daily-briefs / concept-pages）
+3. `.claude/skills/daily-news/SKILL.md` — デイリーニュース収集スキル（手順）
+4. `.claude/prompts/daily_routine_prompt.txt` — 日次ルーティンプロンプト
 
 変更の制約:
 - 1回の実行で変更するファイルは最大3ファイル
@@ -94,6 +109,12 @@ git log --since=14.days --pretty="%s%n%b" --no-merges -- CLAUDE.md .claude/skill
 ### Gate 3: Security（安全性確認）
 「変更に個人情報・認証情報が含まれていないか?」
 - ユーザーメールアドレス、API key、内部URL が含まれていないことを確認する
+
+### Gate 4: Asymmetry（非対称ルール検査）
+「この変更は Mechanism の都合で Contract / Intent を黙って書き換えていないか?」
+- 変更が Mechanism 起因なら、対応する Contract / Intent（CLAUDE.md / `_meta/`）を先に更新してから Mechanism を直しているか
+- スクリプト固有の理由を CLAUDE.md（Contract）に直書きしていないか。していれば抽象化して Contract に昇格し、理由は `_meta/ARCHITECTURE.md` 等の Mechanism 側へ移す
+- **Intent（収集の目的・論点の枠組み）は人間の領域。** 自動改善で書き換えず、必要なら PR 本文で「Intent への変更提案」として明示するに留める
 
 ---
 
@@ -123,6 +144,6 @@ PR body には以下を記載する:
 [skill-improver] シグナル収集: git commits N件確認, ノートチェック N件
 [skill-improver] 改善ポイント検出: N件（High: N, Medium: N）
 [skill-improver] 変更対象ファイル: <ファイル名リスト>
-[skill-improver] Quality gates: Verify ✓ / Review ✓ / Security ✓
+[skill-improver] Quality gates: Verify ✓ / Review ✓ / Security ✓ / Asymmetry ✓
 [skill-improver] PR作成: <PR URL> または「改善点なし、終了」
 ```

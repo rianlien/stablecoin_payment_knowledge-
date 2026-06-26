@@ -1,4 +1,12 @@
+---
+name: daily-news
+description: stablecoin / agentic commerce の日次ニュースを収集し 00_Inbox にノート化、概念ページへリンクし Daily Brief を作る手順。
+when_to_use: 日次のニュース収集 routine を実行するとき、または会話中に渡された記事をノート化するとき。
+---
+
 # Daily News Collection Skill
+
+> **層: Mechanism（OS層）。** CLAUDE.md の Intent（採用基準）と Contract（ノート・出力・リンクの約束）を満たす手段。ルールを変えるときは先に CLAUDE.md / `_meta/` を更新してからこのスキルを直す（非対称ルール）。
 
 ## Purpose
 ステーブルコイン決済に関する重要なニュースや更新情報を、毎日1回収集し、
@@ -14,7 +22,7 @@
   `.claude/prompts/daily_routine_prompt.txt` を実行する形で行う
 - 手動実行する場合は、同 prompt の `${TODAY}` / `${YEAR_MONTH}` / `${START_DATE}` を
   当日の値に置き換えて Claude Code に渡す
-- 運用ルールの本体は repo ルートの `CLAUDE.md`「Daily agentic-commerce routine defaults」に従う
+- 運用ルールの本体は repo ルートの `CLAUDE.md` の Intent（採用基準）と Contract（Daily routine 判定パラメータ / Daily Brief 出力 / Concept page linking）に従う
 
 ## Time window
 - 収集対象は直近7日間に公開または重要更新された情報とする
