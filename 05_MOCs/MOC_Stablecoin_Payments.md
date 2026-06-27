@@ -1,7 +1,7 @@
 ---
 title: "MOC: ステーブルコイン決済"
 type: moc
-updated: 2026-06-20
+updated: 2026-06-27
 tags:
   - stablecoin
   - payments
@@ -65,6 +65,8 @@ tags:
 | [[2026-04-22_MoneyGram-Stellar_usdc-latam-expansion]] | MoneyGram × Stellar、USDC 残高機能を中南米展開（現金化拠点50万拠点） |
 | [[2026-06-02_MoneyGram_mgusd-stellar-launch]] | MoneyGram が Stellar 上で MGUSD ステーブルコインを本番ローンチ（発行体は Bridge） |
 | [[2026-06-22_MoneyGram-Solana_validator-developer-platform]] | MoneyGram が Solana のバリデーターに参加＋機関向け Developer Platform に加盟——Stellar（MGUSD）＋ Solana の 2 チェーン戦略へ移行 |
+| [[2026-06-24_Ripple-SBI_rlusd-japan-jfsa-launch]] | Ripple × SBI が RLUSD の日本ローンチ——JFSA「第4種電子決済手段」認可取得、外国発行ステーブルコインとして国内初 |
+| [[2026-06-25_Circle-Nomura_usdc-japan-fx-settlement]] | Circle × 野村が USDC で日本企業向け FX 即時決済プラットフォームを構築発表——日次 4,400 億ドル FX 市場、2027 年ローンチ目標 |
 
 ### マネージド決済プラットフォーム
 
@@ -91,7 +93,7 @@ tags:
 Bridge（Stripe傘下）が B2B プラットフォームに採用され、PSP がステーブルコイン機能を API として提供するモデルが確立しつつある。Veem、DoorDash の事例が参照モデル。
 
 ### オン/オフランプの実用化
-MoneyGram の事例はステーブルコインが既存送金ネットワークと接続し、現金化まで一気通貫で機能することを示した。Swift 非依存の国際送金ルートが具体的に見えてきた。
+MoneyGram の事例はステーブルコインが既存送金ネットワークと接続し、現金化まで一気通貫で機能することを示した。Swift 非依存の国際送金ルートが具体的に見えてきた。2026-06-24〜25 には日本市場でも外国ステーブルコインが本格参入——RLUSD（Ripple × SBI、JFSA 認可）と USDC（Circle × 野村、2027 年ローンチ目標）が日次 4,400 億ドルの日本 FX 市場をターゲットにほぼ同時期に動いた。改正資金決済法の完全施行が直接の契機であり、G3 以外の主要市場での実案件が初めて形成された。
 
 ### エージェント・機械向け決済
 x402 プロトコルが急速に普及し、2026-06 時点で Base 上の x402 取引が 1 億件を突破（Chainalysis 報告）。当初は USD（USDC on Base/Arbitrum）中心だったが、2026-06-19 に AllUnity が EU 初の非 USD x402 決済レール（SEKAU × SEPA 精算）を本番稼働させ、地理・通貨の多様化が始まった。Visa TAP・Mastercard AP4M・Google AP2 など既存カードネットワーク側も独自のエージェント認証・決済フローを整備し、x402 系プロトコルとの競合・共存の構図が明確になってきている。→ [[MOC_Protocols]]
