@@ -1,7 +1,7 @@
 ---
 title: "MOC: ステーブルコイン決済"
 type: moc
-updated: 2026-06-27
+updated: 2026-06-29
 tags:
   - stablecoin
   - payments
@@ -75,6 +75,7 @@ tags:
 | [[2026-04-08_Circle_cpn-managed-payments]] | Circle CPN Managed Payments：銀行・PSP が暗号資産管理なしで USDC 決済利用可 |
 | [[2026-05-27_Circle-Nium_cpn-usdc-global-payouts]] | Circle × Nium：CPN 上の USDC 決済を Nium の 190 カ国・100 通貨ペイアウトに接続 |
 | [[2026-06-11_MassPay-Coinbase_stablecoin-payouts]] | MassPay × Coinbase：USDC + CPN を活用したグローバルペイアウト展開 |
+| [[2026-06-24_Invesco-Superstate_stablecoin-reserves-onchain-fund]] | Invesco が GENIUS Act 準拠の stablecoin 準備金向けオンチェーン MMF（Superstate 技術）を SEC に申請——主要 TradFi が GENIUS Act 準拠専用インフラを初提供 |
 
 ---
 
