@@ -1,7 +1,7 @@
 ---
 title: "Binance"
 type: company
-updated: 2026-06-27
+updated: 2026-06-29
 category: crypto-exchange
 tags:
   - MiCA
@@ -40,3 +40,4 @@ Binance の EU 退場確定により、EU 内 USDC/EURC 流動性が MiCA 認可
 |---|---|---|
 | 2026-06-16 | [[2026-06-16_Binance_mica-eu-exit-risk]] | HCMC 拒否報道と Binance の反論——情報が錯綜した EU 撤退危機の第一報 |
 | 2026-06-24 | [[2026-06-24_Binance_mica-greece-withdrawal-eu-limbo]] | ギリシャ MiCA 申請を正式撤回——7/1 直前に EU ユーザーをリンボ状態に |
+| 2026-06-26 | [[2026-06-26_Binance_eu-service-halt-july1]] | EU ユーザーに 7/1 からのサービス停止を正式通知——MiCA 退場の実運用確定 |
