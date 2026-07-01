@@ -2437,12 +2437,12 @@
 <h3 id="_2">何をしているか<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>MiCA 準拠ステーブルコイン発行（EMT シリーズ）</strong>: EURAU（EUR、2025-07-31 ローンチ）・CHFAU（CHF、2026-02-26 ローンチ）を BaFin 規制下で稼働中。Ethereum・Polygon・Arbitrum・Base・Optimism・Solana に展開し、Privy（Stripe 傘下）との統合やオフランプ経路も整備。</li>
-<li><strong>SEKAU（SEK 建て EMT）の準備</strong>: スウェーデン・クローナ完全準備担保の 3 本目の MiCA 準拠 EMT。2026 年 5 月発表時の「6 月ローンチ目標」は BaFin 最終承認未取得のまま 2026-06-15 を通過し、未達。MiCA 移行期間終了（2026-07-01）前後のローンチを継続監視中。</li>
-<li><strong>Agentic Payments インフラの構築</strong>: x402 プロトコルを採用し、AI エージェント起点の取引を受け入れてローカル銀行口座に現地通貨で精算できる仕組みを準備。ステーブルコイン保有不要の設計で、欧州 PSP・加盟店の参入障壁を下げる。</li>
+<li><strong>SEKAU（SEK 建て EMT）の正式ローンチ</strong>: スウェーデン・クローナ完全準備担保の 3 本目の MiCA 準拠 EMT。2026 年 5 月発表時の「6 月ローンチ目標」は BaFin 最終承認未取得のまま 2026-06-15 を通過し一旦未達となったが、MiCA 移行期間終了（2026-07-01）直前の 2026-06-19 に BaFin 承認を取得し正式ローンチ。世界初の完全準備担保 MiCAR 準拠 SEK 建て EMT。</li>
+<li><strong>Agentic Payments インフラの正式公開</strong>: x402 プロトコルを採用したインフラを SEKAU ローンチと同時（2026-06-19）に公開。AI エージェント起点の取引を受け入れ、SEPA 経由でローカル銀行口座に SEK で精算できる。ステーブルコイン保有不要の設計で、欧州 PSP・加盟店の参入障壁を下げる。実際の PSP・加盟店の採用事例は未確認（ローンチ直後）。</li>
 </ul>
 <h3 id="_3">見立て<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>AllUnity の戦略は「EU 規制（MiCA）への先行適合」と「ローカル通貨ステーブルコインによる USD 依存脱却」の 2 軸で成立している。MiCA 準拠の EU 規制下で非 USD ステーブルコインを発行し、x402 による Agentic Payments を組み合わせることで、欧州デジタルサービス市場での規制準拠型エージェント決済の最初期参照実装となる可能性がある。</p>
-<p>ただし、SEKAU の BaFin 承認遅延は「MiCA EMT 審査プロセスの不確実性」を示す事例になった。承認取得後に x402 Agentic Payments との同時ローンチを実現できるかが、欧州 x402 エコシステムへの実質的な貢献度を左右する。SEKAU が仮に大幅に遅れた場合、EURAU を使った先行 Agentic Payments 運用が代替戦略として浮上する。</p>
+<p>SEKAU は当初 6 月ローンチ目標に対し BaFin 承認遅延で一旦未達となったが（「MiCA EMT 審査プロセスの不確実性」を示す事例）、MiCA 移行期間終了直前の 2026-06-19 に承認を取得し、x402 Agentic Payments インフラと同時に正式ローンチした。「承認取得後に同時ローンチを実現できるか」という当初の論点は解消され、今後は Agentic Payments の実際の採用事例（PSP・加盟店の統合）が欧州 x402 エコシステムへの実質的な貢献度を左右する。</p>
 <hr />
 <h2 id="inbox">Inbox との紐付け<a class="headerlink" href="#inbox" title="Permanent link">&para;</a></h2>
 <h3 id="sekau-2026-05">SEKAU 発表・計画（2026-05）<a class="headerlink" href="#sekau-2026-05" title="Permanent link">&para;</a></h3>
@@ -2502,8 +2502,8 @@
 <hr />
 <h2 id="_4">監視ポイント<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>SEKAU の BaFin 承認タイミング</strong>: MiCA 移行期間終了（2026-07-01）前後での駆け込みローンチ、または 7/1 後のローンチ実現可否を継続監視</li>
-<li><strong>Agentic Payments の公式ローンチと採用事例</strong>: x402 ファシリテーター実装仕様（Coinbase CDP 利用か独自実装か）、対応チェーン、SEPA / SEPA Instant 接続の具体設計が明らかになるタイミング</li>
+<li><strong>SEKAU ローンチ後の実運用状況</strong>: 2026-06-19 に BaFin 承認・正式ローンチ済み。対応チェーン（EURAU・CHFAU 実績の Ethereum / Polygon / Arbitrum / Base / Optimism / Solana に対応するか）や流通量を継続監視</li>
+<li><strong>Agentic Payments の採用事例</strong>: インフラ自体は 2026-06-19 に公開済み。x402 ファシリテーター実装仕様（Coinbase CDP 利用か独自実装か）、SEPA / SEPA Instant 接続の具体設計、実際に統合する EU PSP・加盟店の有無を継続監視</li>
 <li><strong>EURAU の x402 Agentic Payments 対応</strong>: SEKAU 代替として EURAU での先行運用が発表されるか</li>
 <li><strong>欧州 PSP・加盟店との提携発表</strong>: Adyen・Worldpay 等の欧州 PSP が AllUnity ステーブルコインを x402 決済通貨として採用するか</li>
 <li><strong>他のローカル通貨 EMT 拡張</strong>: NOK・DKK・GBP 等のスカンジナビア・欧州通貨への展開計画</li>
